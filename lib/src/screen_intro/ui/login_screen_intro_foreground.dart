@@ -14,10 +14,6 @@ import '../widget/login_screen_intro_widget_subtitle.dart';
 import '../widget/login_screen_intro_widget_title.dart';
 
 class LoginScreenIntroForeground extends StatelessWidget {
-  static const double _marginTextRight = 12;
-  static const double _marginTitleRight = 10;
-  static const double _marginTextTop = 2;
-
   final String title;
   final String subtitle;
   final String button;
@@ -31,31 +27,31 @@ class LoginScreenIntroForeground extends StatelessWidget {
         Provider.of<LoginScreenIntroService>(context, listen: false);
     return SafeArea(
         child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: service.style.size(6)),
+            padding: EdgeInsets.symmetric(horizontal: service.style.size(25)),
             child: Column(children: [
               Container(
-                  margin: EdgeInsets.only(top: service.style.size(2)),
+                  margin: EdgeInsets.only(top: service.style.size(19)),
                   alignment: Alignment.topRight,
                   child: LoginScreenIntroWidgetSkipButton()),
               Container(
                   margin: EdgeInsets.only(
-                      top: service.style.size(15),
-                      right: service.style.size(_marginTitleRight)),
+                      top: service.style.size(60),
+                      right: service.style.size(25)),
                   alignment: Alignment.centerLeft,
                   child: LoginScreenIntroWidgetTitle(title)),
               Container(
                   margin: EdgeInsets.only(
-                      top: service.style.size(_marginTextTop),
-                      right: service.style.size(_marginTextRight)),
+                      top: service.style.size(20),
+                      right: service.style.size(25)),
                   child: LoginScreenIntroWidgetSubtitle(subtitle)),
               Container(
                   margin: EdgeInsets.only(
-                      top: service.style.size(_marginTextTop),
-                      right: service.style.size(_marginTextRight)),
+                      top: service.style.size(20),
+                      right: service.style.size(25)),
                   alignment: Alignment.centerLeft,
                   child: LoginScreenIntroWidgetDots(pos)),
               Container(
-                  margin: EdgeInsets.only(top: service.style.size(5)),
+                  margin: EdgeInsets.only(top: service.style.size(50)),
                   alignment: Alignment.centerLeft,
                   child: LoginScreenIntroWidgetButton(button)),
             ])));

@@ -4,8 +4,8 @@
  */
 import 'package:flutter/widgets.dart';
 
-class LoginScreenInboxWidgetIcons {
-  LoginScreenInboxWidgetIcons._();
+class LoginUtilsIcons {
+  LoginUtilsIcons._();
 
   static const _kFontFam = 'LoginIcons';
   static const String? _kFontPkg = 'login';

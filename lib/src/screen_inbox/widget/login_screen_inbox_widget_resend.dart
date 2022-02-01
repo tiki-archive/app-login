@@ -6,8 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../utils/login_utils_icons.dart';
 import '../login_screen_inbox_service.dart';
-import 'login_screen_inbox_widget_icons.dart';
 
 class LoginScreenInboxWidgetResend extends StatelessWidget {
   static const String _textReceive = "Didn't receive it?";
@@ -21,7 +21,7 @@ class LoginScreenInboxWidgetResend extends StatelessWidget {
       Text(_textReceive,
           style: TextStyle(
               color: service.style.textColor,
-              fontSize: service.style.textSize,
+              fontSize: service.style.text(14),
               fontWeight: FontWeight.w600,
               fontFamily: service.style.textFamily)),
       TextButton(
@@ -32,11 +32,10 @@ class LoginScreenInboxWidgetResend extends StatelessWidget {
                 child: Text(_textResend,
                     style: TextStyle(
                         fontFamily: service.style.textFamily,
-                        fontSize: service.style.textSize,
+                        fontSize: service.style.text(14),
                         fontWeight: FontWeight.bold,
                         color: service.style.buttonColor))),
-            Icon(LoginScreenInboxWidgetIcons.reload,
-                size: service.style.textSize)
+            Icon(LoginUtilsIcons.reload, size: service.style.text(14))
           ]))
     ]);
   }

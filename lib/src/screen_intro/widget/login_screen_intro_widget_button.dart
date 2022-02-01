@@ -19,10 +19,10 @@ class LoginScreenIntroWidgetButton extends StatelessWidget {
         Provider.of<LoginScreenIntroService>(context, listen: false);
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: service.style.size(2)),
+          padding: EdgeInsets.symmetric(vertical: service.style.size(16)),
           shape: RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.all(Radius.circular(service.style.size(10)))),
+                  BorderRadius.all(Radius.circular(service.style.size(37)))),
           primary: service.style.buttonColor,
         ),
         child: Row(
@@ -33,14 +33,15 @@ class LoginScreenIntroWidgetButton extends StatelessWidget {
               direction: Axis.vertical,
               children: [
                 Container(
-                    width: service.style.size(70),
+                    width: service.style.size(228),
                     child: Text(text,
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                          color: service.style.buttonTextColor,
                           fontWeight: FontWeight.w800,
-                          fontSize: service.style.text(16),
+                          fontSize: service.style.text(22),
                           letterSpacing: service.style.size(0.05),
-                          fontFamily: service.style.fontFamily,
+                          fontFamily: service.style.textFamily,
                         )))
               ],
             ),

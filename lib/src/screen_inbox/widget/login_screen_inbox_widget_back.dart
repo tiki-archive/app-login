@@ -6,8 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../utils/login_utils_icons.dart';
 import '../login_screen_inbox_service.dart';
-import 'login_screen_inbox_widget_icons.dart';
 
 class LoginScreenInboxWidgetBack extends StatelessWidget {
   static const String _text = "Back";
@@ -20,8 +20,7 @@ class LoginScreenInboxWidgetBack extends StatelessWidget {
       onPressed: () => service.controller.back(),
       child: Row(children: [
         Container(
-          child: Icon(LoginScreenInboxWidgetIcons.back,
-              size: service.style.textSize),
+          child: Icon(LoginUtilsIcons.back, size: service.style.text(14)),
           margin: EdgeInsets.only(right: service.style.size(1)),
         ),
         Text(_text,
@@ -29,7 +28,7 @@ class LoginScreenInboxWidgetBack extends StatelessWidget {
                 color: service.style.buttonColor,
                 fontFamily: service.style.textFamily,
                 fontWeight: FontWeight.w800,
-                fontSize: service.style.textSize))
+                fontSize: service.style.text(14)))
       ]),
     );
   }

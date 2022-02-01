@@ -20,13 +20,13 @@ class LoginScreenInboxWidgetSent extends StatelessWidget {
           style: TextStyle(
               color: service.style.textColor,
               fontFamily: service.style.textFamily,
-              fontSize: service.style.textSize,
+              fontSize: service.style.text(14),
               fontWeight: FontWeight.w600)),
       Text(service.model.email ?? "",
           style: TextStyle(
               color: service.style.textColor,
               fontFamily: service.style.textFamily,
-              fontSize: service.style.textSize,
+              fontSize: service.style.text(14),
               fontWeight: FontWeight.bold))
     ]);
   }

@@ -5,15 +5,13 @@
 
 import 'package:flutter/material.dart';
 
-import '../utils/style.dart';
+import '../utils/login_utils_style.dart';
 
-class LoginScreenInboxStyle extends Style {
+class LoginScreenInboxStyle extends LoginUtilsStyle {
   final Color _textColor;
-  late final double _textSize;
   final String _textFamily;
 
   final Color _titleColor;
-  late final double _titleSize;
   final String _titleFamily;
 
   final Color _buttonColor;
@@ -23,8 +21,6 @@ class LoginScreenInboxStyle extends Style {
       {MediaQueryData? mediaQueryData,
       String textFamily = 'Arial',
       String titleFamily = 'Arial',
-      double titleSize = 28,
-      double textSize = 14,
       Color textColor = Colors.black,
       Color titleColor = Colors.black,
       Color buttonColor = Colors.orange,
@@ -35,22 +31,15 @@ class LoginScreenInboxStyle extends Style {
         _titleColor = titleColor,
         _buttonColor = buttonColor,
         _backgroundColor = backgroundColor,
-        super(mediaQueryData: mediaQueryData) {
-    _titleSize = text(titleSize);
-    _textSize = text(textSize);
-  }
+        super(mediaQueryData: mediaQueryData);
 
   Color get buttonColor => _buttonColor;
 
   String get titleFamily => _titleFamily;
 
-  double get titleSize => _titleSize;
-
   Color get titleColor => _titleColor;
 
   String get textFamily => _textFamily;
-
-  double get textSize => _textSize;
 
   Color get textColor => _textColor;
 

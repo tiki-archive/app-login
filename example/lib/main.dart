@@ -26,7 +26,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Router(
-            routerDelegate: Login().routerDelegate,
+            routerDelegate: Login(
+                style: LoginFlowStyle(
+              intro: LoginScreenIntroStyle(
+                  backgroundColor1: Color(0xFFFFD225),
+                  backgroundColor2: Color(0xFFFFD976),
+                  backgroundColor3: Color(0xFFFFC376),
+                  buttonColor: Color(0xFF27002E),
+                  buttonTextColor: Color(0xFFFFFFFF),
+                  textColor: Color(0xFF27002E),
+                  skipColor: Color(0xFF00133F),
+                  dotColor: Color(0xFFFFFFFF),
+                  dotColorActive: Color(0xFF27002E),
+                  textFamily: 'NunitoSans',
+                  titleFamily: 'Koara'),
+              email: LoginScreenEmailStyle(),
+              inbox: LoginScreenInboxStyle(),
+              terms: LoginScreenTermsStyle(),
+            )).routerDelegate,
             backButtonDispatcher: RootBackButtonDispatcher()));
   }
 }

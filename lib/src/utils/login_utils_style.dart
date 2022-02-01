@@ -5,13 +5,13 @@
 
 import 'package:flutter/material.dart';
 
-abstract class Style {
+abstract class LoginUtilsStyle {
   static const double _stdDeviceWidth = 375;
 
   final double _deviceWidth;
   final double _textScaleFactor;
 
-  Style({MediaQueryData? mediaQueryData})
+  LoginUtilsStyle({MediaQueryData? mediaQueryData})
       : _textScaleFactor = mediaQueryData?.textScaleFactor ?? 1.0,
         _deviceWidth = mediaQueryData?.size.width ?? 375;
 

@@ -25,7 +25,7 @@ class LoginScreenIntroBackground extends StatelessWidget {
       ),
       Container(
           alignment: Alignment.bottomRight,
-          margin: EdgeInsets.only(bottom: service.style.size(5)),
+          margin: EdgeInsets.only(bottom: service.style.size(36)),
           child:
               Image.asset('res/images/intro-pineapple.png', package: 'login'))
     ]);

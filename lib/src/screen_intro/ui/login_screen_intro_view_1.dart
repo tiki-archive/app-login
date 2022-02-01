@@ -15,7 +15,7 @@ class LoginScreenIntroView1 extends LoginScreenIntroView {
   String get button => 'NEXT';
 
   @override
-  int get pos => 1;
+  int get pos => 0;
 
   @override
   String get subtitle =>

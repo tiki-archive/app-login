@@ -20,7 +20,7 @@ class LoginScreenInboxWidgetTitle extends StatelessWidget {
         style: TextStyle(
             color: style.titleColor,
             fontFamily: style.titleFamily,
-            fontSize: style.titleSize,
+            fontSize: style.text(14),
             fontWeight: FontWeight.bold));
   }
 }

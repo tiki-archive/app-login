@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:login/src/screen_intro/login_screen_intro_service.dart';
 import 'package:provider/provider.dart';
 
+import '../../login.dart';
 import 'login_flow_service.dart';
 
 class LoginFlowLayout extends StatelessWidget {
@@ -19,20 +20,18 @@ class LoginFlowLayout extends StatelessWidget {
     LoginFlowService service = Provider.of<LoginFlowService>(context);
     return Navigator(
       key: navigatorKey,
-      pages: getPages(service),
-      onPopPage: service.controller.pop,
-    );
-  }
-
-  List<Page> getPages(LoginFlowService service) {
-    return [
-      LoginScreenIntroService(service.style.intro).presenter,
-      /*if (service.model.state == LoginFlowModelState.returningUser)
+      pages: [
+        LoginScreenIntroService(LoginScreenIntroStyle.mqd(
+                service.style.intro, MediaQuery.of(context)))
+            .presenter,
+        /*if (service.model.state == LoginFlowModelState.returningUser)
         LoginScreenEmailService(service).presenter
       else if (service.model.state == LoginFlowModelState.otpRequested)
         LoginScreenInboxService(service).presenter
       else if (service.model.state == LoginFlowModelState.loggedIn)
         HomeScreenService(providers: service.provide()).presenter*/
-    ];
+      ],
+      onPopPage: service.controller.pop,
+    );
   }
 }

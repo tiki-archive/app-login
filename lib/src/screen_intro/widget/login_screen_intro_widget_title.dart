@@ -21,8 +21,10 @@ class LoginScreenIntroWidgetTitle extends StatelessWidget {
     return Text(text,
         textAlign: TextAlign.left,
         style: TextStyle(
-            fontFamily: style.fontFamilyTitle,
-            fontSize: style.text(34),
+            height: 1.1,
+            color: style.textColor,
+            fontFamily: style.titleFamily,
+            fontSize: style.text(44),
             fontWeight: FontWeight.bold));
   }
 }

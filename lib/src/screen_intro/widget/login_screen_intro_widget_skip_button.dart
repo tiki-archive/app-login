@@ -21,11 +21,11 @@ class LoginScreenIntroWidgetSkipButton extends StatelessWidget {
             child: Text(
               _text,
               style: TextStyle(
-                color: service.style.skipColor,
-                fontWeight: FontWeight.bold,
-                fontSize: service.style.text(15),
-                fontFamily: service.style.fontFamily,
-              ),
+                  color: service.style.skipColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: service.style.text(20),
+                  fontFamily: service.style.textFamily,
+                  height: 1.2),
             )));
   }
 }

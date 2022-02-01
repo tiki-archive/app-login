@@ -19,6 +19,7 @@ dependencies:
   provider: ^6.0.2
   flutter_secure_storage: ^5.0.2
   url_launcher: ^6.0.18
+  flutter_markdown: ^0.6.9
   wallet:
     git:
       url: https://github.com/tiki/wallet
@@ -41,6 +42,9 @@ flutter:
     - packages/login/res/images/inbox-blob-bl.png
     - packages/login/res/images/inbox-blob-tr.png
     - packages/login/res/images/inbox-pineapple.png
+    - packages/login/res/images/email-pineapple.png
+    - packages/login/res/images/email-blob.png
+    - packages/login/res/images/terms-blob-tr.png
   fonts:
     - family: LoginIcons
       fonts:

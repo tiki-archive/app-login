@@ -6,9 +6,9 @@
 import 'package:flutter/material.dart';
 
 import 'login_screen_intro_controller.dart';
+import 'login_screen_intro_model.dart';
 import 'login_screen_intro_presenter.dart';
 import 'login_screen_intro_style.dart';
-import 'model/login_screen_intro_model.dart';
 
 class LoginScreenIntroService extends ChangeNotifier {
   final LoginScreenIntroStyle style;

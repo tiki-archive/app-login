@@ -27,9 +27,9 @@ class LoginScreenIntroWidgetDots extends StatelessWidget {
   }
 
   Widget _dot(bool isActive) {
-    double size = style.size(0.9);
+    double size = style.size(8);
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: size * 0.5),
+      margin: EdgeInsets.symmetric(horizontal: size * 0.66),
       height: size,
       width: size,
       decoration: BoxDecoration(

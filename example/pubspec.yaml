@@ -65,3 +65,11 @@ flutter:
         - asset: res/fonts/NunitoSans-ExtraLightItalic.ttf
           weight: 200
           style: italic
+    - family: Koara
+      fonts:
+        - asset: res/fonts/Koara-Bold.ttf
+          weight: 700
+        - asset: res/fonts/Koara-Regular.ttf
+          weight: 400
+        - asset: res/fonts/Koara-Light.ttf
+          weight: 300
