@@ -8,8 +8,8 @@ import 'package:login/src/screen_intro/login_screen_intro_style.dart';
 import 'package:provider/provider.dart';
 
 import '../login_screen_intro_service.dart';
-import 'login_screen_intro_view_background.dart';
-import 'login_screen_intro_view_foreground.dart';
+import 'login_screen_intro_background.dart';
+import 'login_screen_intro_foreground.dart';
 
 abstract class LoginScreenIntroView extends StatelessWidget {
   late final LoginScreenIntroStyle style;
@@ -23,8 +23,8 @@ abstract class LoginScreenIntroView extends StatelessWidget {
         body: Center(
             child: GestureDetector(
                 child: Stack(children: [
-                  LoginScreenIntroViewBackground(background),
-                  LoginScreenIntroViewForeground(pos, title, subtitle, button)
+                  LoginScreenIntroBackground(background),
+                  LoginScreenIntroForeground(pos, title, subtitle, button)
                 ]),
                 onHorizontalDragEnd: (dragEndDetails) => service.controller
                     .onHorizontalDrag(context, dragEndDetails))));

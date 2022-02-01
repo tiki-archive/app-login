@@ -13,7 +13,7 @@ import '../widget/login_screen_intro_widget_skip_button.dart';
 import '../widget/login_screen_intro_widget_subtitle.dart';
 import '../widget/login_screen_intro_widget_title.dart';
 
-class LoginScreenIntroViewForeground extends StatelessWidget {
+class LoginScreenIntroForeground extends StatelessWidget {
   static const double _marginTextRight = 12;
   static const double _marginTitleRight = 10;
   static const double _marginTextTop = 2;
@@ -23,8 +23,7 @@ class LoginScreenIntroViewForeground extends StatelessWidget {
   final String button;
   final int pos;
 
-  LoginScreenIntroViewForeground(
-      this.pos, this.title, this.subtitle, this.button);
+  LoginScreenIntroForeground(this.pos, this.title, this.subtitle, this.button);
 
   @override
   Widget build(BuildContext context) {

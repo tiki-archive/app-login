@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 
 import '../login_screen_intro_service.dart';
 
-class LoginScreenIntroViewBackground extends StatelessWidget {
+class LoginScreenIntroBackground extends StatelessWidget {
   final Color background;
 
-  LoginScreenIntroViewBackground(this.background);
+  LoginScreenIntroBackground(this.background);
 
   @override
   Widget build(BuildContext context) {

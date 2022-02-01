@@ -5,12 +5,9 @@
 
 import 'package:flutter/material.dart';
 
-class LoginScreenIntroStyle {
-  static const double _stdDeviceWidth = 375;
+import '../utils/style.dart';
 
-  final double _deviceWidth;
-  final double _textScaleFactor;
-
+class LoginScreenIntroStyle extends Style {
   final Color _backgroundColor1;
   final Color _backgroundColor2;
   final Color _backgroundColor3;
@@ -33,9 +30,7 @@ class LoginScreenIntroStyle {
       Color dotColorActive = Colors.purple,
       String fontFamily = 'Arial',
       String fontFamilyTitle = 'Arial'})
-      : _textScaleFactor = mediaQueryData?.textScaleFactor ?? 1.0,
-        _deviceWidth = mediaQueryData?.size.width ?? 375,
-        _backgroundColor1 = backgroundColor1,
+      : _backgroundColor1 = backgroundColor1,
         _backgroundColor2 = backgroundColor2,
         _backgroundColor3 = backgroundColor3,
         _buttonColor = buttonColor,
@@ -43,12 +38,8 @@ class LoginScreenIntroStyle {
         _dotColor = dotColor,
         _dotColorActive = dotColorActive,
         _fontFamily = fontFamily,
-        _fontFamilyTitle = fontFamilyTitle {}
-
-  double size(double raw) => (raw * (_deviceWidth / _stdDeviceWidth));
-
-  double text(double raw) =>
-      (raw * (_deviceWidth / _stdDeviceWidth)) * _textScaleFactor;
+        _fontFamilyTitle = fontFamilyTitle,
+        super(mediaQueryData: mediaQueryData) {}
 
   Color get backgroundColor3 => _backgroundColor3;
 

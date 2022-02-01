@@ -38,3 +38,10 @@ flutter:
   assets:
     - packages/login/res/images/intro-blob.png
     - packages/login/res/images/intro-pineapple.png
+    - packages/login/res/images/inbox-blob-bl.png
+    - packages/login/res/images/inbox-blob-tr.png
+    - packages/login/res/images/inbox-pineapple.png
+  fonts:
+    - family: LoginIcons
+      fonts:
+        - asset: packages/login/res/fonts/LoginIcons.ttf
