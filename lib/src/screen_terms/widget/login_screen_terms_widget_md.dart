@@ -9,15 +9,17 @@ import 'package:provider/provider.dart';
 import '../login_screen_terms_service.dart';
 
 class LoginScreenTermsWidgetMd extends StatelessWidget {
-  static const double _fontSizeText = 13;
+  static const double _fontSizeText = 16;
 
   @override
   Widget build(BuildContext context) {
     LoginScreenTermsService service =
         Provider.of<LoginScreenTermsService>(context);
     return FutureBuilder(
-        future: DefaultAssetBundle.of(context)
-            .loadString('res/md/' + service.model.filename! + '.md'),
+        future: DefaultAssetBundle.of(context).loadString(
+            'packages/login/src/screen_terms/' +
+                service.model.filename! +
+                '.md'),
         builder: (BuildContext context, AsyncSnapshot<String> mdSource) {
           return MarkdownBody(
               selectable: true,
@@ -56,7 +58,7 @@ class LoginScreenTermsWidgetMd extends StatelessWidget {
 
   double _relativeHeadingSize(
       double Function(double raw) responsive, double factor) {
-    return ((responsive(24) - responsive(_fontSizeText)) * factor) +
+    return ((responsive(36) - responsive(_fontSizeText)) * factor) +
         responsive(_fontSizeText);
   }
 }

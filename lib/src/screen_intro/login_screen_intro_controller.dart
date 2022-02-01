@@ -4,6 +4,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:login/src/flow/login_flow_service.dart';
+import 'package:provider/provider.dart';
 
 import 'login_screen_intro_service.dart';
 
@@ -26,11 +28,10 @@ class LoginScreenIntroController {
     }
   }
 
-  void skipToLogin(
-      context) {} /*=>
+  void skipToLogin(context) =>
       Provider.of<LoginFlowService>(context, listen: false)
           .controller
-          .showReturningUser();*/
+          .showScreenEmail();
 
   void onHorizontalDrag(BuildContext context, DragEndDetails dragEndDetails) {
     if (dragEndDetails.primaryVelocity! < 0) navigateToNextScreen(context);

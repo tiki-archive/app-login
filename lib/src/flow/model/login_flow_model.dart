@@ -5,6 +5,7 @@
 
 import 'login_flow_model_current.dart';
 import 'login_flow_model_otp.dart';
+import 'login_flow_model_state.dart';
 import 'login_flow_model_token.dart';
 import 'login_flow_model_user.dart';
 
@@ -14,5 +15,12 @@ class LoginFlowModel {
   LoginFlowModelToken? token;
   LoginFlowModelOtp? otp;
 
-  LoginFlowModel({this.current, this.user, this.token, this.otp});
+  LoginFlowModelState? state;
+
+  LoginFlowModel(
+      {this.current,
+      this.user,
+      this.token,
+      this.otp,
+      this.state = LoginFlowModelState.returningUser});
 }

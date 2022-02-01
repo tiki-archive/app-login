@@ -4,11 +4,12 @@
  */
 
 import 'package:flutter/widgets.dart';
-import 'package:login/src/flow/login_flow_style.dart';
 
 import 'login_flow_controller.dart';
 import 'login_flow_presenter.dart';
+import 'login_flow_style.dart';
 import 'model/login_flow_model.dart';
+import 'model/login_flow_model_state.dart';
 
 class LoginFlowService extends ChangeNotifier {
   final LoginFlowStyle style;
@@ -19,5 +20,10 @@ class LoginFlowService extends ChangeNotifier {
   LoginFlowService(this.style) {
     controller = LoginFlowController(this);
     presenter = LoginFlowPresenter(this);
+  }
+
+  void changeState(LoginFlowModelState state) {
+    model.state = state;
+    notifyListeners();
   }
 }

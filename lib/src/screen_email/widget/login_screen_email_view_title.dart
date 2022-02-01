@@ -21,7 +21,8 @@ class LoginScreenEmailViewTitle extends StatelessWidget {
         style: TextStyle(
             fontFamily: style.titleFamily,
             color: style.titleColor,
-            fontSize: style.text(28),
+            fontSize: style.text(36),
+            letterSpacing: style.size(0.02),
             fontWeight: FontWeight.bold));
   }
 }

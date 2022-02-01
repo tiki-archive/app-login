@@ -33,6 +33,16 @@ class LoginScreenInboxStyle extends LoginUtilsStyle {
         _backgroundColor = backgroundColor,
         super(mediaQueryData: mediaQueryData);
 
+  LoginScreenInboxStyle.mqd(
+      LoginScreenInboxStyle style, MediaQueryData mediaQueryData)
+      : _textFamily = style.textFamily,
+        _titleFamily = style.titleFamily,
+        _textColor = style.textColor,
+        _titleColor = style.titleColor,
+        _buttonColor = style.buttonColor,
+        _backgroundColor = style.backgroundColor,
+        super(mediaQueryData: mediaQueryData);
+
   Color get buttonColor => _buttonColor;
 
   String get titleFamily => _titleFamily;

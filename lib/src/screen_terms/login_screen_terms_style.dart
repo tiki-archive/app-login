@@ -29,7 +29,17 @@ class LoginScreenTermsStyle extends LoginUtilsStyle {
         _textFamily = textFamily,
         _titleFamily = titleFamily,
         _headingColor = headingColor,
-        super(mediaQueryData: mediaQueryData) {}
+        super(mediaQueryData: mediaQueryData);
+
+  LoginScreenTermsStyle.mqd(
+      LoginScreenTermsStyle style, MediaQueryData mediaQueryData)
+      : _backgroundColor = style.backgroundColor,
+        _linkColor = style.linkColor,
+        _textColor = style.textColor,
+        _textFamily = style.textFamily,
+        _titleFamily = style.titleFamily,
+        _headingColor = style.headingColor,
+        super(mediaQueryData: mediaQueryData);
 
   Color get backgroundColor => _backgroundColor;
 

@@ -3,3 +3,4 @@
  * MIT license. See LICENSE file in root directory.
  */
 
+enum LoginFlowModelState { returningUser, otpRequested, keyFlow, loggedIn }

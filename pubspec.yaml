@@ -45,6 +45,8 @@ flutter:
     - packages/login/res/images/email-pineapple.png
     - packages/login/res/images/email-blob.png
     - packages/login/res/images/terms-blob-tr.png
+    - packages/login/src/screen_terms/login_screen_terms_privacy.md
+    - packages/login/src/screen_terms/login_screen_terms_tos.md
   fonts:
     - family: LoginIcons
       fonts:

@@ -31,7 +31,7 @@ class LoginScreenEmailViewTos extends StatelessWidget {
 
   TextStyle _textStyle(LoginScreenEmailStyle style, Color color) {
     return TextStyle(
-        fontSize: style.text(11),
+        fontSize: style.text(14),
         fontWeight: FontWeight.bold,
         color: color,
         fontFamily: style.textFamily);
@@ -41,7 +41,7 @@ class LoginScreenEmailViewTos extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       minWidth: 0,
-      height: style.text(11),
+      height: style.text(14),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       padding: EdgeInsets.all(0),
       child: Text(text, style: _textStyle(style, style.linkColor)),

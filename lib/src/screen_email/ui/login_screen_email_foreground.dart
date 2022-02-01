@@ -22,28 +22,29 @@ class LoginScreenEmailForeground extends StatelessWidget {
         Provider.of<LoginScreenEmailService>(context).style;
     return SafeArea(
         child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: style.size(6)),
+            padding: EdgeInsets.symmetric(horizontal: style.size(32)),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
               Container(
                   margin: EdgeInsets.only(
-                      top: style.size(5), right: style.size(20)),
+                      top: style.size(51), right: style.size(60)),
                   alignment: Alignment.centerLeft,
                   child: LoginScreenEmailViewTitle()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(2)),
+                  margin: EdgeInsets.only(top: style.size(15)),
                   alignment: Alignment.centerLeft,
                   child: LoginScreenEmailViewSubtitle()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(2)),
+                  margin: EdgeInsets.only(top: style.size(15)),
                   child: LoginScreenEmailViewInput()),
-              Align(
+              Container(
                   alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.only(top: style.size(5)),
                   child: LoginScreenEmailViewError()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(1)),
+                  margin: EdgeInsets.only(top: style.size(5)),
                   child: LoginScreenEmailViewButton()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(2)),
+                  margin: EdgeInsets.only(top: style.size(20)),
                   child: LoginScreenEmailViewTos()),
             ])));
   }

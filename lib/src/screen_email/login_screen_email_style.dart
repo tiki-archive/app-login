@@ -44,6 +44,20 @@ class LoginScreenEmailStyle extends LoginUtilsStyle {
         _textColor = textColor,
         super(mediaQueryData: mediaQueryData);
 
+  LoginScreenEmailStyle.mqd(
+      LoginScreenEmailStyle style, MediaQueryData mediaQueryData)
+      : _textFamily = style.textFamily,
+        _titleFamily = style.titleFamily,
+        _titleColor = style.titleColor,
+        _errorColor = style.errorColor,
+        _buttonColor = style.buttonColor,
+        _buttonTextColor = style.buttonTextColor,
+        _backgroundColor = style.backgroundColor,
+        _linkColor = style.linkColor,
+        _hintColor = style.hintColor,
+        _textColor = style.textColor,
+        super(mediaQueryData: mediaQueryData);
+
   Color get buttonColor => _buttonColor;
 
   String get titleFamily => _titleFamily;

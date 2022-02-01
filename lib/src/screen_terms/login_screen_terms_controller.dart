@@ -12,11 +12,12 @@ class LoginScreenTermsController {
 
   LoginScreenTermsController(this.service);
 
-  back(BuildContext context) {
-    Navigator.of(context).pop();
-  }
+  void back(BuildContext context) => Navigator.of(context).pop();
 
-  openUrl(String? href) async {
-    if (href != null && await canLaunch(href)) await launch(href);
+  Future<bool> openUrl(String? href) async {
+    if (href != null && await canLaunch(href))
+      return launch(href);
+    else
+      return false;
   }
 }

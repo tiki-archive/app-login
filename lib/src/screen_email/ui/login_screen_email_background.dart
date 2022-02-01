@@ -17,19 +17,19 @@ class LoginScreenEmailBackground extends StatelessWidget {
     return Stack(children: [
       Center(child: Container(color: style.backgroundColor)),
       Container(
-          margin: EdgeInsets.only(top: style.size(2)),
+          margin: EdgeInsets.only(top: style.size(18)),
           alignment: Alignment.topRight,
           child: Image.asset(
-            'res/images/login-pineapple.png',
-            height: style.size(24),
+            'res/images/email-pineapple.png',
+            height: style.size(188),
             package: 'login',
           )),
       Container(
-          margin: EdgeInsets.only(top: style.size(32)),
+          margin: EdgeInsets.only(top: style.size(271)),
           alignment: Alignment.topLeft,
           child: Image.asset(
-            'res/images/login-blob.png',
-            height: style.size(11.5),
+            'res/images/email-blob.png',
+            height: style.size(107),
             package: 'login',
           ))
     ]);

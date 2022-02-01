@@ -19,12 +19,10 @@ class LoginScreenEmailViewError extends StatelessWidget {
       opacity: service.model.isError ? 1.0 : 0.0,
       child: Text(_text,
           style: TextStyle(
-              fontSize: service.style.size(14),
+              fontSize: service.style.size(15),
               fontWeight: FontWeight.w600,
               fontFamily: service.style.textFamily,
-              color: service.model.isError
-                  ? service.style.errorColor
-                  : service.style.backgroundColor)),
+              color: service.style.errorColor)),
     );
   }
 }

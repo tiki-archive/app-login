@@ -18,7 +18,7 @@ class LoginScreenTermsBackground extends StatelessWidget {
       Center(child: Container(color: style.backgroundColor)),
       Align(
         alignment: Alignment.topRight,
-        child: Image.asset("res/images/home-blob-tr.png", package: 'login'),
+        child: Image.asset("res/images/terms-blob-tr.png", package: 'login'),
       )
     ]);
   }

@@ -20,15 +20,19 @@ class LoginScreenTermsWidgetBack extends StatelessWidget {
       onPressed: () => service.controller.back(context),
       child: Row(children: [
         Container(
-          child: Icon(LoginUtilsIcons.back, size: service.style.text(15)),
-          margin: EdgeInsets.only(right: service.style.size(15)),
+          child: Icon(
+            LoginUtilsIcons.back,
+            size: service.style.text(22),
+            color: service.style.linkColor,
+          ),
+          margin: EdgeInsets.only(right: service.style.size(6)),
         ),
         Text(_textBack,
             style: TextStyle(
                 fontFamily: service.style.textFamily,
                 color: service.style.linkColor,
                 fontWeight: FontWeight.w800,
-                fontSize: service.style.text(15)))
+                fontSize: service.style.text(22)))
       ]),
     );
   }

@@ -19,22 +19,24 @@ class LoginScreenEmailViewInput extends StatelessWidget {
         style: TextStyle(
           color: service.style.buttonColor,
           fontWeight: FontWeight.bold,
-          fontSize: service.style.text(14),
+          fontSize: service.style.text(20),
           fontFamily: service.style.textFamily,
         ),
         cursorColor: service.style.linkColor,
         autocorrect: false,
         autofocus: true,
+        keyboardAppearance: Brightness.light,
+        keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
-                horizontal: service.style.size(1.5),
-                vertical: service.style.size(2)),
+                horizontal: service.style.size(16),
+                vertical: service.style.size(20)),
             hintText: _placeholder,
             hintStyle: TextStyle(
                 color: service.style.hintColor,
                 fontWeight: FontWeight.bold,
                 fontFamily: service.style.textFamily,
-                fontSize: service.style.text(14)),
+                fontSize: service.style.text(20)),
             filled: true,
             fillColor: Colors.white,
             enabledBorder: UnderlineInputBorder(

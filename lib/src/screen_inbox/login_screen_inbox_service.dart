@@ -17,7 +17,7 @@ class LoginScreenInboxService extends ChangeNotifier {
   late final LoginScreenInboxController controller;
   //final LoginFlowService loginFlowService;
 
-  LoginScreenInboxService(this.style, String email) //, this.loginFlowService)
+  LoginScreenInboxService(this.style, String? email) //, this.loginFlowService)
       : model = LoginScreenInboxModel(email: email) {
     controller = LoginScreenInboxController(this);
     presenter = LoginScreenInboxPresenter(this);

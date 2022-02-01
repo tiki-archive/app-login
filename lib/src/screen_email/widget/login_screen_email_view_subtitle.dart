@@ -17,9 +17,9 @@ class LoginScreenEmailViewSubtitle extends StatelessWidget {
     LoginScreenEmailStyle style =
         Provider.of<LoginScreenEmailService>(context).style;
     return Text(_text,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.left,
         style: TextStyle(
-            fontSize: style.text(14),
+            fontSize: style.text(20),
             fontWeight: FontWeight.w600,
             fontFamily: style.textFamily,
             color: style.textColor));
