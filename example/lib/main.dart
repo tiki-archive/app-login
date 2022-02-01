@@ -25,12 +25,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(child: Text('hello world')),
-      ),
-    );
+        home: Router(
+            routerDelegate: Login().routerDelegate,
+            backButtonDispatcher: RootBackButtonDispatcher()));
   }
 }
