@@ -91,6 +91,7 @@ class FlowService extends ChangeNotifier {
         email: model.current?.email,
         isLoggedIn: true,
         address: address ?? model.user?.address));
+    model.loginCallbacks.forEach((key, func) => func());
     model.state = FlowModelState.loggedIn;
     notifyListeners();
   }
@@ -98,6 +99,11 @@ class FlowService extends ChangeNotifier {
   void addLogoutCallback(String id, void Function() callback) {
     if (!model.logoutCallbacks.containsKey(id))
       model.logoutCallbacks[id] = callback;
+  }
+
+  void addLoginCallback(String id, void Function() callback) {
+    if (!model.loginCallbacks.containsKey(id))
+      model.loginCallbacks[id] = callback;
   }
 
   Future<void> logout() async {
