@@ -42,8 +42,8 @@ class FlowLayout extends StatelessWidget {
                   ScreenInboxStyle.mqd(service.style.inbox, mediaQueryData),
                   service.model.otp?.email)
               .presenter
-        /*else if (service.model.state == FlowModelState.loggedIn)
-          HomeScreenService(providers: service.provide()).presenter*/
+        else if (service.model.state == FlowModelState.loggedIn)
+          service.home
       ],
       onPopPage: service.controller.pop,
     );

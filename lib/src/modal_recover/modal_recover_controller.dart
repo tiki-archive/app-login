@@ -56,10 +56,11 @@ class ModalRecoverController {
     return Navigator.of(context).pop();
   }
 
-  void complete(BuildContext context) {
-    FlowService service = Provider.of<FlowService>(context, listen: false);
-    //service.changeState(FlowModelState.otpRequested);
-    //call login
+  Future<void> complete(BuildContext context) async {
+    FlowService flowService = Provider.of<FlowService>(context, listen: false);
+    ModalRecoverService recoverService =
+        Provider.of<ModalRecoverService>(context, listen: false);
+    await flowService.login(address: recoverService.state.keys?.address);
     return Navigator.of(context).pop();
   }
 

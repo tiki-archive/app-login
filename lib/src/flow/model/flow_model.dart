@@ -17,6 +17,7 @@ class FlowModel {
 
   FlowModelState? state;
   bool otpError;
+  Map<String, void Function()> logoutCallbacks;
 
   FlowModel(
       {this.current,
@@ -24,5 +25,7 @@ class FlowModel {
       this.token,
       this.otp,
       this.state,
-      this.otpError = false});
+      this.otpError = false,
+      Map<String, void Function()>? logoutCallbacks})
+      : this.logoutCallbacks = logoutCallbacks ?? Map();
 }
