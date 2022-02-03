@@ -150,9 +150,10 @@ class FlowService extends ChangeNotifier {
         model.otp = saved.otp;
         model.token = saved.token;
         model.user = saved.user;
-        if (model.user?.isLoggedIn == true)
+        if (model.user?.isLoggedIn == true) {
           model.state = FlowModelState.loggedIn;
-        else if (model.current?.email != null)
+          model.loginCallbacks.forEach((key, func) => func());
+        } else if (model.current?.email != null)
           model.state = FlowModelState.returningUser;
         notifyListeners();
       });
