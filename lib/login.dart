@@ -6,14 +6,15 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
-import 'package:login/src/flow/model/flow_model_user.dart';
+import 'src/flow/model/flow_model_user.dart';
 
 import 'src/flow/flow_service.dart';
 import 'src/flow/flow_style.dart';
+import 'src/flow/model/flow_model_token.dart';
 
 export 'src/flow/flow_style.dart';
-export 'src/flow/model/flow_model_user.dart';
 export 'src/flow/model/flow_model_token.dart';
+export 'src/flow/model/flow_model_user.dart';
 export 'src/modal_recover/modal_recover_style.dart';
 export 'src/screen_email/screen_email_style.dart';
 export 'src/screen_inbox/screen_inbox_style.dart';
@@ -45,7 +46,8 @@ class Login {
 
   FlowModelToken? get token => _flowService.model.token;
 
-  Future<void> refresh(void Function(String?)? onComplete) => _flowService.refresh(onComplete);
+  Future<void> refresh(void Function(String?)? onComplete) =>
+      _flowService.refresh(onComplete);
 
   Future<void> logout() => _flowService.logout();
 }
