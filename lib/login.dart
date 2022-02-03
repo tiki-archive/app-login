@@ -13,6 +13,7 @@ import 'src/flow/flow_style.dart';
 
 export 'src/flow/flow_style.dart';
 export 'src/flow/model/flow_model_user.dart';
+export 'src/flow/model/flow_model_token.dart';
 export 'src/modal_recover/modal_recover_style.dart';
 export 'src/screen_email/screen_email_style.dart';
 export 'src/screen_inbox/screen_inbox_style.dart';
@@ -41,6 +42,10 @@ class Login {
       _flowService.addLogoutCallback(id, callback);
 
   FlowModelUser? get user => _flowService.model.user;
+
+  FlowModelToken? get token => _flowService.model.token;
+
+  Future<void> refresh(void Function(String?)? onComplete) => _flowService.refresh(onComplete);
 
   Future<void> logout() => _flowService.logout();
 }
