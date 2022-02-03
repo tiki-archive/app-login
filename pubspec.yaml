@@ -20,16 +20,17 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   url_launcher: ^6.0.18
   flutter_markdown: ^0.6.9
+  email_validator: ^2.0.1
+  firebase_dynamic_links: ^4.0.5
   wallet:
-    git:
-      url: https://github.com/tiki/wallet
-      ref: 0.0.7
+    path: ../wallet/
+    #git:
+      #url: https://github.com/tiki/wallet
+      #ref: 0.0.7
   httpp:
     git:
       url: https://github.com/tiki/httpp
       ref: 0.0.3
-  recover:
-    path: ../recover
 
 dev_dependencies:
   flutter_test:
@@ -45,8 +46,12 @@ flutter:
     - packages/login/res/images/email-pineapple.png
     - packages/login/res/images/email-blob.png
     - packages/login/res/images/terms-blob-tr.png
-    - packages/login/src/screen_terms/login_screen_terms_privacy.md
-    - packages/login/src/screen_terms/login_screen_terms_tos.md
+    - packages/login/res/images/recover-pineapple-pizza.png
+    - packages/login/res/images/recover-avocado.png
+    - packages/login/res/animation/recover-creating.json
+    - packages/login/res/animation/recover-loading.json
+    - packages/login/src/screen_terms/screen_terms_privacy.md
+    - packages/login/src/screen_terms/screen_terms_tos.md
   fonts:
     - family: LoginIcons
       fonts:

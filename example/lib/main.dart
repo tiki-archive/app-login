@@ -1,35 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 import 'package:login/login.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((record) => print(
+      '${record.time.toIso8601String()}: ${record.level.name} [${record.loggerName}] ${record.message}'));
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsFlutterBinding.ensureInitialized();
-    Logger.root.level = Level.ALL;
-    Logger.root.onRecord.listen((record) => print(
-        '${record.time.toIso8601String()}: ${record.level.name} [${record.loggerName}] ${record.message}'));
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Router(
             routerDelegate: Login(
-                style: LoginFlowStyle(
-              intro: LoginScreenIntroStyle(
+                style: FlowStyle(
+              intro: ScreenIntroStyle(
                   backgroundColor1: Color(0xFFFFD225),
                   backgroundColor2: Color(0xFFFFD976),
                   backgroundColor3: Color(0xFFFFC376),
@@ -41,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                   dotColorActive: Color(0xFF27002E),
                   textFamily: 'NunitoSans',
                   titleFamily: 'Koara'),
-              email: LoginScreenEmailStyle(
+              email: ScreenEmailStyle(
                   errorColor: Color(0xFFC73000),
                   buttonColor: Color(0xFF27002E),
                   textColor: Color(0xFF545454),
@@ -52,8 +44,14 @@ class _MyAppState extends State<MyApp> {
                   titleColor: Color(0xFF27002E),
                   textFamily: 'NunitoSans',
                   titleFamily: 'Koara'),
-              inbox: LoginScreenInboxStyle(),
-              terms: LoginScreenTermsStyle(
+              inbox: ScreenInboxStyle(
+                  buttonColor: Color(0xFFFF521C),
+                  backgroundColor: Color(0xFFFFF5E9),
+                  textColor: Color(0xFF545454),
+                  titleColor: Color(0xFF27002E),
+                  textFamily: 'NunitoSans',
+                  titleFamily: 'Koara'),
+              terms: ScreenTermsStyle(
                   backgroundColor: Color(0xFFFFF5E9),
                   textColor: Color(0xFF545454),
                   headingColor: Color(0xFF27002E),
