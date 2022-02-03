@@ -6,11 +6,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
-import 'src/flow/model/flow_model_user.dart';
 
 import 'src/flow/flow_service.dart';
 import 'src/flow/flow_style.dart';
 import 'src/flow/model/flow_model_token.dart';
+import 'src/flow/model/flow_model_user.dart';
 
 export 'src/flow/flow_style.dart';
 export 'src/flow/model/flow_model_token.dart';
@@ -41,6 +41,9 @@ class Login {
 
   void onLogout(String id, void Function() callback) =>
       _flowService.addLogoutCallback(id, callback);
+
+  void onLogin(String id, void Function() callback) =>
+      _flowService.addLoginCallback(id, callback);
 
   FlowModelUser? get user => _flowService.model.user;
 
