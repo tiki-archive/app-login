@@ -1,0 +1,58 @@
+name: login
+description: flutter lib for login
+version: 0.0.1
+homepage: https://mytiki.com
+repository: https://github.com/tiki/login
+issue_tracker: https://github.com/tiki/login/issues
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  permission_handler: ^8.3.0
+  barcode_scan2: ^4.2.0
+  lottie: ^1.2.1
+  logging: ^1.0.2
+  provider: ^6.0.2
+  flutter_secure_storage: ^5.0.2
+  url_launcher: ^6.0.18
+  flutter_markdown: ^0.6.9
+  email_validator: ^2.0.1
+  firebase_dynamic_links: ^4.0.5
+  wallet:
+    path: ../wallet/
+    #git:
+      #url: https://github.com/tiki/wallet
+      #ref: 0.0.7
+  httpp:
+    git:
+      url: https://github.com/tiki/httpp
+      ref: 0.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - packages/login/res/images/intro-blob.png
+    - packages/login/res/images/intro-pineapple.png
+    - packages/login/res/images/inbox-blob-bl.png
+    - packages/login/res/images/inbox-blob-tr.png
+    - packages/login/res/images/inbox-pineapple.png
+    - packages/login/res/images/email-pineapple.png
+    - packages/login/res/images/email-blob.png
+    - packages/login/res/images/terms-blob-tr.png
+    - packages/login/res/images/recover-pineapple-pizza.png
+    - packages/login/res/images/recover-avocado.png
+    - packages/login/res/animation/recover-creating.json
+    - packages/login/res/animation/recover-loading.json
+    - packages/login/src/screen_terms/screen_terms_privacy.md
+    - packages/login/src/screen_terms/screen_terms_tos.md
+  fonts:
+    - family: LoginIcons
+      fonts:
+        - asset: packages/login/res/fonts/LoginIcons.ttf
