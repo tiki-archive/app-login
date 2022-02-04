@@ -70,8 +70,4 @@ class ModalRecoverController {
           query:
               'subject=${Uri.encodeComponent('Account Locked')}&body=${Uri.encodeComponent('My TIKI account is locked. Code: $code')}')
       .toString());
-
-  void setLoading() => _service.setLoading(true);
-
-  void finishLoading() => _service.setLoading(false);
 }

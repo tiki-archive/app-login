@@ -24,13 +24,13 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
 
   @override
   Future<void> onSubmit(BuildContext context, String pin) async {
-    controller.setLoading();
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
     if (!service.state.loading) {
       service.setPin(pin);
+      service.setLoading(true);
       await service.lookup(pin, (success) {
-        controller.finishLoading();
+        service.setLoading(false);
         if (success) {
           controller.showRecoverPassphrase();
           service.clearError();
