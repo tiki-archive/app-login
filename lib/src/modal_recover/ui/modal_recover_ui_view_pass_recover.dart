@@ -23,14 +23,16 @@ class ModalRecoverUiViewPassRecover extends ModalRecoverUiViewPass {
   Future<void> onSubmit(BuildContext context, String passphrase) async {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if (await service.decrypt(passphrase)) {
-      service.state.passphrase = passphrase;
-      service.clearError();
-      controller.finishLoading();
-      controller.showCycle();
-    } else {
-      controller.finishLoading();
-      service.setError(_error);
+    if(!service.state.loading) {
+      if (await service.decrypt(passphrase)) {
+        service.state.passphrase = passphrase;
+        service.clearError();
+        controller.finishLoading();
+        controller.showCycle();
+      } else {
+        controller.finishLoading();
+        service.setError(_error);
+      }
     }
   }
 

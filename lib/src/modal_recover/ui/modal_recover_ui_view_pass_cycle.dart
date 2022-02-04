@@ -25,22 +25,24 @@ class ModalRecoverUiViewPassCycle extends ModalRecoverUiViewPass {
   Future<void> onSubmit(BuildContext context, String passphrase) async {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if (passphrase == service.state.passphrase)
-      service.setError(_error);
-    else {
-      service.clearError();
-      await service.cycle(passphrase, controller.showSuccess, (error) {
-        if (error is StateError) {
-          service.setError(error.message);
-          controller.finishLoading();
-          controller.showError();
-        } else {
-          _log.severe(error);
-          service.setError('Weird error. Try again.');
-          controller.finishLoading();
-          controller.showError();
-        }
-      });
+    if(!service.state.loading) {
+      if (passphrase == service.state.passphrase)
+        service.setError(_error);
+      else {
+        service.clearError();
+        await service.cycle(passphrase, controller.showSuccess, (error) {
+          if (error is StateError) {
+            service.setError(error.message);
+            controller.finishLoading();
+            controller.showError();
+          } else {
+            _log.severe(error);
+            service.setError('Weird error. Try again.');
+            controller.finishLoading();
+            controller.showError();
+          }
+        });
+      }
     }
   }
 

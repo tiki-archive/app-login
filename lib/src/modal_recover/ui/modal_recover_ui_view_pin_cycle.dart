@@ -25,13 +25,15 @@ class ModalRecoverUiViewPinCycle extends ModalRecoverUiViewPin {
   Future<void> onSubmit(BuildContext context, String pin) async {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if (pin == service.state.pin)
-      service.setError(_error);
-    else {
-      service.clearError();
-      service.setNewPin(pin);
-      controller.showCyclePassphrase();
-    }
+      if(!service.state.loading) {
+        if (pin == service.state.pin)
+          service.setError(_error);
+        else {
+          service.clearError();
+          service.setNewPin(pin);
+          controller.showCyclePassphrase();
+        }
+      }
   }
 
   @override
