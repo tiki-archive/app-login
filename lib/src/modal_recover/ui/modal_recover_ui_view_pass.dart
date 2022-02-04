@@ -38,7 +38,6 @@ abstract class ModalRecoverUiViewPass extends ModalRecoverUiView {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: style.size(40)),
                       child: ModalRecoverWidgetPass((passphrase) {
-                        controller.setLoading();
                         onSubmit(context, passphrase);
                       }),
                     )

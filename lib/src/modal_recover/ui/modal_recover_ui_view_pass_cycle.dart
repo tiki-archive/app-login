@@ -30,15 +30,16 @@ class ModalRecoverUiViewPassCycle extends ModalRecoverUiViewPass {
         service.setError(_error);
       else {
         service.clearError();
+        service.setLoading(true);
         await service.cycle(passphrase, controller.showSuccess, (error) {
           if (error is StateError) {
             service.setError(error.message);
-            controller.finishLoading();
+            service.setLoading(false);
             controller.showError();
           } else {
             _log.severe(error);
             service.setError('Weird error. Try again.');
-            controller.finishLoading();
+            service.setLoading(false);
             controller.showError();
           }
         });

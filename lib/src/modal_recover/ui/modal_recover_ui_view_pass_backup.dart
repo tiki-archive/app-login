@@ -27,15 +27,16 @@ class ModalRecoverUiViewPassBackup extends ModalRecoverUiViewPass {
         Provider.of<ModalRecoverService>(context, listen: false);
     if (!service.state.loading) {
       if (passphrase.length < 8) {
-        controller.finishLoading();
+        service.setLoading(false);
         service.setError(_error);
       } else {
+        service.setLoading(true);
         await service.backup(passphrase, () {
           service.clearError();
-          controller.finishLoading();
+          service.setLoading(false);
           controller.showSuccess();
         }, (error) {
-          controller.finishLoading();
+          service.setLoading(true);
           if (error is StateError) {
             service.setError(error.message);
             controller.showError();
