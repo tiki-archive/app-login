@@ -21,12 +21,18 @@ class ModalRecoverUiViewPinBackup extends ModalRecoverUiViewPin {
   void onSubmit(BuildContext context, String pin) {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if(!service.state.loading) {
+    if (!service.state.loading) {
       service.setPin(pin);
       controller.showBackupPassphrase();
     }
   }
 
   @override
-  void back(BuildContext context) => controller.showBackup();
+  void back(BuildContext context) {
+    ModalRecoverService service =
+        Provider.of<ModalRecoverService>(context, listen: false);
+    service.clearError();
+    service.setLoading(false);
+    controller.showBackup();
+  }
 }
