@@ -23,7 +23,7 @@ class ModalRecoverUiViewPassRecover extends ModalRecoverUiViewPass {
   Future<void> onSubmit(BuildContext context, String passphrase) async {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if(!service.state.loading) {
+    if (!service.state.loading) {
       if (await service.decrypt(passphrase)) {
         service.state.passphrase = passphrase;
         service.clearError();
@@ -38,7 +38,10 @@ class ModalRecoverUiViewPassRecover extends ModalRecoverUiViewPass {
 
   @override
   void back(BuildContext context) {
-    Provider.of<ModalRecoverService>(context, listen: false).clearError();
+    ModalRecoverService service =
+        Provider.of<ModalRecoverService>(context, listen: false);
+    service.clearError();
+    service.setLoading(false);
     controller.showRecoverPin();
   }
 }

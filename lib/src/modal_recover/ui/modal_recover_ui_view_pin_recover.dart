@@ -27,7 +27,7 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
     controller.setLoading();
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if(!service.state.loading) {
+    if (!service.state.loading) {
       service.setPin(pin);
       await service.lookup(pin, (success) {
         controller.finishLoading();
@@ -54,7 +54,10 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
 
   @override
   void back(BuildContext context) {
-    Provider.of<ModalRecoverService>(context, listen: false).clearError();
+    ModalRecoverService service =
+        Provider.of<ModalRecoverService>(context, listen: false);
+    service.clearError();
+    service.setLoading(false);
     controller.showRecover();
   }
 }
