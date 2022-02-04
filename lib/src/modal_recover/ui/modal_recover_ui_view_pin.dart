@@ -17,7 +17,10 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
   @override
   Widget page(BuildContext context) {
     ModalRecoverService service = Provider.of<ModalRecoverService>(context);
-    return Stack(children: [
+    return Container(
+        height: MediaQuery.of(context).viewInsets.bottom + style.size(200),
+        padding: EdgeInsets.all(style.modalContentPadding),
+        child: Stack(children: [
               Padding(
               padding: EdgeInsets.all(style.modalContentPadding),
               child: Column(
@@ -40,7 +43,7 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
                   child: Align(
                       alignment: Alignment.topCenter,
                       child: Lottie.asset("res/animation/recover-loading.json",
-                          package: 'login', height: style.size(100))))]);
+                          package: 'login', height: style.size(100))))]));
   }
 
   String get title;

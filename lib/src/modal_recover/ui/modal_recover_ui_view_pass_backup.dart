@@ -25,25 +25,27 @@ class ModalRecoverUiViewPassBackup extends ModalRecoverUiViewPass {
   Future<void> onSubmit(BuildContext context, String passphrase) async {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
-    if (passphrase.length < 8) {
-      controller.finishLoading();
-      service.setError(_error);
-    } else {
-      await service.backup(passphrase, () {
-        service.clearError();
+    if(!service.state.loading) {
+      if (passphrase.length < 8) {
         controller.finishLoading();
-        controller.showSuccess();
-      }, (error) {
-        controller.finishLoading();
-        if (error is StateError) {
-          service.setError(error.message);
-          controller.showError();
-        } else {
-          _log.severe(error);
-          service.setError('Weird error. Try again.');
-          controller.showError();
-        }
-      });
+        service.setError(_error);
+      } else {
+        await service.backup(passphrase, () {
+          service.clearError();
+          controller.finishLoading();
+          controller.showSuccess();
+        }, (error) {
+          controller.finishLoading();
+          if (error is StateError) {
+            service.setError(error.message);
+            controller.showError();
+          } else {
+            _log.severe(error);
+            service.setError('Weird error. Try again.');
+            controller.showError();
+          }
+        });
+      }
     }
   }
 
