@@ -23,17 +23,17 @@ dependencies:
   email_validator: ^2.0.1
   firebase_dynamic_links: ^4.0.5
   wallet:
-    git:
-      url: https://github.com/tiki/wallet
-      ref: 0.0.8
+    path: ../wallet
+#    git:
+#      url: https://github.com/tiki/wallet
   httpp:
     git:
       url: https://github.com/tiki/httpp
-      ref: 0.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: 1.0.4
 
 flutter:
   assets:
