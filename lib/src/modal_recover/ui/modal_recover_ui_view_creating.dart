@@ -12,6 +12,8 @@ import '../modal_recover_service.dart';
 import '../widget/modal_recover_widget_text.dart';
 
 class ModalRecoverUiViewCreating extends StatefulWidget {
+  const ModalRecoverUiViewCreating({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _ModalRecoverUiViewCreating();
 }

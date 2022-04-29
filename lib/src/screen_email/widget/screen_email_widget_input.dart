@@ -5,11 +5,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 
 class ScreenEmailWidgetInput extends StatelessWidget {
   static const String _placeholder = "Your email";
+
+  ScreenEmailWidgetInput({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

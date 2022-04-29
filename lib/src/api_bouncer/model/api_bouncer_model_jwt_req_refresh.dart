@@ -10,7 +10,7 @@ class ApiBouncerModelJwtReqRefresh {
 
   ApiBouncerModelJwtReqRefresh.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.refreshToken = json['refreshToken'];
+      refreshToken = json['refreshToken'];
     }
   }
 

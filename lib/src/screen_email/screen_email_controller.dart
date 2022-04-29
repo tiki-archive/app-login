@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../flow/flow_service.dart';
-import '../flow/flow_style.dart';
 import '../screen_terms/screen_terms_service.dart';
-import '../screen_terms/screen_terms_style.dart';
 import 'screen_email_service.dart';
 
 class ScreenEmailController {
@@ -25,17 +23,13 @@ class ScreenEmailController {
   onChanged(String input) => _service.setEmail(input);
 
   void tos(BuildContext context) {
-    FlowStyle style = Provider.of<FlowService>(context, listen: false).style;
-    Navigator.of(context).push(ScreenTermsService('screen_terms_tos',
-            ScreenTermsStyle.mqd(style.terms, MediaQuery.of(context)))
+    Navigator.of(context).push(ScreenTermsService('screen_terms_tos')
         .presenter
         .createRoute(context));
   }
 
   void privacy(BuildContext context) {
-    FlowStyle style = Provider.of<FlowService>(context, listen: false).style;
-    Navigator.of(context).push(ScreenTermsService('screen_terms_privacy',
-            ScreenTermsStyle.mqd(style.terms, MediaQuery.of(context)))
+    Navigator.of(context).push(ScreenTermsService('screen_terms_privacy')
         .presenter
         .createRoute(context));
   }

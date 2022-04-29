@@ -12,6 +12,8 @@ import '../screen_terms_service.dart';
 class ScreenTermsWidgetMd extends StatelessWidget {
   static const double _fontSizeText = 16;
 
+  ScreenTermsWidgetMd({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenTermsService service = Provider.of<ScreenTermsService>(context);
@@ -30,7 +32,7 @@ class ScreenTermsWidgetMd extends StatelessWidget {
                     color: service.style.headingColor,
                     fontSize: _relativeHeadingSize(service.style.text, 1),
                     fontWeight: FontWeight.bold,
-                    fontFamily: service.style.titleFamily),
+                    fontFamily: TextProvider.familyKoara),
                 h3: TextStyle(
                     fontSize: _relativeHeadingSize(service.style.text, 0.3),
                     color: service.style.headingColor,

@@ -17,6 +17,8 @@ class ModalRecoverUiViewBackup extends ModalRecoverUiView {
   static const String _opt1Txt = 'Continue';
   static const String _opt2Txt = 'Skip (experts only)';
 
+  ModalRecoverUiViewBackup({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     return Container(
@@ -30,7 +32,7 @@ class ModalRecoverUiViewBackup extends ModalRecoverUiView {
             Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: style.textPaddingHorizontal),
-                child: ModalRecoverWidgetText(_title)),
+                child: const ModalRecoverWidgetText(_title)),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

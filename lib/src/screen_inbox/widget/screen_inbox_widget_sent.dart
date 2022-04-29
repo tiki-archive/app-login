@@ -5,11 +5,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_inbox_service.dart';
 
 class ScreenInboxWidgetSent extends StatelessWidget {
   static const String _text = "I sent an email with a link to";
+
+  ScreenInboxWidgetSent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

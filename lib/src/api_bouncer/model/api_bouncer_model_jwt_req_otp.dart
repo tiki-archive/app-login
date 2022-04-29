@@ -11,8 +11,8 @@ class ApiBouncerModelJwtReqOtp {
 
   ApiBouncerModelJwtReqOtp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.otp = json['otp'];
-      this.salt = json['salt'];
+      otp = json['otp'];
+      salt = json['salt'];
     }
   }
 

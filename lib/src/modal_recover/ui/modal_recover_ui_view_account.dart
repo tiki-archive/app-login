@@ -17,6 +17,8 @@ class ModalRecoverUiViewAccount extends ModalRecoverUiView {
   static const String _opt1Txt = 'Create new account';
   static const String _opt2Txt = 'Use an existing account';
 
+  ModalRecoverUiViewAccount({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     return Container(

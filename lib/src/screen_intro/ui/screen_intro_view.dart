@@ -14,6 +14,8 @@ import 'screen_intro_foreground.dart';
 abstract class ScreenIntroView extends StatelessWidget {
   late final ScreenIntroStyle style;
 
+  ScreenIntroView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenIntroService service =

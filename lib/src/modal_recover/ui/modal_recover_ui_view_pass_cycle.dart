@@ -26,9 +26,9 @@ class ModalRecoverUiViewPassCycle extends ModalRecoverUiViewPass {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
     if (!service.state.loading) {
-      if (passphrase == service.state.passphrase)
+      if (passphrase == service.state.passphrase) {
         service.setError(_error);
-      else {
+      } else {
         service.clearError();
         service.setLoading(true);
         await service.cycle(passphrase, controller.showSuccess, (error) {

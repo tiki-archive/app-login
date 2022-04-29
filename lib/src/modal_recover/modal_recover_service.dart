@@ -74,9 +74,9 @@ class ModalRecoverService extends ChangeNotifier {
   }
 
   Future<bool> decode(String address, String data, String sign) async {
-    if (address.length != 44 || data.length != 44 || sign.length != 1624)
+    if (address.length != 44 || data.length != 44 || sign.length != 1624) {
       return false;
-    else {
+    } else {
       try {
         state.keys = TikiKeysModel.decode(address, sign, data);
         await _keysService.provide(state.keys!);
@@ -91,9 +91,9 @@ class ModalRecoverService extends ChangeNotifier {
 
   Future<bool> decrypt(String passphrase) async {
     state.keys = await _keysService.decrypt(passphrase, state.ciphertext!);
-    if (state.keys == null)
+    if (state.keys == null) {
       return false;
-    else {
+    } else {
       await _keysService.provide(state.keys!);
       return true;
     }
@@ -111,8 +111,9 @@ class ModalRecoverService extends ChangeNotifier {
               state.ciphertext = ciphertext;
               notifyListeners();
               onComplete(true);
-            } else
+            } else {
               onComplete(false);
+            }
           });
 
   Future<void> cycle(
@@ -146,12 +147,13 @@ class ModalRecoverService extends ChangeNotifier {
   }
 
   Error _mapError(error) {
-    if (error is TikiBkupErrorLock)
+    if (error is TikiBkupErrorLock) {
       return error;
-    else if (error is SocketException)
+    } else if (error is SocketException) {
       return StateError('No internet. Try again');
-    else
+    } else {
       return StateError('Weird error. Try again');
+    }
   }
 
   void setLoading(bool isLoading) {

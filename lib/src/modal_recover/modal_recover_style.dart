@@ -18,30 +18,27 @@ class ModalRecoverStyle extends UtilsStyle{
   final Color _hintColor = ColorProvider.greySix;
   final Color _modalNavColor = Colors.grey;
 
-  final double _modalHeight = 349;
-  final double _modalNavIconSize = 16;
-  final double _modalContentPadding = 20;
-  final double _textPaddingHorizontal = 20;
-  final double _fontSize = 18;
-  final double _buttonWidth = 324;
-  final double _buttonHeight = 58;
-  final double _buttonRadius = 12;
+  static const double _modalNavIconSize = 16;
+  static const double _modalContentPadding = 20;
+  static const double _textPaddingHorizontal = 20;
+  static const double _fontSize = 18;
+  static const double _buttonWidth = 324;
+  static const double _buttonHeight = 58;
+  static const double _buttonRadius = 12;
+  static const double _modalHeight = 349;
 
   final FontWeight _textWeight = FontWeight.w600;
   final FontWeight _buttonTextWeight = FontWeight.w700;
-
-
-  late final double _modalContainerHeight;
 
   Color get backgroundColor => _backgroundColor;
 
   Color get modalNavColor => _modalNavColor;
 
-  double get modalContainerHeight => _modalContainerHeight;
+  double get modalContainerHeight => SizeProvider.instance.size(_modalHeight - 24 - _modalNavIconSize);
 
   double get modalNavIconSize => SizeProvider.instance.size(_modalNavIconSize);
 
-  double get fontSize => _fontSize;
+  double get fontSize => SizeProvider.instance.text(_fontSize);
 
   Color get textColor => _textColor;
 
@@ -66,6 +63,5 @@ class ModalRecoverStyle extends UtilsStyle{
   double get modalContentPadding => _modalContentPadding;
 
   double get textPaddingHorizontal => _textPaddingHorizontal;
-
 
 }
