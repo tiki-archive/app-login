@@ -5,8 +5,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lottie/lottie.dart';
+
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../modal_recover_service.dart';
 import '../widget/modal_recover_widget_pin.dart';
@@ -39,11 +40,10 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
                   ])),
           if (service.state.loading)
             Container(
-                color: Color.fromRGBO(255, 255, 255, 0.5),
+                color: const Color.fromRGBO(255, 255, 255, 0.5),
                 child: Align(
                     alignment: Alignment.topCenter,
-                    child: Lottie.asset("res/animation/recover-loading.json",
-                        package: 'login', height: style.size(100))))
+                    child: SizedBox(height: style.size(100), child: AnimationProvider.recoverLoading)))
         ]));
   }
 
