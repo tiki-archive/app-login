@@ -24,7 +24,7 @@ dependencies:
   firebase_dynamic_links: ^4.2.1
   tiki_wallet: ^0.0.13
   httpp: ^0.0.4
-  tiki_style: ^0.0.11
+  tiki_style: ^0.0.12
 
 dev_dependencies:
   flutter_test:

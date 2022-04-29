@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../utils/utils_icons.dart';
 import '../modal_recover_service.dart';
@@ -71,22 +72,21 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
                         child: ModalRecoverWidgetText(_title)),
                     Expanded(
                         child: FittedBox(
-                      fit: BoxFit.fitHeight,
-                      child: ClipRect(
-                        child: Align(
-                            alignment: Alignment.center,
-                            heightFactor: 0.66,
-                            widthFactor: 1,
-                            child: ConstrainedBox(
-                                constraints:
-                                    BoxConstraints(minWidth: 1, minHeight: 1),
-                                child: Lottie.asset(
-                                    "res/animation/recover-creating.json",
-                                    package: 'login'))),
-                      ),
-                    )),
-                  ],
-                ))
+                          fit: BoxFit.fitHeight,
+                          child: ClipRect(
+                            child: Align(
+                                alignment: Alignment.center,
+                                heightFactor: 0.66,
+                                widthFactor: 1,
+                                child: ConstrainedBox(
+                                    constraints:
+                                        const BoxConstraints(minWidth: 1, minHeight: 1),
+                                    child: AnimationProvider.recoverCreating,
+                                )
+                          ),
+                        ))),
+                      ],
+                    ))
           ],
         ));
   }
