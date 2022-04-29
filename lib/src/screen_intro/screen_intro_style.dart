@@ -44,8 +44,7 @@ class ScreenIntroStyle extends UtilsStyle {
         _dotColorActive = dotColorActive,
         _textColor = textColor,
         _textFamily = textFamily,
-        _titleFamily = titleFamily,
-        super(mediaQueryData: mediaQueryData);
+        _titleFamily = titleFamily;
 
   ScreenIntroStyle.mqd(ScreenIntroStyle style, MediaQueryData mediaQueryData)
       : _backgroundColor1 = style.backgroundColor1,
@@ -58,8 +57,7 @@ class ScreenIntroStyle extends UtilsStyle {
         _dotColorActive = style.dotColorActive,
         _textColor = style.textColor,
         _textFamily = style.textFamily,
-        _titleFamily = style.titleFamily,
-        super(mediaQueryData: mediaQueryData);
+        _titleFamily = style.titleFamily;
 
   Color get backgroundColor3 => _backgroundColor3;
 

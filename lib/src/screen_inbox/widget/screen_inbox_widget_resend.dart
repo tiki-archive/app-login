@@ -24,7 +24,8 @@ class ScreenInboxWidgetResend extends StatelessWidget {
               height: 1.2,
               fontSize: service.style.text(20),
               fontWeight: FontWeight.w600,
-              fontFamily: service.style.textFamily)),
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',)),
       TextButton(
           onPressed: () => service.controller.resend(context),
           child: Row(children: [
@@ -32,7 +33,8 @@ class ScreenInboxWidgetResend extends StatelessWidget {
                 margin: EdgeInsets.only(right: service.style.size(4)),
                 child: Text(_textResend,
                     style: TextStyle(
-                        fontFamily: service.style.textFamily,
+                        fontFamily: TextProvider.familyNunitoSans,
+                        package: 'tiki_style',
                         fontSize: service.style.text(20),
                         fontWeight: FontWeight.bold,
                         height: 1.2,

@@ -10,7 +10,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'package:wallet/wallet.dart';
+import 'package:tiki_wallet/tiki_wallet.dart';
 
 import 'modal_recover_controller.dart';
 import 'modal_recover_presenter.dart';

@@ -20,7 +20,8 @@ class ScreenEmailWidgetSubtitle extends StatelessWidget {
         style: TextStyle(
             fontSize: style.text(20),
             fontWeight: FontWeight.w600,
-            fontFamily: style.textFamily,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             color: style.textColor));
   }
 }

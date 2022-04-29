@@ -5,7 +5,7 @@
 
 import 'dart:typed_data';
 
-import 'package:wallet/wallet.dart';
+import 'package:tiki_wallet/tiki_wallet.dart';
 
 import 'modal_recover_model_page.dart';
 

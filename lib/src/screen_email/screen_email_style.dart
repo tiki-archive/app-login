@@ -41,8 +41,7 @@ class ScreenEmailStyle extends UtilsStyle {
         _backgroundColor = backgroundColor,
         _linkColor = linkColor,
         _hintColor = hintColor,
-        _textColor = textColor,
-        super(mediaQueryData: mediaQueryData);
+        _textColor = textColor;
 
   ScreenEmailStyle.mqd(ScreenEmailStyle style, MediaQueryData mediaQueryData)
       : _textFamily = style.textFamily,
@@ -54,8 +53,7 @@ class ScreenEmailStyle extends UtilsStyle {
         _backgroundColor = style.backgroundColor,
         _linkColor = style.linkColor,
         _hintColor = style.hintColor,
-        _textColor = style.textColor,
-        super(mediaQueryData: mediaQueryData);
+        _textColor = style.textColor;
 
   Color get buttonColor => _buttonColor;
 

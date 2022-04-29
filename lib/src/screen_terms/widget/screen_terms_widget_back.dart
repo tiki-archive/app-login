@@ -29,7 +29,8 @@ class ScreenTermsWidgetBack extends StatelessWidget {
         ),
         Text(_textBack,
             style: TextStyle(
-                fontFamily: service.style.textFamily,
+                fontFamily: TextProvider.familyNunitoSans,
+                package: 'tiki_style',
                 color: service.style.linkColor,
                 fontWeight: FontWeight.w800,
                 fontSize: service.style.text(22)))

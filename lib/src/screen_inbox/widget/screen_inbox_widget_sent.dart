@@ -18,14 +18,16 @@ class ScreenInboxWidgetSent extends StatelessWidget {
       Text(_text,
           style: TextStyle(
               color: service.style.textColor,
-              fontFamily: service.style.textFamily,
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               fontSize: service.style.text(20),
               height: 1.2,
               fontWeight: FontWeight.w600)),
       Text(service.model.email ?? "",
           style: TextStyle(
               color: service.style.textColor,
-              fontFamily: service.style.textFamily,
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               fontSize: service.style.text(20),
               height: 1.2,
               fontWeight: FontWeight.bold))

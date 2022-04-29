@@ -28,8 +28,7 @@ class ScreenTermsStyle extends UtilsStyle {
         _textColor = textColor,
         _textFamily = textFamily,
         _titleFamily = titleFamily,
-        _headingColor = headingColor,
-        super(mediaQueryData: mediaQueryData);
+        _headingColor = headingColor;
 
   ScreenTermsStyle.mqd(ScreenTermsStyle style, MediaQueryData mediaQueryData)
       : _backgroundColor = style.backgroundColor,
@@ -37,8 +36,7 @@ class ScreenTermsStyle extends UtilsStyle {
         _textColor = style.textColor,
         _textFamily = style.textFamily,
         _titleFamily = style.titleFamily,
-        _headingColor = style.headingColor,
-        super(mediaQueryData: mediaQueryData);
+        _headingColor = style.headingColor;
 
   Color get backgroundColor => _backgroundColor;
 

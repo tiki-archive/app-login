@@ -30,8 +30,7 @@ class ScreenInboxStyle extends UtilsStyle {
         _textColor = textColor,
         _titleColor = titleColor,
         _buttonColor = buttonColor,
-        _backgroundColor = backgroundColor,
-        super(mediaQueryData: mediaQueryData);
+        _backgroundColor = backgroundColor;
 
   ScreenInboxStyle.mqd(ScreenInboxStyle style, MediaQueryData mediaQueryData)
       : _textFamily = style.textFamily,
@@ -39,8 +38,7 @@ class ScreenInboxStyle extends UtilsStyle {
         _textColor = style.textColor,
         _titleColor = style.titleColor,
         _buttonColor = style.buttonColor,
-        _backgroundColor = style.backgroundColor,
-        super(mediaQueryData: mediaQueryData);
+        _backgroundColor = style.backgroundColor;
 
   Color get buttonColor => _buttonColor;
 

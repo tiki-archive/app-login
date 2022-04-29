@@ -41,7 +41,8 @@ class ScreenIntroWidgetButton extends StatelessWidget {
                           fontWeight: FontWeight.w800,
                           fontSize: service.style.text(22),
                           letterSpacing: service.style.size(0.05),
-                          fontFamily: service.style.textFamily,
+                          fontFamily: TextProvider.familyNunitoSans,
+                          package: 'tiki_style',
                         )))
               ],
             ),

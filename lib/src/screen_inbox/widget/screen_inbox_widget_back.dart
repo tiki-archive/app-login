@@ -27,7 +27,8 @@ class ScreenInboxWidgetBack extends StatelessWidget {
         Text(_text,
             style: TextStyle(
                 color: service.style.buttonColor,
-                fontFamily: service.style.textFamily,
+                fontFamily: TextProvider.familyNunitoSans,
+                package: 'tiki_style',
                 fontWeight: FontWeight.w800,
                 fontSize: service.style.text(22)))
       ]),

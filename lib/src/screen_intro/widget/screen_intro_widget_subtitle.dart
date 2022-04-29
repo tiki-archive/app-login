@@ -24,7 +24,8 @@ class ScreenIntroWidgetSubtitle extends StatelessWidget {
             color: style.textColor,
             fontSize: style.text(20),
             fontWeight: FontWeight.bold,
-            fontFamily: style.textFamily,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             height: 1.2));
   }
 }
