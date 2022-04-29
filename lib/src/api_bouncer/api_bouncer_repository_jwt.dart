@@ -13,9 +13,9 @@ import 'model/api_bouncer_model_rsp.dart';
 
 class ApiBouncerRepositoryJwt {
   final Logger _log = Logger('ApiBouncerRepositoryJwt');
-  static final String _path = 'https://bouncer.mytiki.com/api/latest/jwt';
-  static final String _pathOtp = _path + '/otp';
-  static final String _pathRefresh = _path + '/refresh';
+  static const String _path = 'https://bouncer.mytiki.com/api/latest/jwt';
+  static const String _pathOtp = _path + '/otp';
+  static const String _pathRefresh = _path + '/refresh';
 
   Future<void> otp(
       {required HttppClient client,
@@ -27,15 +27,17 @@ class ApiBouncerRepositoryJwt {
         verb: HttppVerb.POST,
         headers: HttppHeaders.typical(),
         body: HttppBody.fromJson(body?.toJson()),
-        timeout: Duration(seconds: 30),
+        timeout: const Duration(seconds: 30),
         onSuccess: (rsp) {
-          if (onSuccess != null)
+          if (onSuccess != null) {
             onSuccess(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody,
                 (json) => ApiBouncerModelJwtRsp.fromJson(json)));
+          }
         },
         onResult: (rsp) {
-          if (onError != null)
+          if (onError != null) {
             onError(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody, (json) {}));
+          }
         },
         onError: onError);
     _log.finest('${request.verb.value} — ${request.uri}');
@@ -52,15 +54,17 @@ class ApiBouncerRepositoryJwt {
         verb: HttppVerb.POST,
         headers: HttppHeaders.typical(),
         body: HttppBody.fromJson(body?.toJson()),
-        timeout: Duration(seconds: 30),
+        timeout: const Duration(seconds: 30),
         onSuccess: (rsp) {
-          if (onSuccess != null)
+          if (onSuccess != null) {
             onSuccess(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody,
                 (json) => ApiBouncerModelJwtRsp.fromJson(json)));
+          }
         },
         onResult: (rsp) {
-          if (onError != null)
+          if (onError != null) {
             onError(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody, (json) {}));
+          }
         },
         onError: onError);
     _log.finest('${request.verb.value} — ${request.uri}');

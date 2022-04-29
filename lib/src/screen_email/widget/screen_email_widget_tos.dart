@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 import '../screen_email_style.dart';
@@ -33,7 +34,8 @@ class ScreenEmailWidgetTos extends StatelessWidget {
         fontSize: style.text(14),
         fontWeight: FontWeight.bold,
         color: color,
-        fontFamily: style.textFamily);
+        fontFamily: TextProvider.familyNunitoSans,
+        package: 'tiki_style',);
   }
 
   Widget _link(String text, Function() onPressed, ScreenEmailStyle style) {

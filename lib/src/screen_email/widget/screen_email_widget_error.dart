@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 
@@ -20,7 +21,8 @@ class ScreenEmailWidgetError extends StatelessWidget {
           style: TextStyle(
               fontSize: service.style.size(15),
               fontWeight: FontWeight.w600,
-              fontFamily: service.style.textFamily,
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               color: service.style.errorColor)),
     );
   }

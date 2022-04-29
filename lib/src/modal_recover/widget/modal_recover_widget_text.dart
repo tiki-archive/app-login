@@ -5,6 +5,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../modal_recover_service.dart';
 import '../modal_recover_style.dart';
@@ -14,9 +15,9 @@ class ModalRecoverWidgetText extends StatelessWidget {
   final Color? _color;
   final FontStyle? _fontStyle;
 
-  const ModalRecoverWidgetText(this._text, {Color? color, FontStyle? fontStyle})
+  const ModalRecoverWidgetText(this._text, {Key? key, Color? color, FontStyle? fontStyle})
       : _color = color,
-        _fontStyle = fontStyle;
+        _fontStyle = fontStyle, super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,8 @@ class ModalRecoverWidgetText extends StatelessWidget {
             height: 1.2,
             fontWeight: style.textWeight,
             fontSize: style.fontSize,
-            fontFamily: style.fontFamily,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             color: _color ?? style.textColor,
             fontStyle: _fontStyle ?? FontStyle.normal));
   }

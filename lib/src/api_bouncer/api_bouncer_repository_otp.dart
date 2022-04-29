@@ -24,15 +24,17 @@ class ApiBouncerRepositoryOtp {
         verb: HttppVerb.POST,
         headers: HttppHeaders.typical(),
         body: HttppBody.fromJson(body?.toJson()),
-        timeout: Duration(seconds: 30),
+        timeout: const Duration(seconds: 30),
         onSuccess: (rsp) {
-          if (onSuccess != null)
+          if (onSuccess != null) {
             onSuccess(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody,
                 (json) => ApiBouncerModelOtpRsp.fromJson(json)));
+          }
         },
         onResult: (rsp) {
-          if (onError != null)
+          if (onError != null) {
             onError(ApiBouncerModelRsp.fromJson(rsp.body?.jsonBody, (json) {}));
+          }
         },
         onError: onError);
     _log.finest('${request.verb.value} — ${request.uri}');

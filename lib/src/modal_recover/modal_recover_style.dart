@@ -4,94 +4,41 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
-class ModalRecoverStyle {
-  static const double _stdDeviceWidth = 375;
+import '../utils/utils_style.dart';
 
-  final double _deviceWidth;
-  final double _textScaleFactor;
+class ModalRecoverStyle extends UtilsStyle{
 
-  final Color _backgroundColor;
-  late final double _modalContainerHeight;
-  final Color _modalNavColor;
-  late final double _modalNavIconSize;
-  late final double _modalContentPadding;
+  final Color _textColor = ColorProvider.tikiPurple;
+  final Color _backgroundColor = ColorProvider.white;
+  final Color _buttonColor = ColorProvider.orange;
+  final Color _errorColor = ColorProvider.tikiRed;
+  final Color _buttonTextColor = ColorProvider.white;
+  final Color _hintColor = ColorProvider.greySix;
+  final Color _modalNavColor = Colors.grey;
 
-  final String _fontFamily;
-  late final double _fontSize;
+  static const double _modalNavIconSize = 16;
+  static const double _modalContentPadding = 20;
+  static const double _textPaddingHorizontal = 20;
+  static const double _fontSize = 18;
+  static const double _buttonWidth = 324;
+  static const double _buttonHeight = 58;
+  static const double _buttonRadius = 12;
+  static const double _modalHeight = 349;
 
-  final Color _textColor;
-  final FontWeight _textWeight;
-  late final double _textPaddingHorizontal;
-
-  final Color _hintColor;
-  final Color _errorColor;
-
-  late final double _buttonWidth;
-  late final double _buttonHeight;
-  late final double _buttonRadius;
-  final Color _buttonColor;
-  final Color _buttonTextColor;
-  final FontWeight _buttonTextWeight;
-
-  ModalRecoverStyle(
-      {MediaQueryData? mediaQueryData,
-      Color backgroundColor = Colors.white,
-      double modalHeight = 349,
-      Color modalNavColor = Colors.grey,
-      double modalNavIconSize = 16,
-      double modalContentPadding = 20,
-      double textPaddingHorizontal = 20,
-      String fontFamily = 'Arial',
-      double fontSize = 18,
-      Color textColor = Colors.black,
-      Color hintColor = Colors.black26,
-      Color errorColor = Colors.red,
-      FontWeight textWeight = FontWeight.w600,
-      double buttonWidth = 324,
-      double buttonHeight = 58,
-      double buttonRadius = 12,
-      Color buttonColor = Colors.red,
-      Color buttonTextColor = Colors.white,
-      FontWeight buttonTextWeight = FontWeight.w700})
-      : _textScaleFactor = mediaQueryData?.textScaleFactor ?? 1.0,
-        _deviceWidth = mediaQueryData?.size.width ?? 375,
-        _backgroundColor = backgroundColor,
-        _modalNavColor = modalNavColor,
-        _fontFamily = fontFamily,
-        _textColor = textColor,
-        _textWeight = textWeight,
-        _hintColor = hintColor,
-        _errorColor = errorColor,
-        _buttonColor = buttonColor,
-        _buttonTextColor = buttonTextColor,
-        _buttonTextWeight = buttonTextWeight {
-    _modalNavIconSize = size(modalNavIconSize);
-    _modalContentPadding = size(modalContentPadding);
-    _modalContainerHeight = size(modalHeight) - 24 - _modalNavIconSize;
-    _fontSize = text(fontSize);
-    _buttonWidth = size(buttonWidth);
-    _buttonHeight = size(buttonHeight);
-    _buttonRadius = size(buttonRadius);
-    _textPaddingHorizontal = size(textPaddingHorizontal);
-  }
-
-  double size(double raw) => (raw * (_deviceWidth / _stdDeviceWidth));
-
-  double text(double raw) =>
-      (raw * (_deviceWidth / _stdDeviceWidth)) * _textScaleFactor;
+  final FontWeight _textWeight = FontWeight.w600;
+  final FontWeight _buttonTextWeight = FontWeight.w700;
 
   Color get backgroundColor => _backgroundColor;
 
   Color get modalNavColor => _modalNavColor;
 
-  double get modalContainerHeight => _modalContainerHeight;
+  double get modalContainerHeight => SizeProvider.instance.size(_modalHeight - 24 - _modalNavIconSize);
 
-  double get modalNavIconSize => _modalNavIconSize;
+  double get modalNavIconSize => SizeProvider.instance.size(_modalNavIconSize);
 
-  String get fontFamily => _fontFamily;
-
-  double get fontSize => _fontSize;
+  double get fontSize => SizeProvider.instance.text(_fontSize);
 
   Color get textColor => _textColor;
 
@@ -116,4 +63,5 @@ class ModalRecoverStyle {
   double get modalContentPadding => _modalContentPadding;
 
   double get textPaddingHorizontal => _textPaddingHorizontal;
+
 }

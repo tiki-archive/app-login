@@ -12,11 +12,12 @@ class FlowModelToken {
 
   FlowModelToken.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.bearer = json['bearer'];
-      this.refresh = json['refresh'];
-      if (json['expires_epoch'] != null)
-        this.expires =
+      bearer = json['bearer'];
+      refresh = json['refresh'];
+      if (json['expires_epoch'] != null) {
+        expires =
             DateTime.fromMillisecondsSinceEpoch(json['expires_epoch']);
+      }
     }
   }
 

@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../modal_recover_service.dart';
 import '../modal_recover_style.dart';
@@ -23,7 +24,8 @@ class ModalRecoverWidgetBtnElev extends StatelessWidget {
       onPressed: _callback,
       child: Text(_text,
           style: TextStyle(
-            fontFamily: style.fontFamily,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             fontWeight: style.buttonTextWeight,
             fontSize: style.fontSize,
             color: style.buttonTextColor,

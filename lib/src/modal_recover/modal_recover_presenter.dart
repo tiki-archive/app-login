@@ -26,6 +26,6 @@ class ModalRecoverPresenter {
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(_style.size(36)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
-            value: _service, child: ModalRecoverUiLayout()));
+            value: _service, child: const ModalRecoverUiLayout()));
   }
 }

@@ -10,6 +10,8 @@ import '../screen_inbox_service.dart';
 import '../screen_inbox_style.dart';
 
 class ScreenInboxBackground extends StatelessWidget {
+  const ScreenInboxBackground({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenInboxStyle style =

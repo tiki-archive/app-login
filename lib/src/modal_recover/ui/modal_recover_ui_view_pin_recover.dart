@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
-import 'package:wallet/wallet.dart';
+import 'package:tiki_wallet/tiki_wallet.dart';
 
 import '../modal_recover_service.dart';
 import 'modal_recover_ui_view_pin.dart';
@@ -34,8 +34,9 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
         if (success) {
           controller.showRecoverPassphrase();
           service.clearError();
-        } else
+        } else {
           service.setError(_error);
+        }
       }, (error) {
         if (error is StateError) {
           service.setError(error.message);

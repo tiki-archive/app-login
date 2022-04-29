@@ -25,6 +25,9 @@ import 'modal_recover_ui_view_recover.dart';
 import 'modal_recover_ui_view_success.dart';
 
 class ModalRecoverUiLayout extends StatelessWidget {
+
+  const ModalRecoverUiLayout({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ModalRecoverService service = Provider.of<ModalRecoverService>(context);
@@ -32,7 +35,7 @@ class ModalRecoverUiLayout extends StatelessWidget {
       case ModalRecoverModelPage.account:
         return ModalRecoverUiViewAccount();
       case ModalRecoverModelPage.creating:
-        return ModalRecoverUiViewCreating();
+        return const ModalRecoverUiViewCreating();
       case ModalRecoverModelPage.backup:
         return ModalRecoverUiViewBackup();
       case ModalRecoverModelPage.backupPin:

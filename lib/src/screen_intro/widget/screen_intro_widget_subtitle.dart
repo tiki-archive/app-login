@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_intro_service.dart';
 import '../screen_intro_style.dart';
@@ -24,7 +25,8 @@ class ScreenIntroWidgetSubtitle extends StatelessWidget {
             color: style.textColor,
             fontSize: style.text(20),
             fontWeight: FontWeight.bold,
-            fontFamily: style.textFamily,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             height: 1.2));
   }
 }

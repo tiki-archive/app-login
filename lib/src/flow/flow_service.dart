@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'package:login/src/flow/model/flow_model_user.dart';
+import 'model/flow_model_user.dart';
 
 import '../api_bouncer/api_bouncer_service.dart';
 import '../api_bouncer/model/api_bouncer_model_jwt_rsp.dart';
@@ -97,13 +97,15 @@ class FlowService extends ChangeNotifier {
   }
 
   void addLogoutCallback(String id, void Function() callback) {
-    if (!model.logoutCallbacks.containsKey(id))
+    if (!model.logoutCallbacks.containsKey(id)) {
       model.logoutCallbacks[id] = callback;
+    }
   }
 
   void addLoginCallback(String id, void Function() callback) {
-    if (!model.loginCallbacks.containsKey(id))
+    if (!model.loginCallbacks.containsKey(id)) {
       model.loginCallbacks[id] = callback;
+    }
   }
 
   Future<void> logout() async {
@@ -153,13 +155,14 @@ class FlowService extends ChangeNotifier {
         if (model.user?.isLoggedIn == true) {
           model.state = FlowModelState.loggedIn;
           model.loginCallbacks.forEach((key, func) => func());
-        } else if (model.current?.email != null)
+        } else if (model.current?.email != null) {
           model.state = FlowModelState.returningUser;
+        }
         notifyListeners();
       });
 
   Future<void> _dynamicLinkHandler(Uri link) async {
-    final String dlPathBouncer = "/app/bouncer";
+    const String dlPathBouncer = "/app/bouncer";
     if (link.path == dlPathBouncer) {
       String? otp = link.queryParameters["otp"];
       if (otp != null && otp.isNotEmpty) _verifyOtp(otp);
@@ -185,8 +188,9 @@ class FlowService extends ChangeNotifier {
             model.user = await _repository.getUser(model.otp!.email!);
             if (model.user?.address != null) {
               await login();
-            } else
+            } else {
               model.state = FlowModelState.otpVerified;
+            }
             notifyListeners();
           },
           onError: (error) => _log.severe(error));

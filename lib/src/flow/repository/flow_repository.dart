@@ -46,10 +46,10 @@ class FlowRepository {
   }
 
   Future<FlowModelUser> saveUser(FlowModelUser user) async {
-    if (user.email == null)
+    if (user.email == null) {
       throw ArgumentError(
           "Attempting to write to user without an email. Skipping");
-    else {
+    } else {
       await _repositoryUser.save(user.email!, user);
       return user;
     }
@@ -63,10 +63,10 @@ class FlowRepository {
   }
 
   Future<FlowModelOtp> saveOtp(FlowModelOtp otp) async {
-    if (otp.email == null)
+    if (otp.email == null) {
       throw ArgumentError(
           "Attempting to write to otp without an email. Skipping");
-    else {
+    } else {
       await _repositoryOtp.save(otp.email!, otp);
       return otp;
     }

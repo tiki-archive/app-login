@@ -5,8 +5,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:login/src/modal_recover/widget/modal_recover_widget_btn_elev.dart';
-import 'package:login/src/modal_recover/widget/modal_recover_widget_text.dart';
+import '../widget/modal_recover_widget_btn_elev.dart';
+import '../widget/modal_recover_widget_text.dart';
 
 import 'modal_recover_ui_view.dart';
 
@@ -26,7 +26,7 @@ class ModalRecoverUiViewSuccess extends ModalRecoverUiView {
           children: [
             Container(
                 padding: EdgeInsets.only(bottom: style.size(10)),
-                child: ModalRecoverWidgetText(_title)),
+                child: const ModalRecoverWidgetText(_title)),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

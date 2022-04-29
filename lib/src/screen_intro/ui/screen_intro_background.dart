@@ -11,7 +11,7 @@ import '../screen_intro_service.dart';
 class ScreenIntroBackground extends StatelessWidget {
   final Color background;
 
-  ScreenIntroBackground(this.background);
+  ScreenIntroBackground(this.background, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

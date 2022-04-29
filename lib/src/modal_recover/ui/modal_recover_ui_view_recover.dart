@@ -5,9 +5,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:login/src/modal_recover/widget/modal_recover_widget_btn_elev.dart';
-import 'package:login/src/modal_recover/widget/modal_recover_widget_btn_text.dart';
-import 'package:login/src/modal_recover/widget/modal_recover_widget_text.dart';
+import '../widget/modal_recover_widget_btn_elev.dart';
+import '../widget/modal_recover_widget_btn_text.dart';
+import '../widget/modal_recover_widget_text.dart';
 
 import 'modal_recover_ui_view.dart';
 
@@ -16,6 +16,8 @@ class ModalRecoverUiViewRecover extends ModalRecoverUiView {
       'Are you logged into another device in your possession?';
   static const String _opt1Txt = 'Yes';
   static const String _opt2Txt = 'No';
+
+  ModalRecoverUiViewRecover({Key? key}) : super(key: key);
 
   @override
   Widget page(BuildContext context) {
