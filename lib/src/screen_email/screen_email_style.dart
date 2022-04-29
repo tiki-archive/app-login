@@ -9,7 +9,6 @@ import 'package:tiki_style/tiki_style.dart';
 import '../utils/utils_style.dart';
 
 class ScreenEmailStyle extends UtilsStyle {
-
   final Color errorColor = ColorProvider.tikiRed;
   final Color buttonColor = ColorProvider.tikiPurple;
   final Color textColor = ColorProvider.greySeven;
@@ -18,5 +17,4 @@ class ScreenEmailStyle extends UtilsStyle {
   final Color hintColor = ColorProvider.greyFive;
   final Color linkColor = ColorProvider.orange;
   final Color titleColor = ColorProvider.tikiPurple;
-
 }

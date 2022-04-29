@@ -26,13 +26,11 @@ class FlowLayout extends StatelessWidget {
       pages: [
         ScreenIntroService(ScreenIntroStyle()).presenter,
         if (service.model.state == FlowModelState.returningUser)
-          ScreenEmailService(isError: service.model.otpError)
-              .presenter
+          ScreenEmailService(isError: service.model.otpError).presenter
         else if (service.model.state == FlowModelState.otpRequested ||
             service.model.state == FlowModelState.otpVerified ||
             service.model.state == FlowModelState.setupKeys)
-          ScreenInboxService(service.model.otp?.email)
-              .presenter
+          ScreenInboxService(service.model.otp?.email).presenter
         else if (service.model.state == FlowModelState.loggedIn)
           service.home
       ],

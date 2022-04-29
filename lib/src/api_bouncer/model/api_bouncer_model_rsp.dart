@@ -16,8 +16,8 @@ class ApiBouncerModelRsp<T> {
   ApiBouncerModelRsp(
       {this.status, this.code, this.data, this.page, this.messages});
 
-  ApiBouncerModelRsp.fromJson(
-      Map<String, dynamic>? json, T Function(Map<String, dynamic>? json) fromJson) {
+  ApiBouncerModelRsp.fromJson(Map<String, dynamic>? json,
+      T Function(Map<String, dynamic>? json) fromJson) {
     if (json != null) {
       status = json['status'];
       code = json['code'];

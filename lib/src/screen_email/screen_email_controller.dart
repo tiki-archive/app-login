@@ -23,9 +23,8 @@ class ScreenEmailController {
   onChanged(String input) => _service.setEmail(input);
 
   void tos(BuildContext context) {
-    Navigator.of(context).push(ScreenTermsService('screen_terms_tos')
-        .presenter
-        .createRoute(context));
+    Navigator.of(context).push(
+        ScreenTermsService('screen_terms_tos').presenter.createRoute(context));
   }
 
   void privacy(BuildContext context) {

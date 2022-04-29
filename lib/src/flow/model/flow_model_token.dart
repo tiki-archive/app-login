@@ -15,8 +15,7 @@ class FlowModelToken {
       bearer = json['bearer'];
       refresh = json['refresh'];
       if (json['expires_epoch'] != null) {
-        expires =
-            DateTime.fromMillisecondsSinceEpoch(json['expires_epoch']);
+        expires = DateTime.fromMillisecondsSinceEpoch(json['expires_epoch']);
       }
     }
   }

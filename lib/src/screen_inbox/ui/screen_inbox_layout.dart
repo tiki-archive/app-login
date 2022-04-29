@@ -4,12 +4,12 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../flow/flow_service.dart';
 import '../../flow/model/flow_model_state.dart';
 import '../../modal_recover/modal_recover_service.dart';
 import '../../modal_recover/model/modal_recover_model_state.dart';
-import 'package:provider/provider.dart';
-
 import 'screen_inbox_background.dart';
 import 'screen_inbox_foreground.dart';
 

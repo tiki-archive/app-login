@@ -31,11 +31,12 @@ class ScreenEmailWidgetTos extends StatelessWidget {
 
   TextStyle _textStyle(ScreenEmailStyle style, Color color) {
     return TextStyle(
-        fontSize: style.text(14),
-        fontWeight: FontWeight.bold,
-        color: color,
-        fontFamily: TextProvider.familyNunitoSans,
-        package: 'tiki_style',);
+      fontSize: style.text(14),
+      fontWeight: FontWeight.bold,
+      color: color,
+      fontFamily: TextProvider.familyNunitoSans,
+      package: 'tiki_style',
+    );
   }
 
   Widget _link(String text, Function() onPressed, ScreenEmailStyle style) {

@@ -8,7 +8,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'model/flow_model_user.dart';
 
 import '../api_bouncer/api_bouncer_service.dart';
 import '../api_bouncer/model/api_bouncer_model_jwt_rsp.dart';
@@ -20,6 +19,7 @@ import 'model/flow_model.dart';
 import 'model/flow_model_otp.dart';
 import 'model/flow_model_state.dart';
 import 'model/flow_model_token.dart';
+import 'model/flow_model_user.dart';
 import 'repository/flow_repository.dart';
 
 class FlowService extends ChangeNotifier {

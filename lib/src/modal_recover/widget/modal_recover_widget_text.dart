@@ -15,9 +15,11 @@ class ModalRecoverWidgetText extends StatelessWidget {
   final Color? _color;
   final FontStyle? _fontStyle;
 
-  const ModalRecoverWidgetText(this._text, {Key? key, Color? color, FontStyle? fontStyle})
+  const ModalRecoverWidgetText(this._text,
+      {Key? key, Color? color, FontStyle? fontStyle})
       : _color = color,
-        _fontStyle = fontStyle, super(key: key);
+        _fontStyle = fontStyle,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {

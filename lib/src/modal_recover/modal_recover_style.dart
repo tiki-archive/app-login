@@ -8,8 +8,7 @@ import 'package:tiki_style/tiki_style.dart';
 
 import '../utils/utils_style.dart';
 
-class ModalRecoverStyle extends UtilsStyle{
-
+class ModalRecoverStyle extends UtilsStyle {
   final Color _textColor = ColorProvider.tikiPurple;
   final Color _backgroundColor = ColorProvider.white;
   final Color _buttonColor = ColorProvider.orange;
@@ -34,7 +33,8 @@ class ModalRecoverStyle extends UtilsStyle{
 
   Color get modalNavColor => _modalNavColor;
 
-  double get modalContainerHeight => SizeProvider.instance.size(_modalHeight - 24 - _modalNavIconSize);
+  double get modalContainerHeight =>
+      SizeProvider.instance.size(_modalHeight - 24 - _modalNavIconSize);
 
   double get modalNavIconSize => SizeProvider.instance.size(_modalNavIconSize);
 
@@ -63,5 +63,4 @@ class ModalRecoverStyle extends UtilsStyle{
   double get modalContentPadding => _modalContentPadding;
 
   double get textPaddingHorizontal => _textPaddingHorizontal;
-
 }

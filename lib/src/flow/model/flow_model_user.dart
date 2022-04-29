@@ -18,9 +18,6 @@ class FlowModelUser {
     }
   }
 
-  Map<String, dynamic> toJson() => {
-        'email': email,
-        'address': address,
-        'isLoggedIn': isLoggedIn
-      };
+  Map<String, dynamic> toJson() =>
+      {'email': email, 'address': address, 'isLoggedIn': isLoggedIn};
 }

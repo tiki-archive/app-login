@@ -21,29 +21,30 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
         height: MediaQuery.of(context).viewInsets.bottom + style.size(200),
         padding: EdgeInsets.all(style.modalContentPadding),
         child: Stack(children: [
-              Padding(
+          Padding(
               padding: EdgeInsets.all(style.modalContentPadding),
               child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ModalRecoverWidgetText(title),
-                Container(
-                    padding: EdgeInsets.only(bottom: style.size(50)),
-                    child: service.state.error == null
-                        ? ModalRecoverWidgetText(subtitle)
-                        : ModalRecoverWidgetText(service.state.error!,
-                            color: style.errorColor)),
-                ModalRecoverWidgetPin((pin) => onSubmit(context, pin)),
-              ])),
-              if (service.state.loading)
-                Container(
-                  color: Color.fromRGBO(255, 255, 255, 0.5),
-                  child: Align(
-                      alignment: Alignment.topCenter,
-                      child: Lottie.asset("res/animation/recover-loading.json",
-                          package: 'login', height: style.size(100))))]));
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ModalRecoverWidgetText(title),
+                    Container(
+                        padding: EdgeInsets.only(bottom: style.size(50)),
+                        child: service.state.error == null
+                            ? ModalRecoverWidgetText(subtitle)
+                            : ModalRecoverWidgetText(service.state.error!,
+                                color: style.errorColor)),
+                    ModalRecoverWidgetPin((pin) => onSubmit(context, pin)),
+                  ])),
+          if (service.state.loading)
+            Container(
+                color: Color.fromRGBO(255, 255, 255, 0.5),
+                child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Lottie.asset("res/animation/recover-loading.json",
+                        package: 'login', height: style.size(100))))
+        ]));
   }
 
   String get title;

@@ -25,7 +25,6 @@ import 'modal_recover_ui_view_recover.dart';
 import 'modal_recover_ui_view_success.dart';
 
 class ModalRecoverUiLayout extends StatelessWidget {
-
   const ModalRecoverUiLayout({Key? key}) : super(key: key);
 
   @override

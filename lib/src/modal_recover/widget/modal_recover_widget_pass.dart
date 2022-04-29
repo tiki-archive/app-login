@@ -14,14 +14,15 @@ class ModalRecoverWidgetPass extends StatefulWidget {
   final int min;
   final void Function(String) submit;
 
-  const ModalRecoverWidgetPass(this.submit, {Key? key, int? min}) : min = min ?? 8, super(key: key);
+  const ModalRecoverWidgetPass(this.submit, {Key? key, int? min})
+      : min = min ?? 8,
+        super(key: key);
 
   @override
   State<StatefulWidget> createState() => _ModalRecoverWidgetPass();
 }
 
 class _ModalRecoverWidgetPass extends State<ModalRecoverWidgetPass> {
-
   final _controller = TextEditingController();
 
   _ModalRecoverWidgetPass();

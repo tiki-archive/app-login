@@ -9,7 +9,6 @@ import 'package:tiki_style/tiki_style.dart';
 import '../utils/utils_style.dart';
 
 class ScreenIntroStyle extends UtilsStyle {
-
   final Color backgroundColor1 = ColorProvider.yellow;
   final Color backgroundColor2 = ColorProvider.lightYellow;
   final Color backgroundColor3 = ColorProvider.lightOrange;
@@ -19,5 +18,4 @@ class ScreenIntroStyle extends UtilsStyle {
   final Color skipColor = ColorProvider.tikiBlue;
   final Color dotColor = ColorProvider.white;
   final Color dotColorActive = ColorProvider.tikiPurple;
-
 }

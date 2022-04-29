@@ -21,12 +21,13 @@ class ScreenInboxWidgetResend extends StatelessWidget {
     return Row(children: [
       Text(_textReceive,
           style: TextStyle(
-              color: service.style.textColor,
-              height: 1.2,
-              fontSize: service.style.text(20),
-              fontWeight: FontWeight.w600,
-              fontFamily: TextProvider.familyNunitoSans,
-              package: 'tiki_style',)),
+            color: service.style.textColor,
+            height: 1.2,
+            fontSize: service.style.text(20),
+            fontWeight: FontWeight.w600,
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
+          )),
       TextButton(
           onPressed: () => service.controller.resend(context),
           child: Row(children: [
