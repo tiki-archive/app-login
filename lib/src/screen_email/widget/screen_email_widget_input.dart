@@ -5,11 +5,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 
 class ScreenEmailWidgetInput extends StatelessWidget {
   static const String _placeholder = "Your email";
+
+  ScreenEmailWidgetInput({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,8 @@ class ScreenEmailWidgetInput extends StatelessWidget {
           color: service.style.buttonColor,
           fontWeight: FontWeight.bold,
           fontSize: service.style.text(20),
-          fontFamily: service.style.textFamily,
+          fontFamily: TextProvider.familyNunitoSans,
+          package: 'tiki_style',
         ),
         cursorColor: service.style.linkColor,
         autocorrect: false,
@@ -34,7 +38,8 @@ class ScreenEmailWidgetInput extends StatelessWidget {
             hintStyle: TextStyle(
                 color: service.style.hintColor,
                 fontWeight: FontWeight.bold,
-                fontFamily: service.style.textFamily,
+                fontFamily: TextProvider.familyNunitoSans,
+                package: 'tiki_style',
                 fontSize: service.style.text(20)),
             filled: true,
             fillColor: Colors.white,

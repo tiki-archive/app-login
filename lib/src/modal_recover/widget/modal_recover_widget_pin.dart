@@ -11,22 +11,18 @@ import '../modal_recover_service.dart';
 import '../modal_recover_style.dart';
 
 class ModalRecoverWidgetPin extends StatefulWidget {
-  final int _min;
-  final void Function(String) _submit;
+  final int min;
+  final void Function(String) submit;
 
-  const ModalRecoverWidgetPin(this._submit, {int? min}) : _min = min ?? 6;
+  ModalRecoverWidgetPin(this.submit, {int? min}) : min = min ?? 6;
 
   @override
-  State<StatefulWidget> createState() => _ModalRecoverWidgetPin(_submit, _min);
+  State<StatefulWidget> createState() => _ModalRecoverWidgetPin();
 }
 
 class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
-  final int _min;
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _textEditingController = TextEditingController();
-  final void Function(String) _submit;
-
-  _ModalRecoverWidgetPin(this._submit, this._min);
 
   @override
   void initState() {
@@ -46,10 +42,10 @@ class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
         backgroundCursorColor: Colors.transparent,
         keyboardType: TextInputType.number,
         keyboardAppearance: Brightness.light,
-        inputFormatters: [LengthLimitingTextInputFormatter(_min)],
+        inputFormatters: [LengthLimitingTextInputFormatter(widget.min)],
         controller: _textEditingController,
         onChanged: (s) {
-          if (s.length == _min) _submit(s);
+          if (s.length == widget.min) widget.submit(s);
           setState(() {});
         },
       ),
@@ -66,7 +62,7 @@ class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
 
   List<Widget> _circles(BuildContext context) {
     List<Widget> circles = [];
-    for (int i = 0; i < _min; i++) {
+    for (int i = 0; i < widget.min; i++) {
       circles.add(_circle(context, i < _textEditingController.text.length));
     }
     return circles;

@@ -11,6 +11,7 @@ import 'flow_service.dart';
 
 class FlowPresenter extends RouterDelegate
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {
+  @override
   final GlobalKey<NavigatorState> navigatorKey;
   final FlowService service;
 

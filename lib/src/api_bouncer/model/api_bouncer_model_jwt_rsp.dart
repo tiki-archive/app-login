@@ -14,10 +14,10 @@ class ApiBouncerModelJwtRsp {
 
   ApiBouncerModelJwtRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.accessToken = json['accessToken'];
-      this.tokenType = json['tokenType'];
-      this.expiresIn = json['expiresIn'];
-      this.refreshToken = json['refreshToken'];
+      accessToken = json['accessToken'];
+      tokenType = json['tokenType'];
+      expiresIn = json['expiresIn'];
+      refreshToken = json['refreshToken'];
     }
   }
 

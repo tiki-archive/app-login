@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../utils/utils_icons.dart';
 import '../screen_inbox_service.dart';
@@ -27,7 +28,8 @@ class ScreenInboxWidgetBack extends StatelessWidget {
         Text(_text,
             style: TextStyle(
                 color: service.style.buttonColor,
-                fontFamily: service.style.textFamily,
+                fontFamily: TextProvider.familyNunitoSans,
+                package: 'tiki_style',
                 fontWeight: FontWeight.w800,
                 fontSize: service.style.text(22)))
       ]),

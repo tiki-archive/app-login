@@ -5,12 +5,12 @@
 
 import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/widgets.dart';
-import 'package:login/src/flow/model/flow_model_state.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../flow/flow_service.dart';
+import '../flow/model/flow_model_state.dart';
 import 'modal_recover_service.dart';
 import 'model/modal_recover_model_page.dart';
 
@@ -64,10 +64,9 @@ class ModalRecoverController {
     return Navigator.of(context).pop();
   }
 
-  Future<bool> contactSupport(String? code) => launch(Uri(
-          scheme: 'mailto',
-          path: 'support@mytiki.com',
-          query:
-              'subject=${Uri.encodeComponent('Account Locked')}&body=${Uri.encodeComponent('My TIKI account is locked. Code: $code')}')
-      .toString());
+  Future<bool> contactSupport(String? code) => launchUrl(Uri(
+      scheme: 'mailto',
+      path: 'support@mytiki.com',
+      query:
+          'subject=${Uri.encodeComponent('Account Locked')}&body=${Uri.encodeComponent('My TIKI account is locked. Code: $code')}'));
 }

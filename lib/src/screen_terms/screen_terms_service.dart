@@ -12,13 +12,14 @@ import 'screen_terms_presenter.dart';
 import 'screen_terms_style.dart';
 
 class ScreenTermsService extends ChangeNotifier {
-  final ScreenTermsStyle style;
+  late final ScreenTermsStyle style;
   final ScreenTermsModel model;
   late final ScreenTermsPresenter presenter;
   late final ScreenTermsController controller;
 
-  ScreenTermsService(String filename, this.style)
+  ScreenTermsService(String filename)
       : model = ScreenTermsModel(filename: filename) {
+    style = ScreenTermsStyle();
     presenter = ScreenTermsPresenter(this);
     controller = ScreenTermsController(this);
   }

@@ -22,9 +22,9 @@ class FlowStyle {
       ScreenInboxStyle? inbox,
       ScreenEmailStyle? email,
       ModalRecoverStyle? recover})
-      : this.intro = intro ?? ScreenIntroStyle(),
-        this.terms = terms ?? ScreenTermsStyle(),
-        this.inbox = inbox ?? ScreenInboxStyle(),
-        this.email = email ?? ScreenEmailStyle(),
-        this.recover = recover ?? ModalRecoverStyle();
+      : intro = intro ?? ScreenIntroStyle(),
+        terms = terms ?? ScreenTermsStyle(),
+        inbox = inbox ?? ScreenInboxStyle(),
+        email = email ?? ScreenEmailStyle(),
+        recover = recover ?? ModalRecoverStyle();
 }

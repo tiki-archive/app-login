@@ -16,8 +16,8 @@ class ApiBouncerModelRsp<T> {
   ApiBouncerModelRsp(
       {this.status, this.code, this.data, this.page, this.messages});
 
-  ApiBouncerModelRsp.fromJson(
-      Map<String, dynamic>? json, T fromJson(Map<String, dynamic>? json)) {
+  ApiBouncerModelRsp.fromJson(Map<String, dynamic>? json,
+      T Function(Map<String, dynamic>? json) fromJson) {
     if (json != null) {
       status = json['status'];
       code = json['code'];
@@ -28,13 +28,15 @@ class ApiBouncerModelRsp<T> {
             : fromJson(json['data']);
       }
 
-      if (json['page'] != null)
+      if (json['page'] != null) {
         page = ApiBouncerModelRspPage().fromJson(json['page']);
+      }
 
-      if (json['messages'] != null)
-        this.messages = (json['messages'] as List)
+      if (json['messages'] != null) {
+        messages = (json['messages'] as List)
             .map((e) => ApiBouncerModelRspMessage.fromJson(e))
             .toList();
+      }
     }
   }
 

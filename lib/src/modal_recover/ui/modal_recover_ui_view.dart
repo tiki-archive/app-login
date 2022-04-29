@@ -15,6 +15,8 @@ abstract class ModalRecoverUiView extends StatelessWidget {
   late final ModalRecoverStyle style;
   late final ModalRecoverController controller;
 
+  ModalRecoverUiView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ModalRecoverService service =

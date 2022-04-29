@@ -10,7 +10,7 @@ class ApiBouncerModelOtpReq {
 
   ApiBouncerModelOtpReq.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.email = json['email'];
+      email = json['email'];
     }
   }
 

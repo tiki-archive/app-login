@@ -29,6 +29,6 @@ class FlowModel {
       this.otpError = false,
       Map<String, void Function()>? logoutCallbacks,
       Map<String, void Function()>? loginCallbacks})
-      : this.logoutCallbacks = logoutCallbacks ?? Map(),
-        this.loginCallbacks = loginCallbacks ?? Map();
+      : logoutCallbacks = logoutCallbacks ?? {},
+        loginCallbacks = loginCallbacks ?? {};
 }

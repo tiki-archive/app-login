@@ -12,9 +12,9 @@ class ApiBouncerModelOtpRsp {
 
   ApiBouncerModelOtpRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.salt = json['salt'];
-      this.issued = DateTime.parse(json['issued']);
-      this.expires = DateTime.parse(json['expires']);
+      salt = json['salt'];
+      issued = DateTime.parse(json['issued']);
+      expires = DateTime.parse(json['expires']);
     }
   }
 
