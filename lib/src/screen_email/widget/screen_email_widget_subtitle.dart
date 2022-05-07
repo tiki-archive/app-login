@@ -13,6 +13,8 @@ import '../screen_email_style.dart';
 class ScreenEmailWidgetSubtitle extends StatelessWidget {
   static const String _text = "Enter your email below to begin.";
 
+  ScreenEmailWidgetSubtitle({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenEmailStyle style = Provider.of<ScreenEmailService>(context).style;

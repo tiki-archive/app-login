@@ -34,7 +34,7 @@ class ScreenInboxLayout extends StatelessWidget {
     return Scaffold(
         body: Center(
             child: Stack(children: [
-      ScreenInboxBackground(),
+      const ScreenInboxBackground(),
       ScreenInboxForeground(),
     ])));
   }

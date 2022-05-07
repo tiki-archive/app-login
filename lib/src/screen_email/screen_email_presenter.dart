@@ -12,7 +12,7 @@ import 'ui/screen_email_layout.dart';
 class ScreenEmailPresenter extends Page {
   final ScreenEmailService service;
 
-  ScreenEmailPresenter(this.service) : super(key: ValueKey("ScreenEmail"));
+  ScreenEmailPresenter(this.service) : super(key: const ValueKey("ScreenEmail"));
 
   @override
   Route createRoute(BuildContext context) {

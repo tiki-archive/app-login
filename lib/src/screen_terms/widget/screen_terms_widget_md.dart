@@ -12,7 +12,7 @@ import '../screen_terms_service.dart';
 class ScreenTermsWidgetMd extends StatelessWidget {
   static const double _fontSizeText = 16;
 
-  ScreenTermsWidgetMd({Key? key}) : super(key: key);
+  const ScreenTermsWidgetMd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

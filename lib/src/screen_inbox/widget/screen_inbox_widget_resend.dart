@@ -14,6 +14,8 @@ class ScreenInboxWidgetResend extends StatelessWidget {
   static const String _textReceive = "Didn't receive it?";
   static const String _textResend = "Resend now";
 
+  ScreenInboxWidgetResend({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenInboxService service =

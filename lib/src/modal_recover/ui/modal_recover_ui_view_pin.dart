@@ -15,6 +15,8 @@ import '../widget/modal_recover_widget_text.dart';
 import 'modal_recover_ui_view.dart';
 
 abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
+  ModalRecoverUiViewPin({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     ModalRecoverService service = Provider.of<ModalRecoverService>(context);

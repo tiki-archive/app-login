@@ -31,7 +31,7 @@ class ScreenInboxForeground extends StatelessWidget {
                         Container(
                             margin: EdgeInsets.only(top: style.size(21)),
                             alignment: Alignment.centerLeft,
-                            child: ScreenInboxWidgetTitle()),
+                            child: const ScreenInboxWidgetTitle()),
                         Expanded(
                             child: ImgProvider.pineappleAirplane),
                         Container(

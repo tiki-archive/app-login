@@ -19,7 +19,7 @@ class ScreenIntroForeground extends StatelessWidget {
   final String button;
   final int pos;
 
-  ScreenIntroForeground(this.pos, this.title, this.subtitle, this.button);
+  const ScreenIntroForeground(this.pos, this.title, this.subtitle, this.button);
 
   @override
   Widget build(BuildContext context) {

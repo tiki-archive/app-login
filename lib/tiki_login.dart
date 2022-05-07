@@ -33,7 +33,7 @@ class TikiLogin {
             style: style ?? FlowStyle(),
             httpp: httpp ?? Httpp(),
             home: home,
-            secureStorage: secureStorage);
+            secureStorage: secureStorage ?? const FlutterSecureStorage());
 
   RouterDelegate get routerDelegate => _flowService.presenter;
 

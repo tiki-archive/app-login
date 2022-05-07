@@ -12,6 +12,8 @@ import '../screen_intro_service.dart';
 class ScreenIntroWidgetSkipButton extends StatelessWidget {
   static const String _text = 'Skip';
 
+  ScreenIntroWidgetSkipButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenIntroService service =

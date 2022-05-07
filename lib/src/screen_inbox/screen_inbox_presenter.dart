@@ -12,7 +12,7 @@ import 'ui/screen_inbox_layout.dart';
 class ScreenInboxPresenter extends Page {
   final ScreenInboxService service;
 
-  ScreenInboxPresenter(this.service) : super(key: ValueKey("ScreenInbox"));
+  ScreenInboxPresenter(this.service) : super(key: const ValueKey("ScreenInbox"));
 
   @override
   Route createRoute(BuildContext context) {

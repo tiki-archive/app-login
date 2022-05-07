@@ -36,7 +36,7 @@ class ModalRecoverUiViewQrCode extends ModalRecoverUiView {
                 padding: EdgeInsets.symmetric(
                     horizontal: style.textPaddingHorizontal),
                 child: service.state.error == null
-                    ? ModalRecoverWidgetText(_title)
+                    ? const ModalRecoverWidgetText(_title)
                     : ModalRecoverWidgetText(service.state.error!,
                         color: service.style.errorColor)),
             Expanded(

@@ -45,7 +45,7 @@ class ScreenEmailWidgetTos extends StatelessWidget {
       minWidth: 0,
       height: style.text(14),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       child: Text(text, style: _textStyle(style, style.linkColor)),
     );
   }

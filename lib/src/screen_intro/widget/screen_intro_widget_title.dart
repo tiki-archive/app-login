@@ -13,7 +13,7 @@ import '../screen_intro_style.dart';
 class ScreenIntroWidgetTitle extends StatelessWidget {
   final String text;
 
-  ScreenIntroWidgetTitle(this.text, {Key? key}) : super(key: key);
+  const ScreenIntroWidgetTitle(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

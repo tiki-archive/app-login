@@ -12,7 +12,7 @@ import '../screen_intro_service.dart';
 class ScreenIntroWidgetButton extends StatelessWidget {
   final String text;
 
-  ScreenIntroWidgetButton(this.text);
+  ScreenIntroWidgetButton(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

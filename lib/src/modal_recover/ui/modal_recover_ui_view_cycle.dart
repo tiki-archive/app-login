@@ -34,7 +34,7 @@ class ModalRecoverUiViewCycle extends ModalRecoverUiView {
             Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: style.textPaddingHorizontal),
-                child: ModalRecoverWidgetText(_title)),
+                child: const ModalRecoverWidgetText(_title)),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

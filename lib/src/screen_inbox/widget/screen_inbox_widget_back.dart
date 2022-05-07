@@ -13,6 +13,8 @@ import '../screen_inbox_service.dart';
 class ScreenInboxWidgetBack extends StatelessWidget {
   static const String _text = "Back";
 
+  ScreenInboxWidgetBack({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenInboxService service =

@@ -19,6 +19,8 @@ class ModalRecoverUiViewError extends ModalRecoverUiView {
 
   late final ModalRecoverService service;
 
+  ModalRecoverUiViewError({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     service = Provider.of<ModalRecoverService>(context);

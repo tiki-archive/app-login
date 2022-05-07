@@ -12,6 +12,8 @@ import '../screen_email_service.dart';
 class ScreenEmailWidgetButton extends StatelessWidget {
   static const String _text = "CONTINUE";
 
+  ScreenEmailWidgetButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenEmailService service = Provider.of<ScreenEmailService>(context);

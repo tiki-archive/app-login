@@ -15,6 +15,8 @@ class ModalRecoverUiViewPassBackup extends ModalRecoverUiViewPass {
   final Logger _log = Logger('RecoverUiViewPassBackup');
   static const _error = 'Invalid. Must be 8+ characters';
 
+  ModalRecoverUiViewPassBackup({Key? key}) : super(key: key);
+
   @override
   String get title => 'Backing up...';
 

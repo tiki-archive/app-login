@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'screen_intro_view.dart';
 
 class ScreenIntroView1 extends ScreenIntroView {
+  ScreenIntroView1({Key? key}) : super(key: key);
+
   @override
   Color get background => style.backgroundColor1;
 

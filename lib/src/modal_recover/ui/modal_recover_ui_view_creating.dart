@@ -29,7 +29,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
       ModalRecoverService service =
           Provider.of<ModalRecoverService>(context, listen: false);
       await Future.wait(
-          [service.generate(), Future.delayed(Duration(seconds: 2))]);
+          [service.generate(), Future.delayed(const Duration(seconds: 2))]);
       service.controller.showBackup();
     });
   }
@@ -69,7 +69,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
                     Container(
                         padding:
                             EdgeInsets.only(bottom: service.style.size(10)),
-                        child: ModalRecoverWidgetText(_title)),
+                        child: const ModalRecoverWidgetText(_title)),
                     Expanded(
                         child: FittedBox(
                           fit: BoxFit.fitHeight,

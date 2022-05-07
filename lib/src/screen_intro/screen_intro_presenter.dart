@@ -12,7 +12,7 @@ import 'ui/screen_intro_layout.dart';
 class ScreenIntroPresenter extends Page {
   final ScreenIntroService service;
 
-  ScreenIntroPresenter(this.service) : super(key: ValueKey("ScreenIntro"));
+  ScreenIntroPresenter(this.service) : super(key: const ValueKey("ScreenIntro"));
 
   @override
   Route createRoute(BuildContext context) {

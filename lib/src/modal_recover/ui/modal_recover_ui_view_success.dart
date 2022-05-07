@@ -15,6 +15,8 @@ class ModalRecoverUiViewSuccess extends ModalRecoverUiView {
   static const String _title = "Nice job. You're in.";
   static const String _opt1Txt = 'Close';
 
+  ModalRecoverUiViewSuccess({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     return Container(

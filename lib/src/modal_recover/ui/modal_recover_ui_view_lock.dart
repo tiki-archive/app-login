@@ -20,6 +20,8 @@ class ModalRecoverUiViewLock extends ModalRecoverUiView {
 
   late final ModalRecoverService service;
 
+  ModalRecoverUiViewLock({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     service = Provider.of<ModalRecoverService>(context);

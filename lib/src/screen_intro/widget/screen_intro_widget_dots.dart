@@ -15,7 +15,7 @@ class ScreenIntroWidgetDots extends StatelessWidget {
 
   late final ScreenIntroStyle style;
 
-  ScreenIntroWidgetDots(this.pos, {this.num = 3});
+  ScreenIntroWidgetDots(this.pos, {Key? key, this.num = 3}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

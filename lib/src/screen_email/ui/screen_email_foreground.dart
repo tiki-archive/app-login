@@ -27,7 +27,7 @@ class ScreenEmailForeground extends StatelessWidget {
                   margin: EdgeInsets.only(
                       top: style.size(51), right: style.size(60)),
                   alignment: Alignment.centerLeft,
-                  child: ScreenEmailWidgetTitle()),
+                  child: const ScreenEmailWidgetTitle()),
               Container(
                   margin: EdgeInsets.only(top: style.size(15)),
                   alignment: Alignment.centerLeft,

@@ -38,7 +38,7 @@ class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
         focusNode: _focusNode,
         cursorColor: Colors.transparent,
         showCursor: false,
-        style: TextStyle(color: Colors.transparent),
+        style: const TextStyle(color: Colors.transparent),
         backgroundCursorColor: Colors.transparent,
         keyboardType: TextInputType.number,
         keyboardAppearance: Brightness.light,

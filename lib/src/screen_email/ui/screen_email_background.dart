@@ -11,6 +11,8 @@ import '../screen_email_service.dart';
 import '../screen_email_style.dart';
 
 class ScreenEmailBackground extends StatelessWidget {
+  const ScreenEmailBackground({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenEmailStyle style = Provider.of<ScreenEmailService>(context).style;

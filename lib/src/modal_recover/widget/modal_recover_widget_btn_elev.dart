@@ -14,7 +14,7 @@ class ModalRecoverWidgetBtnElev extends StatelessWidget {
   final String _text;
   final void Function() _callback;
 
-  ModalRecoverWidgetBtnElev(this._text, this._callback);
+  const ModalRecoverWidgetBtnElev(this._text, this._callback);
 
   @override
   Widget build(BuildContext context) {

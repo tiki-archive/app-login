@@ -12,7 +12,7 @@ import '../screen_inbox_service.dart';
 class ScreenInboxWidgetSent extends StatelessWidget {
   static const String _text = "I sent an email with a link to";
 
-  ScreenInboxWidgetSent({Key? key}) : super(key: key);
+  const ScreenInboxWidgetSent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
