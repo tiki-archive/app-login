@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_intro_service.dart';
 
@@ -21,13 +22,12 @@ class ScreenIntroBackground extends StatelessWidget {
       Center(child: Container(color: background)),
       Align(
         alignment: Alignment.bottomLeft,
-        child: Image.asset('res/images/intro-blob.png', package: 'login'),
+        child: ImgProvider.introBlob
       ),
       Container(
           alignment: Alignment.bottomRight,
           margin: EdgeInsets.only(bottom: service.style.size(36)),
-          child:
-              Image.asset('res/images/intro-pineapple.png', package: 'login'))
+          child: ImgProvider.introPineapple,)
     ]);
   }
 }

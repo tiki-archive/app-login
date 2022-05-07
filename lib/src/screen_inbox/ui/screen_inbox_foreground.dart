@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_inbox_service.dart';
 import '../screen_inbox_style.dart';
@@ -32,8 +33,7 @@ class ScreenInboxForeground extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: ScreenInboxWidgetTitle()),
                         Expanded(
-                            child: Image.asset('res/images/inbox-pineapple.png',
-                                package: 'login')),
+                            child: ImgProvider.pineappleAirplane),
                         Container(
                             alignment: Alignment.bottomLeft,
                             child: ScreenInboxWidgetSent()),

@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../modal_recover_service.dart';
 import '../widget/modal_recover_widget_btn_elev.dart';
@@ -40,8 +41,8 @@ class ModalRecoverUiViewError extends ModalRecoverUiView {
                     children: [
                   Container(
                       padding: EdgeInsets.only(bottom: style.size(30)),
-                      child: Image.asset("res/images/recover-avocado.png",
-                          width: 75, package: 'login')),
+                      child: SizedBox(width: 75, child: ImgProvider.avocadoSad),
+                  ),
                   ModalRecoverWidgetBtnElev(_opt1Txt, () {
                     service.clearError();
                     controller.showPrevious();

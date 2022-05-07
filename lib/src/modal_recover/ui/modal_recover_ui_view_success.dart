@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../widget/modal_recover_widget_btn_elev.dart';
 import '../widget/modal_recover_widget_text.dart';
@@ -33,10 +34,7 @@ class ModalRecoverUiViewSuccess extends ModalRecoverUiView {
                     children: [
                   Container(
                       padding: EdgeInsets.only(bottom: style.size(30)),
-                      child: Image.asset(
-                          "res/images/recover-pineapple-pizza.png",
-                          width: 75,
-                          package: 'login')),
+                      child: SizedBox(child:ImgProvider.pineapplePizza, height: style.size(75))),
                   ModalRecoverWidgetBtnElev(
                       _opt1Txt, () => controller.complete(context))
                 ])),

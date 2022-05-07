@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 import '../screen_email_style.dart';
@@ -18,19 +19,13 @@ class ScreenEmailBackground extends StatelessWidget {
       Container(
           margin: EdgeInsets.only(top: style.size(18)),
           alignment: Alignment.topRight,
-          child: Image.asset(
-            'res/images/email-pineapple.png',
-            height: style.size(188),
-            package: 'login',
-          )),
+          child: SizedBox(child: ImgProvider.pineappleAirplane, height: style.size(188)),
+      ),
       Container(
           margin: EdgeInsets.only(top: style.size(271)),
           alignment: Alignment.topLeft,
-          child: Image.asset(
-            'res/images/email-blob.png',
-            height: style.size(107),
-            package: 'login',
-          ))
+          child: SizedBox(child: ImgProvider.emailBlob, height: style.size(107))
+          )
     ]);
   }
 }

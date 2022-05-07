@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_terms_service.dart';
 import '../screen_terms_style.dart';
@@ -20,7 +21,7 @@ class ScreenTermsBackground extends StatelessWidget {
       Center(child: Container(color: style.backgroundColor)),
       Align(
         alignment: Alignment.topRight,
-        child: Image.asset("res/images/terms-blob-tr.png", package: 'login'),
+        child: ImgProvider.termsBlobTr
       )
     ]);
   }

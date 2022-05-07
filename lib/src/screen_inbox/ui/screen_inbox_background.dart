@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_inbox_service.dart';
 import '../screen_inbox_style.dart';
@@ -20,12 +21,12 @@ class ScreenInboxBackground extends StatelessWidget {
       Center(child: Container(color: style.backgroundColor)),
       Align(
           alignment: Alignment.topRight,
-          child: Image.asset('res/images/inbox-blob-tr.png',
-              height: style.size(140), package: 'login')),
+          child: SizedBox(child: ImgProvider.inboxBlobTr,
+              height: style.size(140))),
       Align(
           alignment: Alignment.bottomLeft,
-          child: Image.asset('res/images/inbox-blob-bl.png',
-              height: style.size(140), package: 'login')),
+          child: SizedBox(child: ImgProvider.inboxBlobBl,
+             height: style.size(140))),
     ]);
   }
 }
