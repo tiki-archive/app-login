@@ -8,32 +8,19 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
 
 import 'src/flow/flow_service.dart';
-import 'src/flow/flow_style.dart';
 import 'src/flow/model/flow_model_token.dart';
 import 'src/flow/model/flow_model_user.dart';
 
-export 'src/flow/flow_style.dart';
 export 'src/flow/model/flow_model_token.dart';
 export 'src/flow/model/flow_model_user.dart';
-export 'src/modal_recover/modal_recover_style.dart';
-export 'src/screen_email/screen_email_style.dart';
-export 'src/screen_inbox/screen_inbox_style.dart';
-export 'src/screen_intro/screen_intro_style.dart';
-export 'src/screen_terms/screen_terms_style.dart';
 
 class TikiLogin {
   final FlowService _flowService;
 
   TikiLogin(
-      {FlowStyle? style,
-      Httpp? httpp,
-      required Page home,
-      FlutterSecureStorage? secureStorage})
+      {Httpp? httpp, required Page home, FlutterSecureStorage? secureStorage})
       : _flowService = FlowService(
-            style: style ?? FlowStyle(),
-            httpp: httpp ?? Httpp(),
-            home: home,
-            secureStorage: secureStorage);
+            httpp: httpp ?? Httpp(), home: home, secureStorage: secureStorage);
 
   RouterDelegate get routerDelegate => _flowService.presenter;
 

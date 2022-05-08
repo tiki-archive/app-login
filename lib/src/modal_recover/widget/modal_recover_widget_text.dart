@@ -4,11 +4,7 @@
  */
 
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
-
-import '../modal_recover_service.dart';
-import '../modal_recover_style.dart';
 
 class ModalRecoverWidgetText extends StatelessWidget {
   final String _text;
@@ -23,17 +19,15 @@ class ModalRecoverWidgetText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ModalRecoverStyle style =
-        Provider.of<ModalRecoverService>(context, listen: false).style;
     return Text(_text,
         textAlign: TextAlign.center,
         style: TextStyle(
             height: 1.2,
-            fontWeight: style.textWeight,
-            fontSize: style.fontSize,
+            fontWeight: FontWeight.w600,
+            fontSize: SizeProvider.instance.text(18),
             fontFamily: TextProvider.familyNunitoSans,
             package: 'tiki_style',
-            color: _color ?? style.textColor,
+            color: _color ?? ColorProvider.tikiPurple,
             fontStyle: _fontStyle ?? FontStyle.normal));
   }
 }

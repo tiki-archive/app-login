@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../modal_recover_service.dart';
 import '../widget/modal_recover_widget_btn_elev.dart';
@@ -20,12 +21,14 @@ class ModalRecoverUiViewCycle extends ModalRecoverUiView {
 
   late final ModalRecoverService service;
 
+  ModalRecoverUiViewCycle({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     service = Provider.of<ModalRecoverService>(context);
     return Container(
-        height: style.modalContainerHeight,
-        padding: EdgeInsets.all(style.modalContentPadding),
+        height: SizeProvider.instance.height(309),
+        padding: EdgeInsets.all(SizeProvider.instance.width(20)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -33,19 +36,20 @@ class ModalRecoverUiViewCycle extends ModalRecoverUiView {
           children: [
             Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: style.textPaddingHorizontal),
-                child: ModalRecoverWidgetText(_title)),
+                    horizontal: SizeProvider.instance.width(20)),
+                child: const ModalRecoverWidgetText(_title)),
             Expanded(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                   Container(
                       padding: EdgeInsets.only(
-                          bottom: style.size(40),
-                          left: style.size(20),
-                          right: style.size(20)),
-                      child: ModalRecoverWidgetText(_hint,
-                          color: style.hintColor, fontStyle: FontStyle.italic)),
+                          bottom: SizeProvider.instance.height(40),
+                          left: SizeProvider.instance.width(20),
+                          right: SizeProvider.instance.width(20)),
+                      child: const ModalRecoverWidgetText(_hint,
+                          color: ColorProvider.greySeven,
+                          fontStyle: FontStyle.italic)),
                   ModalRecoverWidgetBtnElev(_opt1Txt, controller.showCyclePin)
                 ]))
           ],

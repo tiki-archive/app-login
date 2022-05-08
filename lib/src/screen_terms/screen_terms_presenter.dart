@@ -17,6 +17,6 @@ class ScreenTermsPresenter {
   Route createRoute(BuildContext context) {
     return MaterialPageRoute(
         builder: (BuildContext context) => ChangeNotifierProvider.value(
-            value: service, child: ScreenTermsLayout()));
+            value: service, child: const ScreenTermsLayout()));
   }
 }

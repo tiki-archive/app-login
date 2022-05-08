@@ -8,9 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
-import '../screen_email_style.dart';
 
 class ScreenEmailWidgetTos extends StatelessWidget {
+  const ScreenEmailWidgetTos({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenEmailService service = Provider.of<ScreenEmailService>(context);
@@ -18,20 +19,17 @@ class ScreenEmailWidgetTos extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: [
         Text("By pressing \"Continue\" you agree to TIKI's ",
-            style: _textStyle(service.style, service.style.textColor)),
-        _link("Terms of Service", () => service.controller.tos(context),
-            service.style),
-        Text(" and ",
-            style: _textStyle(service.style, service.style.textColor)),
-        _link("Privacy Policy", () => service.controller.privacy(context),
-            service.style),
+            style: _textStyle(ColorProvider.greySeven)),
+        _link("Terms of Service", () => service.controller.tos(context)),
+        Text(" and ", style: _textStyle(ColorProvider.greySeven)),
+        _link("Privacy Policy", () => service.controller.privacy(context)),
       ],
     );
   }
 
-  TextStyle _textStyle(ScreenEmailStyle style, Color color) {
+  TextStyle _textStyle(Color color) {
     return TextStyle(
-      fontSize: style.text(14),
+      fontSize: SizeProvider.instance.text(14),
       fontWeight: FontWeight.bold,
       color: color,
       fontFamily: TextProvider.familyNunitoSans,
@@ -39,14 +37,14 @@ class ScreenEmailWidgetTos extends StatelessWidget {
     );
   }
 
-  Widget _link(String text, Function() onPressed, ScreenEmailStyle style) {
+  Widget _link(String text, Function() onPressed) {
     return MaterialButton(
       onPressed: onPressed,
       minWidth: 0,
-      height: style.text(14),
+      height: SizeProvider.instance.text(14),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      padding: EdgeInsets.all(0),
-      child: Text(text, style: _textStyle(style, style.linkColor)),
+      padding: const EdgeInsets.all(0),
+      child: Text(text, style: _textStyle(ColorProvider.orange)),
     );
   }
 }

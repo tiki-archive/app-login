@@ -12,7 +12,7 @@ import '../screen_intro_service.dart';
 class ScreenIntroWidgetButton extends StatelessWidget {
   final String text;
 
-  ScreenIntroWidgetButton(this.text);
+  const ScreenIntroWidgetButton(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,12 @@ class ScreenIntroWidgetButton extends StatelessWidget {
         Provider.of<ScreenIntroService>(context, listen: false);
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: service.style.size(16)),
+          padding:
+              EdgeInsets.symmetric(vertical: SizeProvider.instance.height(16)),
           shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(service.style.size(37)))),
-          primary: service.style.buttonColor,
+              borderRadius: BorderRadius.all(
+                  Radius.circular(SizeProvider.instance.width(37)))),
+          primary: ColorProvider.tikiPurple,
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -34,14 +35,14 @@ class ScreenIntroWidgetButton extends StatelessWidget {
               direction: Axis.vertical,
               children: [
                 SizedBox(
-                    width: service.style.size(228),
+                    width: SizeProvider.instance.width(228),
                     child: Text(text,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: service.style.buttonTextColor,
+                          color: ColorProvider.white,
                           fontWeight: FontWeight.w800,
-                          fontSize: service.style.text(22),
-                          letterSpacing: service.style.size(0.05),
+                          fontSize: SizeProvider.instance.text(22),
+                          letterSpacing: SizeProvider.instance.text(0.05),
                           fontFamily: TextProvider.familyNunitoSans,
                           package: 'tiki_style',
                         )))

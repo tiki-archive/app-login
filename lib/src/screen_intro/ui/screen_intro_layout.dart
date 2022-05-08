@@ -12,6 +12,8 @@ import 'screen_intro_view_2.dart';
 import 'screen_intro_view_3.dart';
 
 class ScreenIntroLayout extends StatelessWidget {
+  const ScreenIntroLayout({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenIntroService service = Provider.of<ScreenIntroService>(context);

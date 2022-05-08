@@ -15,6 +15,8 @@ class ModalRecoverUiViewPassCycle extends ModalRecoverUiViewPass {
   final Logger _log = Logger('RecoverUiViewPassCycle');
   static const _error = 'Cannot reuse passphrase. Try again';
 
+  ModalRecoverUiViewPassCycle({Key? key}) : super(key: key);
+
   @override
   String get title => 'Updating security...';
 

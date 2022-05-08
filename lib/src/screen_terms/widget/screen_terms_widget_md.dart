@@ -12,7 +12,7 @@ import '../screen_terms_service.dart';
 class ScreenTermsWidgetMd extends StatelessWidget {
   static const double _fontSizeText = 16;
 
-  ScreenTermsWidgetMd({Key? key}) : super(key: key);
+  const ScreenTermsWidgetMd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,35 +29,38 @@ class ScreenTermsWidgetMd extends StatelessWidget {
                   service.controller.openUrl(href),
               styleSheet: MarkdownStyleSheet(
                 h1: TextStyle(
-                    color: service.style.headingColor,
-                    fontSize: _relativeHeadingSize(service.style.text, 1),
+                    color: ColorProvider.tikiPurple,
+                    fontSize:
+                        _relativeHeadingSize(SizeProvider.instance.text, 1),
                     fontWeight: FontWeight.bold,
                     fontFamily: TextProvider.familyKoara),
                 h3: TextStyle(
-                  fontSize: _relativeHeadingSize(service.style.text, 0.3),
-                  color: service.style.headingColor,
+                  fontSize:
+                      _relativeHeadingSize(SizeProvider.instance.text, 0.3),
+                  color: ColorProvider.tikiPurple,
                   fontWeight: FontWeight.w600,
                   fontFamily: TextProvider.familyNunitoSans,
                   package: 'tiki_style',
                 ),
                 h4: TextStyle(
-                  fontSize: _relativeHeadingSize(service.style.text, 0.1),
-                  color: service.style.headingColor,
+                  fontSize:
+                      _relativeHeadingSize(SizeProvider.instance.text, 0.1),
+                  color: ColorProvider.tikiPurple,
                   fontWeight: FontWeight.w600,
                   fontFamily: TextProvider.familyNunitoSans,
                   package: 'tiki_style',
                 ),
                 a: TextStyle(
-                  color: service.style.linkColor,
+                  color: ColorProvider.orange,
                   fontWeight: FontWeight.w600,
-                  fontSize: service.style.text(_fontSizeText),
+                  fontSize: SizeProvider.instance.text(_fontSizeText),
                   fontFamily: TextProvider.familyNunitoSans,
                   package: 'tiki_style',
                 ),
                 p: TextStyle(
-                  color: service.style.textColor,
+                  color: ColorProvider.greySeven,
                   fontWeight: FontWeight.normal,
-                  fontSize: service.style.text(_fontSizeText),
+                  fontSize: SizeProvider.instance.text(_fontSizeText),
                   fontFamily: TextProvider.familyNunitoSans,
                   package: 'tiki_style',
                 ),

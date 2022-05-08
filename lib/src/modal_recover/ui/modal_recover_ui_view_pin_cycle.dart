@@ -13,6 +13,8 @@ import 'modal_recover_ui_view_pin.dart';
 class ModalRecoverUiViewPinCycle extends ModalRecoverUiViewPin {
   static const _error = 'Cannot reuse pin. Try again';
 
+  ModalRecoverUiViewPinCycle({Key? key}) : super(key: key);
+
   @override
   String get title => 'Updating security...';
 

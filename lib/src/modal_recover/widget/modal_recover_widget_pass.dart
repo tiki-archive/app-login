@@ -4,11 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
-
-import '../modal_recover_service.dart';
-import '../modal_recover_style.dart';
 
 class ModalRecoverWidgetPass extends StatefulWidget {
   final int min;
@@ -34,8 +30,6 @@ class _ModalRecoverWidgetPass extends State<ModalRecoverWidgetPass> {
 
   @override
   Widget build(BuildContext context) {
-    ModalRecoverStyle style =
-        Provider.of<ModalRecoverService>(context, listen: false).style;
     return TextField(
         controller: _controller,
         textAlign: TextAlign.center,
@@ -47,24 +41,25 @@ class _ModalRecoverWidgetPass extends State<ModalRecoverWidgetPass> {
         onEditingComplete: () => widget.submit(_controller.text),
         decoration: InputDecoration(
             focusedBorder: UnderlineInputBorder(
-                borderSide:
-                    BorderSide(color: style.buttonColor, width: style.size(2))),
+                borderSide: BorderSide(
+                    color: ColorProvider.orange,
+                    width: SizeProvider.instance.width(2))),
             hintText: '${widget.min}+ letters or numbers',
             hintStyle: TextStyle(
                 height: 1.2,
-                fontWeight: style.textWeight,
-                fontSize: style.fontSize,
+                fontWeight: FontWeight.w600,
+                fontSize: SizeProvider.instance.text(18),
                 fontFamily: TextProvider.familyNunitoSans,
                 package: 'tiki_style',
-                color: style.hintColor,
+                color: ColorProvider.greySeven,
                 fontStyle: FontStyle.normal)),
         style: TextStyle(
             height: 1.2,
-            fontWeight: style.textWeight,
-            fontSize: style.fontSize,
+            fontWeight: FontWeight.w600,
+            fontSize: SizeProvider.instance.text(18),
             fontFamily: TextProvider.familyNunitoSans,
             package: 'tiki_style',
-            color: style.buttonColor,
+            color: ColorProvider.orange,
             fontStyle: FontStyle.normal));
   }
 

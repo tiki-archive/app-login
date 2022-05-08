@@ -13,6 +13,8 @@ import 'modal_recover_ui_view_pass.dart';
 class ModalRecoverUiViewPassRecover extends ModalRecoverUiViewPass {
   static const _error = 'Incorrect passphrase. Try again';
 
+  ModalRecoverUiViewPassRecover({Key? key}) : super(key: key);
+
   @override
   String get title => 'Restoring from backup...';
 

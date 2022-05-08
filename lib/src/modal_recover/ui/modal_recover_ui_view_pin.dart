@@ -5,7 +5,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
@@ -15,15 +14,18 @@ import '../widget/modal_recover_widget_text.dart';
 import 'modal_recover_ui_view.dart';
 
 abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
+  ModalRecoverUiViewPin({Key? key}) : super(key: key);
+
   @override
   Widget page(BuildContext context) {
     ModalRecoverService service = Provider.of<ModalRecoverService>(context);
     return Container(
-        height: MediaQuery.of(context).viewInsets.bottom + style.size(200),
-        padding: EdgeInsets.all(style.modalContentPadding),
+        height: MediaQuery.of(context).viewInsets.bottom +
+            SizeProvider.instance.height(200),
+        padding: EdgeInsets.all(SizeProvider.instance.width(20)),
         child: Stack(children: [
           Padding(
-              padding: EdgeInsets.all(style.modalContentPadding),
+              padding: EdgeInsets.all(SizeProvider.instance.width(20)),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
@@ -31,11 +33,12 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
                   children: [
                     ModalRecoverWidgetText(title),
                     Container(
-                        padding: EdgeInsets.only(bottom: style.size(50)),
+                        padding: EdgeInsets.only(
+                            bottom: SizeProvider.instance.height(50)),
                         child: service.state.error == null
                             ? ModalRecoverWidgetText(subtitle)
                             : ModalRecoverWidgetText(service.state.error!,
-                                color: style.errorColor)),
+                                color: ColorProvider.tikiRed)),
                     ModalRecoverWidgetPin((pin) => onSubmit(context, pin)),
                   ])),
           if (service.state.loading)
@@ -43,7 +46,9 @@ abstract class ModalRecoverUiViewPin extends ModalRecoverUiView {
                 color: const Color.fromRGBO(255, 255, 255, 0.5),
                 child: Align(
                     alignment: Alignment.topCenter,
-                    child: SizedBox(height: style.size(100), child: AnimationProvider.recoverLoading)))
+                    child: SizedBox(
+                        height: SizeProvider.instance.height(100),
+                        child: AnimationProvider.recoverLoading)))
         ]));
   }
 

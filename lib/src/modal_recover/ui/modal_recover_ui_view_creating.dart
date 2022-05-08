@@ -4,11 +4,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../utils/utils_icons.dart';
 import '../modal_recover_service.dart';
 import '../widget/modal_recover_widget_text.dart';
 
@@ -29,7 +27,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
       ModalRecoverService service =
           Provider.of<ModalRecoverService>(context, listen: false);
       await Future.wait(
-          [service.generate(), Future.delayed(Duration(seconds: 2))]);
+          [service.generate(), Future.delayed(const Duration(seconds: 2))]);
       service.controller.showBackup();
     });
   }
@@ -39,7 +37,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
     return Container(
-        padding: EdgeInsets.only(top: service.style.size(8)),
+        padding: EdgeInsets.only(top: SizeProvider.instance.height(8)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -48,45 +46,44 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
               children: [
                 TextButton(
                     onPressed: service.controller.showAccount,
-                    child: Icon(UtilsIcons.arrow,
-                        size: service.style.modalNavIconSize,
-                        color: service.style.modalNavColor)),
+                    child: Icon(IconProvider.arrow_left,
+                        size: SizeProvider.instance.text(16),
+                        color: ColorProvider.greyThree)),
                 TextButton(
                     onPressed: () => service.controller.close(context),
-                    child: Icon(UtilsIcons.x,
-                        size: service.style.modalNavIconSize,
-                        color: service.style.modalNavColor))
+                    child: Icon(IconProvider.x,
+                        size: SizeProvider.instance.text(16),
+                        color: ColorProvider.greyThree))
               ],
             ),
             Container(
-                height: service.style.modalContainerHeight,
-                padding: EdgeInsets.all(service.style.modalContentPadding),
+                height: SizeProvider.instance.height(309),
+                padding: EdgeInsets.all(SizeProvider.instance.width(20)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                        padding:
-                            EdgeInsets.only(bottom: service.style.size(10)),
-                        child: ModalRecoverWidgetText(_title)),
+                        padding: EdgeInsets.only(
+                            bottom: SizeProvider.instance.height(10)),
+                        child: const ModalRecoverWidgetText(_title)),
                     Expanded(
                         child: FittedBox(
-                          fit: BoxFit.fitHeight,
-                          child: ClipRect(
-                            child: Align(
-                                alignment: Alignment.center,
-                                heightFactor: 0.66,
-                                widthFactor: 1,
-                                child: ConstrainedBox(
-                                    constraints:
-                                        const BoxConstraints(minWidth: 1, minHeight: 1),
+                            fit: BoxFit.fitHeight,
+                            child: ClipRect(
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  heightFactor: 0.66,
+                                  widthFactor: 1,
+                                  child: ConstrainedBox(
+                                    constraints: const BoxConstraints(
+                                        minWidth: 1, minHeight: 1),
                                     child: AnimationProvider.recoverCreating,
-                                )
-                          ),
-                        ))),
-                      ],
-                    ))
+                                  )),
+                            ))),
+                  ],
+                ))
           ],
         ));
   }

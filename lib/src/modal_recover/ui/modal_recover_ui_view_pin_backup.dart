@@ -11,6 +11,8 @@ import '../modal_recover_service.dart';
 import 'modal_recover_ui_view_pin.dart';
 
 class ModalRecoverUiViewPinBackup extends ModalRecoverUiViewPin {
+  ModalRecoverUiViewPinBackup({Key? key}) : super(key: key);
+
   @override
   String get title => 'Backing up...';
 

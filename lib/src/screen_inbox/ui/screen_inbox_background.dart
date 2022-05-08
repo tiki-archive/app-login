@@ -4,28 +4,25 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../screen_inbox_service.dart';
-import '../screen_inbox_style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class ScreenInboxBackground extends StatelessWidget {
   const ScreenInboxBackground({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ScreenInboxStyle style =
-        Provider.of<ScreenInboxService>(context, listen: false).style;
     return Stack(children: [
-      Center(child: Container(color: style.backgroundColor)),
+      Center(child: Container(color: ColorProvider.cream)),
       Align(
           alignment: Alignment.topRight,
-          child: Image.asset('res/images/inbox-blob-tr.png',
-              height: style.size(140), package: 'login')),
+          child: Image(
+              image: ImgProvider.inboxBlobTr.image,
+              height: SizeProvider.instance.height(140))),
       Align(
           alignment: Alignment.bottomLeft,
-          child: Image.asset('res/images/inbox-blob-bl.png',
-              height: style.size(140), package: 'login')),
+          child: Image(
+              image: ImgProvider.inboxBlobBl.image,
+              height: SizeProvider.instance.height(140))),
     ]);
   }
 }

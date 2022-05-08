@@ -5,21 +5,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_intro_service.dart';
-import '../screen_intro_style.dart';
 
 class ScreenIntroWidgetDots extends StatelessWidget {
   final int num;
   final int pos;
 
-  late final ScreenIntroStyle style;
-
-  ScreenIntroWidgetDots(this.pos, {this.num = 3});
+  const ScreenIntroWidgetDots(this.pos, {this.num = 3, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    style = Provider.of<ScreenIntroService>(context, listen: false).style;
     return Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,13 +25,13 @@ class ScreenIntroWidgetDots extends StatelessWidget {
   }
 
   Widget _dot(bool isActive) {
-    double size = style.size(8);
+    double size = SizeProvider.instance.width(8);
     return Container(
       margin: EdgeInsets.symmetric(horizontal: size * 0.66),
       height: size,
       width: size,
       decoration: BoxDecoration(
-          color: isActive ? style.dotColorActive : style.dotColor,
+          color: isActive ? ColorProvider.tikiPurple : ColorProvider.white,
           borderRadius: BorderRadius.all(Radius.circular(size * 2))),
     );
   }

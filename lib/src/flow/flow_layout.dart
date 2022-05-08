@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 import '../screen_email/screen_email_service.dart';
 import '../screen_inbox/screen_inbox_service.dart';
 import '../screen_intro/screen_intro_service.dart';
-import '../screen_intro/screen_intro_style.dart';
 import 'flow_service.dart';
 import 'model/flow_model_state.dart';
 
@@ -24,7 +23,7 @@ class FlowLayout extends StatelessWidget {
     return Navigator(
       key: navigatorKey,
       pages: [
-        ScreenIntroService(ScreenIntroStyle()).presenter,
+        ScreenIntroService().presenter,
         if (service.model.state == FlowModelState.returningUser)
           ScreenEmailService(isError: service.model.otpError).presenter
         else if (service.model.state == FlowModelState.otpRequested ||
