@@ -26,8 +26,11 @@ class ScreenEmailService extends ChangeNotifier {
 
   void setEmail(String email) {
     model.email = email;
-    model.canSubmit = EmailValidator.validate(email);
-    notifyListeners();
+    bool canSubmit = EmailValidator.validate(email);
+    if( canSubmit != model.canSubmit){
+      model.canSubmit = canSubmit;
+      notifyListeners();
+    }
   }
 
   void setError(bool isError) {
