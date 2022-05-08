@@ -1,3 +1,8 @@
+## 0.0.11
+
+* fixed bugs with UI sizing
+* refactor to only use tiki_style
+
 ## 0.0.10
 
 * bump tiki_style version
