@@ -21,8 +21,8 @@ abstract class FlowRepositorySS<T> {
       required this.toJson,
       required this.fromJson,
       FlutterSecureStorage? secureStorage})
-      : this.version = version ?? '1.0.0',
-        this.secureStorage = secureStorage ?? FlutterSecureStorage();
+      : version = version ?? '1.0.0',
+        secureStorage = secureStorage ?? const FlutterSecureStorage();
 
   Future<void> save(String key, T model) async {
     await secureStorage.write(

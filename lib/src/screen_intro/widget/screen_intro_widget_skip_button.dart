@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_intro_service.dart';
 
@@ -15,17 +16,17 @@ class ScreenIntroWidgetSkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenIntroService service =
         Provider.of<ScreenIntroService>(context, listen: false);
-    return Container(
-        child: TextButton(
-            onPressed: () => service.controller.skipToLogin(context),
-            child: Text(
-              _text,
-              style: TextStyle(
-                  color: service.style.skipColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: service.style.text(20),
-                  fontFamily: service.style.textFamily,
-                  height: 1.2),
-            )));
+    return TextButton(
+        onPressed: () => service.controller.skipToLogin(context),
+        child: Text(
+          _text,
+          style: TextStyle(
+              color: service.style.skipColor,
+              fontWeight: FontWeight.bold,
+              fontSize: service.style.text(20),
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
+              height: 1.2),
+        ));
   }
 }

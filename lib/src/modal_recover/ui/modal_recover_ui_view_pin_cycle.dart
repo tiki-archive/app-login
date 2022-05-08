@@ -5,14 +5,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 
 import '../modal_recover_service.dart';
 import 'modal_recover_ui_view_pin.dart';
 
 class ModalRecoverUiViewPinCycle extends ModalRecoverUiViewPin {
-  final Logger _log = Logger('RecoverUiViewPinCycle');
   static const _error = 'Cannot reuse pin. Try again';
 
   @override
@@ -26,9 +24,9 @@ class ModalRecoverUiViewPinCycle extends ModalRecoverUiViewPin {
     ModalRecoverService service =
         Provider.of<ModalRecoverService>(context, listen: false);
     if (!service.state.loading) {
-      if (pin == service.state.pin)
+      if (pin == service.state.pin) {
         service.setError(_error);
-      else {
+      } else {
         service.clearError();
         service.setNewPin(pin);
         controller.showCyclePassphrase();

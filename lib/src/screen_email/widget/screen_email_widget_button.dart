@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../screen_email_service.dart';
 
@@ -27,7 +28,8 @@ class ScreenEmailWidgetButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: service.style.buttonTextColor,
-              fontFamily: service.style.textFamily,
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               fontWeight: FontWeight.w800,
               fontSize: service.style.size(22),
               letterSpacing: service.style.size(0.05),

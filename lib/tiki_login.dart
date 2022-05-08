@@ -21,10 +21,10 @@ export 'src/screen_inbox/screen_inbox_style.dart';
 export 'src/screen_intro/screen_intro_style.dart';
 export 'src/screen_terms/screen_terms_style.dart';
 
-class Login {
+class TikiLogin {
   final FlowService _flowService;
 
-  Login(
+  TikiLogin(
       {FlowStyle? style,
       Httpp? httpp,
       required Page home,

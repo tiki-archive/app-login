@@ -54,8 +54,9 @@ class ModalRecoverUiViewQrCode extends ModalRecoverUiView {
                     if (await controller.scanQr()) {
                       service.setError(_error);
                       controller.showSuccess();
-                    } else
+                    } else {
                       service.clearError();
+                    }
                   })
                 ]))
           ],

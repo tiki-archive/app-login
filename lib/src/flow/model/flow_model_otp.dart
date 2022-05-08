@@ -11,8 +11,8 @@ class FlowModelOtp {
 
   FlowModelOtp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.email = json['email'];
-      this.salt = json['salt'];
+      email = json['email'];
+      salt = json['salt'];
     }
   }
 

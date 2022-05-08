@@ -23,9 +23,9 @@ class ModalRecoverPresenter {
         isDismissible: true,
         backgroundColor: _style.backgroundColor,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-                top: Radius.circular(_style.size(36)))),
+            borderRadius:
+                BorderRadius.vertical(top: Radius.circular(_style.size(36)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
-            value: _service, child: ModalRecoverUiLayout()));
+            value: _service, child: const ModalRecoverUiLayout()));
   }
 }

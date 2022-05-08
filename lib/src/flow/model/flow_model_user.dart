@@ -12,15 +12,12 @@ class FlowModelUser {
 
   FlowModelUser.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
-      this.email = json['email'];
-      this.address = json['address'];
-      this.isLoggedIn = json['isLoggedIn'];
+      email = json['email'];
+      address = json['address'];
+      isLoggedIn = json['isLoggedIn'];
     }
   }
 
-  Map<String, dynamic> toJson() => {
-        'email': email,
-        'address': address,
-        'isLoggedIn': isLoggedIn
-      };
+  Map<String, dynamic> toJson() =>
+      {'email': email, 'address': address, 'isLoggedIn': isLoggedIn};
 }
