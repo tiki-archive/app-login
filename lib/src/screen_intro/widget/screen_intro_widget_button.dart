@@ -21,7 +21,7 @@ class ScreenIntroWidgetButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           padding:
-              EdgeInsets.symmetric(vertical: SizeProvider.instance.height(16)),
+              EdgeInsets.symmetric(vertical: SizeProvider.instance.height(19)),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                   Radius.circular(SizeProvider.instance.width(37)))),
@@ -44,7 +44,7 @@ class ScreenIntroWidgetButton extends StatelessWidget {
                           fontSize: SizeProvider.instance.text(22),
                           letterSpacing: SizeProvider.instance.text(0.05),
                           fontFamily: TextProvider.familyNunitoSans,
-                          package: 'tiki_style',
+                          package: TextProvider.package,
                         )))
               ],
             ),

@@ -20,7 +20,7 @@ class ScreenIntroWidgetSubtitle extends StatelessWidget {
             fontSize: SizeProvider.instance.text(20),
             fontWeight: FontWeight.bold,
             fontFamily: TextProvider.familyNunitoSans,
-            package: 'tiki_style',
+            package: TextProvider.package,
             height: 1.2));
   }
 }

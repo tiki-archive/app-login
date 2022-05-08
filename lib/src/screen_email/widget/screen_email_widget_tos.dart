@@ -33,7 +33,7 @@ class ScreenEmailWidgetTos extends StatelessWidget {
       fontWeight: FontWeight.bold,
       color: color,
       fontFamily: TextProvider.familyNunitoSans,
-      package: 'tiki_style',
+      package: TextProvider.package,
     );
   }
 

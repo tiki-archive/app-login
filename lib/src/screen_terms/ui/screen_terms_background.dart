@@ -13,10 +13,7 @@ class ScreenTermsBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       Center(child: Container(color: ColorProvider.cream)),
-      Align(
-        alignment: Alignment.topRight,
-        child: Image.asset("res/images/terms-blob-tr.png", package: 'login'),
-      )
+      Align(alignment: Alignment.topRight, child: ImgProvider.termsBlobTr)
     ]);
   }
 }

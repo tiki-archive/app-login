@@ -27,7 +27,7 @@ class ScreenIntroWidgetSkipButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: SizeProvider.instance.text(20),
               fontFamily: TextProvider.familyNunitoSans,
-              package: 'tiki_style',
+              package: TextProvider.package,
               height: 1.2),
         ));
   }

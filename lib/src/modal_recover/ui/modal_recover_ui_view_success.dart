@@ -38,10 +38,7 @@ class ModalRecoverUiViewSuccess extends ModalRecoverUiView {
                   Container(
                       padding: EdgeInsets.only(
                           bottom: SizeProvider.instance.height(30)),
-                      child: Image.asset(
-                          "res/images/recover-pineapple-pizza.png",
-                          width: 75,
-                          package: 'login')),
+                      child: ImgProvider.pineapplePizza),
                   ModalRecoverWidgetBtnElev(
                       _opt1Txt, () => controller.complete(context))
                 ])),

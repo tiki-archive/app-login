@@ -19,11 +19,11 @@ class ScreenIntroLayout extends StatelessWidget {
     ScreenIntroService service = Provider.of<ScreenIntroService>(context);
     switch (service.model.currentCard) {
       case 0:
-        return ScreenIntroView1();
+        return const ScreenIntroView1();
       case 1:
-        return ScreenIntroView2();
+        return const ScreenIntroView2();
       case 2:
-        return ScreenIntroView3();
+        return const ScreenIntroView3();
       default:
         throw UnimplementedError();
     }

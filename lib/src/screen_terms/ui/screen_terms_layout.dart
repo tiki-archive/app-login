@@ -16,7 +16,7 @@ class ScreenTermsLayout extends StatelessWidget {
     return Scaffold(
         body: Center(
             child: GestureDetector(
-                child: Stack(children: [
+                child: Stack(children: const [
       ScreenTermsBackground(),
       ScreenTermsForeground(),
     ]))));

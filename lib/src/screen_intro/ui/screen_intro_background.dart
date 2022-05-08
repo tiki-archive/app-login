@@ -22,7 +22,7 @@ class ScreenIntroBackground extends StatelessWidget {
       Container(
           alignment: Alignment.bottomRight,
           margin: EdgeInsets.only(bottom: SizeProvider.instance.height(36)),
-          child: ImgProvider.introPineapple)
+          child: ImgProvider.pineappleWave)
     ]);
   }
 }

@@ -16,13 +16,11 @@ class ScreenEmailBackground extends StatelessWidget {
       Container(
           margin: EdgeInsets.only(top: SizeProvider.instance.height(18)),
           alignment: Alignment.topRight,
-          child: Image.asset(
-            'res/images/email-pineapple.png',
-            height: SizeProvider.instance.height(188),
-            package: 'login',
-          )),
+          child: Image(
+              image: ImgProvider.pineappleLeanIn.image,
+              height: SizeProvider.instance.height(188))),
       Container(
-          margin: EdgeInsets.only(top: SizeProvider.instance.height(271)),
+          margin: EdgeInsets.only(top: SizeProvider.instance.height(272)),
           alignment: Alignment.topLeft,
           child: Image(
             image: ImgProvider.emailBlob.image,

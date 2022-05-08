@@ -5,6 +5,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'flow_layout.dart';
 import 'flow_service.dart';
@@ -19,6 +20,7 @@ class FlowPresenter extends RouterDelegate
 
   @override
   Widget build(BuildContext context) {
+    TikiStyle.init(context);
     return ChangeNotifierProvider.value(
         value: service, child: FlowLayout(navigatorKey: navigatorKey));
   }

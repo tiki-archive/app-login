@@ -22,7 +22,7 @@ class ScreenInboxWidgetBack extends StatelessWidget {
       onPressed: () => service.controller.back(context),
       child: Row(children: [
         Container(
-          child: Icon(IconProvider.arrow_left,
+          child: Icon(IconProvider.arrow_thick_left,
               size: SizeProvider.instance.text(22),
               color: ColorProvider.orange),
           margin: EdgeInsets.only(right: SizeProvider.instance.width(6)),
@@ -31,7 +31,7 @@ class ScreenInboxWidgetBack extends StatelessWidget {
             style: TextStyle(
                 color: ColorProvider.orange,
                 fontFamily: TextProvider.familyNunitoSans,
-                package: 'tiki_style',
+                package: TextProvider.package,
                 fontWeight: FontWeight.w800,
                 fontSize: SizeProvider.instance.text(22)))
       ]),

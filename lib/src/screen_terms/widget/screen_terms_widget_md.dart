@@ -19,9 +19,7 @@ class ScreenTermsWidgetMd extends StatelessWidget {
     ScreenTermsService service = Provider.of<ScreenTermsService>(context);
     return FutureBuilder(
         future: DefaultAssetBundle.of(context).loadString(
-            'packages/login/src/screen_terms/' +
-                service.model.filename! +
-                '.md'),
+            'packages/tiki_login/src/screen_terms/${service.model.filename}.md'),
         builder: (BuildContext context, AsyncSnapshot<String> mdSource) {
           return MarkdownBody(
               selectable: true,
@@ -33,14 +31,15 @@ class ScreenTermsWidgetMd extends StatelessWidget {
                     fontSize:
                         _relativeHeadingSize(SizeProvider.instance.text, 1),
                     fontWeight: FontWeight.bold,
-                    fontFamily: TextProvider.familyKoara),
+                    fontFamily: TextProvider.familyKoara,
+                    package: TextProvider.package),
                 h3: TextStyle(
                   fontSize:
                       _relativeHeadingSize(SizeProvider.instance.text, 0.3),
                   color: ColorProvider.tikiPurple,
                   fontWeight: FontWeight.w600,
                   fontFamily: TextProvider.familyNunitoSans,
-                  package: 'tiki_style',
+                  package: TextProvider.package,
                 ),
                 h4: TextStyle(
                   fontSize:
@@ -48,21 +47,21 @@ class ScreenTermsWidgetMd extends StatelessWidget {
                   color: ColorProvider.tikiPurple,
                   fontWeight: FontWeight.w600,
                   fontFamily: TextProvider.familyNunitoSans,
-                  package: 'tiki_style',
+                  package: TextProvider.package,
                 ),
                 a: TextStyle(
                   color: ColorProvider.orange,
                   fontWeight: FontWeight.w600,
                   fontSize: SizeProvider.instance.text(_fontSizeText),
                   fontFamily: TextProvider.familyNunitoSans,
-                  package: 'tiki_style',
+                  package: TextProvider.package,
                 ),
                 p: TextStyle(
                   color: ColorProvider.greySeven,
                   fontWeight: FontWeight.normal,
                   fontSize: SizeProvider.instance.text(_fontSizeText),
                   fontFamily: TextProvider.familyNunitoSans,
-                  package: 'tiki_style',
+                  package: TextProvider.package,
                 ),
               ),
               data: mdSource.data ?? ""); //mdSource.data

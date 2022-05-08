@@ -31,7 +31,7 @@ class ScreenEmailWidgetButton extends StatelessWidget {
             style: TextStyle(
               color: ColorProvider.white,
               fontFamily: TextProvider.familyNunitoSans,
-              package: 'tiki_style',
+              package: TextProvider.package,
               fontWeight: FontWeight.w800,
               fontSize: SizeProvider.instance.text(22),
               letterSpacing: SizeProvider.instance.text(0.05),

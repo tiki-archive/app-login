@@ -17,7 +17,7 @@ class ScreenEmailWidgetTitle extends StatelessWidget {
         textAlign: TextAlign.left,
         style: TextStyle(
             fontFamily: TextProvider.familyKoara,
-            package: 'tiki_style',
+            package: TextProvider.package,
             color: ColorProvider.tikiPurple,
             fontSize: SizeProvider.instance.text(36),
             letterSpacing: SizeProvider.instance.text(0.02),

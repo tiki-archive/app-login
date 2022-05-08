@@ -20,6 +20,8 @@ class ScreenIntroWidgetTitle extends StatelessWidget {
             color: ColorProvider.tikiPurple,
             fontFamily: TextProvider.familyKoara,
             fontSize: SizeProvider.instance.text(44),
-            fontWeight: FontWeight.bold));
+            letterSpacing: SizeProvider.instance.text(0.02),
+            fontWeight: FontWeight.bold,
+            package: TextProvider.package));
   }
 }

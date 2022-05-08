@@ -23,7 +23,7 @@ class ScreenTermsWidgetBack extends StatelessWidget {
       child: Row(children: [
         Container(
           child: Icon(
-            IconProvider.arrow_tail_left,
+            IconProvider.arrow_thick_left,
             size: SizeProvider.instance.text(22),
             color: ColorProvider.orange,
           ),
@@ -32,7 +32,7 @@ class ScreenTermsWidgetBack extends StatelessWidget {
         Text(_textBack,
             style: TextStyle(
                 fontFamily: TextProvider.familyNunitoSans,
-                package: 'tiki_style',
+                package: TextProvider.package,
                 color: ColorProvider.orange,
                 fontWeight: FontWeight.w800,
                 fontSize: SizeProvider.instance.text(22)))

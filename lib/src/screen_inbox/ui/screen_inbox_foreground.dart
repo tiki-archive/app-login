@@ -22,7 +22,7 @@ class ScreenInboxForeground extends StatelessWidget {
                 left: SizeProvider.instance.width(3),
                 right: SizeProvider.instance.width(6)),
             child: Column(mainAxisSize: MainAxisSize.max, children: [
-              ScreenInboxWidgetBack(),
+              const ScreenInboxWidgetBack(),
               Expanded(
                   child: Container(
                       margin: EdgeInsets.symmetric(
@@ -36,12 +36,12 @@ class ScreenInboxForeground extends StatelessWidget {
                         Expanded(child: ImgProvider.pineappleAirplane),
                         Container(
                             alignment: Alignment.bottomLeft,
-                            child: ScreenInboxWidgetSent()),
+                            child: const ScreenInboxWidgetSent()),
                         Container(
                             alignment: Alignment.bottomLeft,
                             margin: EdgeInsets.only(
                                 bottom: SizeProvider.instance.height(113)),
-                            child: ScreenInboxWidgetResend())
+                            child: const ScreenInboxWidgetResend())
                       ])))
             ])));
   }

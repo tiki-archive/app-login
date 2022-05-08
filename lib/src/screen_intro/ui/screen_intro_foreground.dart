@@ -33,7 +33,7 @@ class ScreenIntroForeground extends StatelessWidget {
                   margin:
                       EdgeInsets.only(top: SizeProvider.instance.height(19)),
                   alignment: Alignment.topRight,
-                  child: ScreenIntroWidgetSkipButton()),
+                  child: const ScreenIntroWidgetSkipButton()),
               Container(
                   margin: EdgeInsets.only(
                       top: SizeProvider.instance.height(60),

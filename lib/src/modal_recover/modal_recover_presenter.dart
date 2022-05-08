@@ -20,7 +20,7 @@ class ModalRecoverPresenter {
         context: context,
         isScrollControlled: true,
         isDismissible: true,
-        backgroundColor: ColorProvider.cream,
+        backgroundColor: ColorProvider.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(SizeProvider.instance.width(36)))),

@@ -24,7 +24,7 @@ class ScreenEmailWidgetError extends StatelessWidget {
               fontSize: SizeProvider.instance.text(15),
               fontWeight: FontWeight.w600,
               fontFamily: TextProvider.familyNunitoSans,
-              package: 'tiki_style',
+              package: TextProvider.package,
               color: ColorProvider.tikiRed)),
     );
   }
