@@ -14,26 +14,24 @@ import 'package:tiki_wallet/tiki_wallet.dart';
 
 import 'modal_recover_controller.dart';
 import 'modal_recover_presenter.dart';
-import 'modal_recover_style.dart';
 import 'model/modal_recover_model_page.dart';
 import 'model/modal_recover_model_state.dart';
 
 class ModalRecoverService extends ChangeNotifier {
   final Logger _log = Logger('ModalRecoverService');
   final ModalRecoverModelState state;
-  final ModalRecoverStyle style;
   final TikiKeysService _keysService;
   final TikiBkupService _bkupService;
   late final ModalRecoverPresenter presenter;
   late final ModalRecoverController controller;
 
-  ModalRecoverService(this.state, this.style,
+  ModalRecoverService(this.state,
       {FlutterSecureStorage? secureStorage,
       Httpp? httpp,
       Future<void> Function(Function(String?)?)? refresh})
       : _keysService = TikiKeysService(secureStorage: secureStorage),
         _bkupService = TikiBkupService(httpp: httpp, refresh: refresh) {
-    presenter = ModalRecoverPresenter(this, style);
+    presenter = ModalRecoverPresenter(this);
     controller = ModalRecoverController(this);
   }
 

@@ -7,12 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../utils/utils_icons.dart';
 import '../screen_inbox_service.dart';
 
 class ScreenInboxWidgetResend extends StatelessWidget {
   static const String _textReceive = "Didn't receive it?";
   static const String _textResend = "Resend now";
+
+  const ScreenInboxWidgetResend({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,9 @@ class ScreenInboxWidgetResend extends StatelessWidget {
     return Row(children: [
       Text(_textReceive,
           style: TextStyle(
-            color: service.style.textColor,
+            color: ColorProvider.greySeven,
             height: 1.2,
-            fontSize: service.style.text(20),
+            fontSize: SizeProvider.instance.text(20),
             fontWeight: FontWeight.w600,
             fontFamily: TextProvider.familyNunitoSans,
             package: 'tiki_style',
@@ -32,17 +33,18 @@ class ScreenInboxWidgetResend extends StatelessWidget {
           onPressed: () => service.controller.resend(context),
           child: Row(children: [
             Container(
-                margin: EdgeInsets.only(right: service.style.size(4)),
+                margin: EdgeInsets.only(right: SizeProvider.instance.width(4)),
                 child: Text(_textResend,
                     style: TextStyle(
                         fontFamily: TextProvider.familyNunitoSans,
                         package: 'tiki_style',
-                        fontSize: service.style.text(20),
+                        fontSize: SizeProvider.instance.text(20),
                         fontWeight: FontWeight.bold,
                         height: 1.2,
-                        color: service.style.buttonColor))),
-            Icon(UtilsIcons.reload,
-                size: service.style.text(20), color: service.style.buttonColor)
+                        color: ColorProvider.orange))),
+            Icon(IconProvider.reload,
+                size: SizeProvider.instance.text(20),
+                color: ColorProvider.orange)
           ]))
     ]);
   }

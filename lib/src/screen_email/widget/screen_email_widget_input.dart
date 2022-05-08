@@ -12,50 +12,50 @@ import '../screen_email_service.dart';
 class ScreenEmailWidgetInput extends StatelessWidget {
   static const String _placeholder = "Your email";
 
-  ScreenEmailWidgetInput({Key? key}) : super(key: key);
+  const ScreenEmailWidgetInput({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ScreenEmailService service = Provider.of<ScreenEmailService>(context);
     return TextField(
         style: TextStyle(
-          color: service.style.buttonColor,
+          color: ColorProvider.tikiPurple,
           fontWeight: FontWeight.bold,
-          fontSize: service.style.text(20),
+          fontSize: SizeProvider.instance.text(20),
           fontFamily: TextProvider.familyNunitoSans,
-          package: 'tiki_style',
+          package: TextProvider.package,
         ),
-        cursorColor: service.style.linkColor,
+        cursorColor: ColorProvider.orange,
         autocorrect: false,
         autofocus: true,
         keyboardAppearance: Brightness.light,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
-                horizontal: service.style.size(16),
-                vertical: service.style.size(20)),
+                horizontal: SizeProvider.instance.width(16),
+                vertical: SizeProvider.instance.height(20)),
             hintText: _placeholder,
             hintStyle: TextStyle(
-                color: service.style.hintColor,
+                color: ColorProvider.greyFive,
                 fontWeight: FontWeight.bold,
                 fontFamily: TextProvider.familyNunitoSans,
-                package: 'tiki_style',
-                fontSize: service.style.text(20)),
+                package: TextProvider.package,
+                fontSize: SizeProvider.instance.text(20)),
             filled: true,
             fillColor: Colors.white,
             enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                     color: service.model.isError
-                        ? service.style.errorColor
-                        : service.style.buttonColor,
-                    width: service.style.size(1),
+                        ? ColorProvider.tikiRed
+                        : ColorProvider.tikiPurple,
+                    width: SizeProvider.instance.width(1),
                     style: BorderStyle.solid)),
             focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                     color: service.model.isError
-                        ? service.style.errorColor
-                        : service.style.buttonColor,
-                    width: service.style.size(1),
+                        ? ColorProvider.tikiRed
+                        : ColorProvider.tikiPurple,
+                    width: SizeProvider.instance.width(1),
                     style: BorderStyle.solid))),
         onChanged: service.controller.onChanged);
   }

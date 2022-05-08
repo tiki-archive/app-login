@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../widget/modal_recover_widget_btn_elev.dart';
 import '../widget/modal_recover_widget_btn_text.dart';
@@ -22,8 +23,8 @@ class ModalRecoverUiViewBackup extends ModalRecoverUiView {
   @override
   Widget page(BuildContext context) {
     return Container(
-        height: style.modalContainerHeight,
-        padding: EdgeInsets.all(style.modalContentPadding),
+        height: SizeProvider.instance.height(309),
+        padding: EdgeInsets.all(SizeProvider.instance.width(20)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -31,7 +32,7 @@ class ModalRecoverUiViewBackup extends ModalRecoverUiView {
           children: [
             Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: style.textPaddingHorizontal),
+                    horizontal: SizeProvider.instance.width(20)),
                 child: const ModalRecoverWidgetText(_title)),
             Expanded(
                 child: Column(
@@ -39,7 +40,8 @@ class ModalRecoverUiViewBackup extends ModalRecoverUiView {
                     children: [
                   ModalRecoverWidgetBtnElev(_opt1Txt, controller.showBackupPin),
                   Padding(
-                      padding: EdgeInsets.symmetric(vertical: style.size(10))),
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeProvider.instance.height(10))),
                   ModalRecoverWidgetBtnText(_opt2Txt, controller.showSuccess)
                 ])),
           ],

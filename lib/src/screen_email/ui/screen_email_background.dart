@@ -4,32 +4,27 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../screen_email_service.dart';
-import '../screen_email_style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class ScreenEmailBackground extends StatelessWidget {
+  const ScreenEmailBackground({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    ScreenEmailStyle style = Provider.of<ScreenEmailService>(context).style;
     return Stack(children: [
-      Center(child: Container(color: style.backgroundColor)),
+      Center(child: Container(color: ColorProvider.cream)),
       Container(
-          margin: EdgeInsets.only(top: style.size(18)),
+          margin: EdgeInsets.only(top: SizeProvider.instance.height(18)),
           alignment: Alignment.topRight,
-          child: Image.asset(
-            'res/images/email-pineapple.png',
-            height: style.size(188),
-            package: 'login',
-          )),
+          child: Image(
+              image: ImgProvider.pineappleLeanIn.image,
+              height: SizeProvider.instance.height(188))),
       Container(
-          margin: EdgeInsets.only(top: style.size(271)),
+          margin: EdgeInsets.only(top: SizeProvider.instance.height(272)),
           alignment: Alignment.topLeft,
-          child: Image.asset(
-            'res/images/email-blob.png',
-            height: style.size(107),
-            package: 'login',
+          child: Image(
+            image: ImgProvider.emailBlob.image,
+            height: SizeProvider.instance.height(107),
           ))
     ]);
   }

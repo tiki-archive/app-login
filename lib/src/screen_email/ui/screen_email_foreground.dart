@@ -4,10 +4,8 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
-import '../screen_email_service.dart';
-import '../screen_email_style.dart';
 import '../widget/screen_email_widget_button.dart';
 import '../widget/screen_email_widget_error.dart';
 import '../widget/screen_email_widget_input.dart';
@@ -16,35 +14,41 @@ import '../widget/screen_email_widget_title.dart';
 import '../widget/screen_email_widget_tos.dart';
 
 class ScreenEmailForeground extends StatelessWidget {
+  const ScreenEmailForeground({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    ScreenEmailStyle style = Provider.of<ScreenEmailService>(context).style;
     return SafeArea(
         child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: style.size(32)),
+            padding: EdgeInsets.symmetric(
+                horizontal: SizeProvider.instance.width(32)),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
               Container(
                   margin: EdgeInsets.only(
-                      top: style.size(51), right: style.size(60)),
+                      top: SizeProvider.instance.height(51),
+                      right: SizeProvider.instance.width(60)),
                   alignment: Alignment.centerLeft,
-                  child: ScreenEmailWidgetTitle()),
+                  child: const ScreenEmailWidgetTitle()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(15)),
+                  margin:
+                      EdgeInsets.only(top: SizeProvider.instance.height(15)),
                   alignment: Alignment.centerLeft,
-                  child: ScreenEmailWidgetSubtitle()),
+                  child: const ScreenEmailWidgetSubtitle()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(15)),
-                  child: ScreenEmailWidgetInput()),
+                  margin:
+                      EdgeInsets.only(top: SizeProvider.instance.height(15)),
+                  child: const ScreenEmailWidgetInput()),
               Container(
                   alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(top: style.size(5)),
-                  child: ScreenEmailWidgetError()),
+                  margin: EdgeInsets.only(top: SizeProvider.instance.height(5)),
+                  child: const ScreenEmailWidgetError()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(5)),
-                  child: ScreenEmailWidgetButton()),
+                  margin: EdgeInsets.only(top: SizeProvider.instance.height(5)),
+                  child: const ScreenEmailWidgetButton()),
               Container(
-                  margin: EdgeInsets.only(top: style.size(20)),
-                  child: ScreenEmailWidgetTos()),
+                  margin:
+                      EdgeInsets.only(top: SizeProvider.instance.height(20)),
+                  child: const ScreenEmailWidgetTos()),
             ])));
   }
 }

@@ -7,20 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../screen_intro_service.dart';
-import '../screen_intro_style.dart';
 import 'screen_intro_background.dart';
 import 'screen_intro_foreground.dart';
 
 abstract class ScreenIntroView extends StatelessWidget {
-  late final ScreenIntroStyle style;
-
-  ScreenIntroView({Key? key}) : super(key: key);
+  const ScreenIntroView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ScreenIntroService service =
         Provider.of<ScreenIntroService>(context, listen: false);
-    style = service.style;
     return Scaffold(
         body: Center(
             child: GestureDetector(

@@ -4,12 +4,15 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'screen_intro_view.dart';
 
 class ScreenIntroView3 extends ScreenIntroView {
+  const ScreenIntroView3({Key? key}) : super(key: key);
+
   @override
-  Color get background => style.backgroundColor3;
+  Color get background => ColorProvider.lightOrange;
 
   @override
   String get button => 'GET STARTED';

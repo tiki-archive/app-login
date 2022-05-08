@@ -12,6 +12,8 @@ import '../screen_intro_service.dart';
 class ScreenIntroWidgetSkipButton extends StatelessWidget {
   static const String _text = 'Skip';
 
+  const ScreenIntroWidgetSkipButton({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     ScreenIntroService service =
@@ -21,11 +23,11 @@ class ScreenIntroWidgetSkipButton extends StatelessWidget {
         child: Text(
           _text,
           style: TextStyle(
-              color: service.style.skipColor,
+              color: ColorProvider.tikiBlue,
               fontWeight: FontWeight.bold,
-              fontSize: service.style.text(20),
+              fontSize: SizeProvider.instance.text(20),
               fontFamily: TextProvider.familyNunitoSans,
-              package: 'tiki_style',
+              package: TextProvider.package,
               height: 1.2),
         ));
   }

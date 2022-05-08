@@ -14,7 +14,6 @@ import '../api_bouncer/model/api_bouncer_model_jwt_rsp.dart';
 import '../api_bouncer/model/api_bouncer_model_otp_rsp.dart';
 import 'flow_controller.dart';
 import 'flow_presenter.dart';
-import 'flow_style.dart';
 import 'model/flow_model.dart';
 import 'model/flow_model_otp.dart';
 import 'model/flow_model_state.dart';
@@ -24,7 +23,6 @@ import 'repository/flow_repository.dart';
 
 class FlowService extends ChangeNotifier {
   final Logger _log = Logger('FlowService');
-  final FlowStyle style;
   final FlowModel model = FlowModel();
   final FlowRepository _repository;
   late final FlowController controller;
@@ -34,10 +32,7 @@ class FlowService extends ChangeNotifier {
   final Page _home;
 
   FlowService(
-      {required this.style,
-      required Page home,
-      Httpp? httpp,
-      FlutterSecureStorage? secureStorage})
+      {required Page home, Httpp? httpp, FlutterSecureStorage? secureStorage})
       : _httpp = httpp ?? Httpp(),
         _home = home,
         _repository = FlowRepository(secureStorage: secureStorage) {

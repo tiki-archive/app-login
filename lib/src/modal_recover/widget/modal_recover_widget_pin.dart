@@ -5,16 +5,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
-
-import '../modal_recover_service.dart';
-import '../modal_recover_style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class ModalRecoverWidgetPin extends StatefulWidget {
   final int min;
   final void Function(String) submit;
 
-  ModalRecoverWidgetPin(this.submit, {int? min}) : min = min ?? 6;
+  const ModalRecoverWidgetPin(this.submit, {int? min, Key? key})
+      : min = min ?? 6,
+        super(key: key);
 
   @override
   State<StatefulWidget> createState() => _ModalRecoverWidgetPin();
@@ -38,7 +37,7 @@ class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
         focusNode: _focusNode,
         cursorColor: Colors.transparent,
         showCursor: false,
-        style: TextStyle(color: Colors.transparent),
+        style: const TextStyle(color: Colors.transparent),
         backgroundCursorColor: Colors.transparent,
         keyboardType: TextInputType.number,
         keyboardAppearance: Brightness.light,
@@ -69,17 +68,17 @@ class _ModalRecoverWidgetPin extends State<ModalRecoverWidgetPin> {
   }
 
   Widget _circle(BuildContext context, bool isFill) {
-    ModalRecoverStyle style =
-        Provider.of<ModalRecoverService>(context, listen: false).style;
     return Container(
-        height: style.fontSize * .83,
-        width: style.fontSize * .83,
-        margin: EdgeInsets.all(style.size(5)),
+        height: SizeProvider.instance.text(18) * .83,
+        width: SizeProvider.instance.text(18) * .83,
+        margin: EdgeInsets.all(SizeProvider.instance.width(5)),
         decoration: BoxDecoration(
-            color: isFill ? style.buttonColor : null,
+            color: isFill ? ColorProvider.orange : null,
             shape: BoxShape.circle,
             border: !isFill
-                ? Border.all(color: style.buttonColor, width: style.size(2))
+                ? Border.all(
+                    color: ColorProvider.orange,
+                    width: SizeProvider.instance.width(2))
                 : null));
   }
 }

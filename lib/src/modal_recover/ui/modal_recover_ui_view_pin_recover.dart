@@ -16,6 +16,8 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
   final Logger _log = Logger('RecoverUiViewPinRecover');
   static const _error = 'Incorrect pin. Try again';
 
+  ModalRecoverUiViewPinRecover({Key? key}) : super(key: key);
+
   @override
   String get title => 'Restoring from backup...';
 

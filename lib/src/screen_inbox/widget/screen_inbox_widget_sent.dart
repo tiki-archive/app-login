@@ -12,7 +12,7 @@ import '../screen_inbox_service.dart';
 class ScreenInboxWidgetSent extends StatelessWidget {
   static const String _text = "I sent an email with a link to";
 
-  ScreenInboxWidgetSent({Key? key}) : super(key: key);
+  const ScreenInboxWidgetSent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +20,18 @@ class ScreenInboxWidgetSent extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(_text,
           style: TextStyle(
-              color: service.style.textColor,
+              color: ColorProvider.greySeven,
               fontFamily: TextProvider.familyNunitoSans,
               package: 'tiki_style',
-              fontSize: service.style.text(20),
+              fontSize: SizeProvider.instance.text(20),
               height: 1.2,
               fontWeight: FontWeight.w600)),
       Text(service.model.email ?? "",
           style: TextStyle(
-              color: service.style.textColor,
+              color: ColorProvider.greySeven,
               fontFamily: TextProvider.familyNunitoSans,
               package: 'tiki_style',
-              fontSize: service.style.text(20),
+              fontSize: SizeProvider.instance.text(20),
               height: 1.2,
               fontWeight: FontWeight.bold))
     ]);

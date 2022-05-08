@@ -14,6 +14,8 @@ import 'screen_inbox_background.dart';
 import 'screen_inbox_foreground.dart';
 
 class ScreenInboxLayout extends StatelessWidget {
+  const ScreenInboxLayout({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     FlowService service = Provider.of<FlowService>(context);
@@ -24,7 +26,6 @@ class ScreenInboxLayout extends StatelessWidget {
                 ModalRecoverModelState(
                     email: service.model.current?.email,
                     accessToken: service.model.token?.bearer),
-                service.style.recover,
                 refresh: service.refresh,
                 httpp: service.httpp)
             .presenter
@@ -33,7 +34,7 @@ class ScreenInboxLayout extends StatelessWidget {
     }
     return Scaffold(
         body: Center(
-            child: Stack(children: [
+            child: Stack(children: const [
       ScreenInboxBackground(),
       ScreenInboxForeground(),
     ])));

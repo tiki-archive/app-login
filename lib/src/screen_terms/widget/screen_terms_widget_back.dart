@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../utils/utils_icons.dart';
 import '../screen_terms_service.dart';
 
 class ScreenTermsWidgetBack extends StatelessWidget {
   static const String _textBack = "Back";
+
+  const ScreenTermsWidgetBack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +23,19 @@ class ScreenTermsWidgetBack extends StatelessWidget {
       child: Row(children: [
         Container(
           child: Icon(
-            UtilsIcons.arrow,
-            size: service.style.text(22),
-            color: service.style.linkColor,
+            IconProvider.arrow_thick_left,
+            size: SizeProvider.instance.text(22),
+            color: ColorProvider.orange,
           ),
-          margin: EdgeInsets.only(right: service.style.size(6)),
+          margin: EdgeInsets.only(right: SizeProvider.instance.width(6)),
         ),
         Text(_textBack,
             style: TextStyle(
                 fontFamily: TextProvider.familyNunitoSans,
-                package: 'tiki_style',
-                color: service.style.linkColor,
+                package: TextProvider.package,
+                color: ColorProvider.orange,
                 fontWeight: FontWeight.w800,
-                fontSize: service.style.text(22)))
+                fontSize: SizeProvider.instance.text(22)))
       ]),
     );
   }

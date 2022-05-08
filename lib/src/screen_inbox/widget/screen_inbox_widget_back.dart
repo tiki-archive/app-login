@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../utils/utils_icons.dart';
 import '../screen_inbox_service.dart';
 
 class ScreenInboxWidgetBack extends StatelessWidget {
   static const String _text = "Back";
+
+  const ScreenInboxWidgetBack({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,18 @@ class ScreenInboxWidgetBack extends StatelessWidget {
       onPressed: () => service.controller.back(context),
       child: Row(children: [
         Container(
-          child: Icon(UtilsIcons.arrow,
-              size: service.style.text(22), color: service.style.buttonColor),
-          margin: EdgeInsets.only(right: service.style.size(6)),
+          child: Icon(IconProvider.arrow_thick_left,
+              size: SizeProvider.instance.text(22),
+              color: ColorProvider.orange),
+          margin: EdgeInsets.only(right: SizeProvider.instance.width(6)),
         ),
         Text(_text,
             style: TextStyle(
-                color: service.style.buttonColor,
+                color: ColorProvider.orange,
                 fontFamily: TextProvider.familyNunitoSans,
-                package: 'tiki_style',
+                package: TextProvider.package,
                 fontWeight: FontWeight.w800,
-                fontSize: service.style.text(22)))
+                fontSize: SizeProvider.instance.text(22)))
       ]),
     );
   }

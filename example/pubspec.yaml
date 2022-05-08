@@ -1,4 +1,4 @@
-name: login_example
+name: tiki_login_example
 description: Demonstrates how to use the login plugin.
 
 publish_to: 'none'
@@ -14,7 +14,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   uuid: 3.0.5
   logging: ^1.0.2
-  firebase_core: ^1.12.0
+  flutter_secure_storage: ^5.0.2
+  httpp: ^0.0.4
+  firebase_core: ^1.15.0
 
 dev_dependencies:
   flutter_test:
