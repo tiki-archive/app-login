@@ -74,7 +74,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
                             child: ClipRect(
                               child: Align(
                                   alignment: Alignment.center,
-                                  heightFactor: 0.66,
+                                  heightFactor: 0.5,
                                   widthFactor: 1,
                                   child: ConstrainedBox(
                                     constraints: const BoxConstraints(

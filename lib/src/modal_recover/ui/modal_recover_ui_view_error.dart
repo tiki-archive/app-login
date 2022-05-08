@@ -45,9 +45,7 @@ class ModalRecoverUiViewError extends ModalRecoverUiView {
                   Container(
                       padding: EdgeInsets.only(
                           bottom: SizeProvider.instance.height(30)),
-                      child: Image(
-                          image: ImgProvider.avocadoSad.image,
-                          width: SizeProvider.instance.width(75))),
+                      child: ImgProvider.avocadoSad),
                   ModalRecoverWidgetBtnElev(_opt1Txt, () {
                     service.clearError();
                     controller.showPrevious();
