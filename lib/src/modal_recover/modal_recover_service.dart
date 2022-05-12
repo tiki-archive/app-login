@@ -30,7 +30,10 @@ class ModalRecoverService extends ChangeNotifier {
       Httpp? httpp,
       Future<void> Function(Function(String?)?)? refresh})
       : _keysService = TikiKeysService(secureStorage: secureStorage),
-        _bkupService = TikiBkupService(httpp: httpp, refresh: refresh) {
+        _bkupService = TikiBkupService(
+            httpp: httpp,
+            refresh: refresh,
+            accessToken: () => state.accessToken) {
     presenter = ModalRecoverPresenter(this);
     controller = ModalRecoverController(this);
   }
@@ -101,7 +104,6 @@ class ModalRecoverService extends ChangeNotifier {
           String pin, Function(bool) onComplete, Function(Error) onError) =>
       _bkupService.recover(
           email: state.email!,
-          accessToken: state.accessToken!,
           pin: pin,
           onError: (error) => onError(_mapError(error)),
           onSuccess: (ciphertext) {
@@ -119,7 +121,6 @@ class ModalRecoverService extends ChangeNotifier {
     Uint8List ciphertext = await _keysService.encrypt(passphrase, state.keys!);
     return _bkupService.cycle(
         email: state.email!,
-        accessToken: state.accessToken!,
         oldPin: state.pin!,
         newPin: state.newPin!,
         ciphertext: ciphertext,
@@ -132,7 +133,6 @@ class ModalRecoverService extends ChangeNotifier {
     Uint8List ciphertext = await _keysService.encrypt(passphrase, state.keys!);
     return _bkupService.backup(
         email: state.email!,
-        accessToken: state.accessToken!,
         pin: state.pin!,
         ciphertext: ciphertext,
         onError: (error) => onError(_mapError(error)),

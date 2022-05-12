@@ -1,3 +1,7 @@
+## 0.0.12
+
+* update to wallet 0.0.18
+
 ## 0.0.11
 
 * fixed bugs with UI sizing
