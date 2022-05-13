@@ -1,3 +1,7 @@
+## 0.0.13
+
+* logout on refresh token failure
+
 ## 0.0.12
 
 * update to wallet 0.0.18

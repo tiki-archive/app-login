@@ -130,15 +130,15 @@ class FlowService extends ChangeNotifier {
             notifyListeners();
             if (onComplete != null) onComplete(jwt.accessToken);
           },
-          onError: (error) {
+          onError: (error) async {
             _log.warning('Failed to refresh token. Logging out', error);
             if (onComplete != null) onComplete(null);
-            //log out
+            await logout();
           });
     } else {
       _log.warning('No refresh token. Logging out');
       if (onComplete != null) onComplete(null);
-      // log out
+      await logout();
     }
   }
 
