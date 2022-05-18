@@ -1,3 +1,7 @@
+## 0.0.14
+
+* bug fix for non-final final 
+
 ## 0.0.13
 
 * logout on refresh token failure

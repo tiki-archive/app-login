@@ -11,7 +11,7 @@ import '../modal_recover_controller.dart';
 import '../modal_recover_service.dart';
 
 abstract class ModalRecoverUiView extends StatelessWidget {
-  late final ModalRecoverController controller;
+  late ModalRecoverController controller;
 
   ModalRecoverUiView({Key? key}) : super(key: key);
 
