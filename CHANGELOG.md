@@ -1,3 +1,7 @@
+## 0.0.15
+
+* update dependencies
+
 ## 0.0.14
 
 * bug fix for non-final final 

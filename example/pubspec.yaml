@@ -11,12 +11,15 @@ dependencies:
     sdk: flutter
   tiki_login:
     path: ../
-  cupertino_icons: ^1.0.2
-  uuid: 3.0.5
+  cupertino_icons: ^1.0.5
+  uuid: ^3.0.6
   logging: ^1.0.2
   flutter_secure_storage: ^5.0.2
   httpp: ^0.0.4
-  firebase_core: ^1.15.0
+  firebase_core: ^1.18.0
+
+dependency_overrides:
+  crypto: 3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -26,4 +29,4 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   test: any
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
