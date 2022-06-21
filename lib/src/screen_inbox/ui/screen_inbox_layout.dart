@@ -20,7 +20,7 @@ class ScreenInboxLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     FlowService service = Provider.of<FlowService>(context);
     if (service.model.state == FlowModelState.otpVerified) {
-      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         service.changeState(FlowModelState.setupKeys);
         ModalRecoverService(
                 ModalRecoverModelState(
