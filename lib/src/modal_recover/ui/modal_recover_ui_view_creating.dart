@@ -23,7 +23,7 @@ class _ModalRecoverUiViewCreating extends State<ModalRecoverUiViewCreating> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       ModalRecoverService service =
           Provider.of<ModalRecoverService>(context, listen: false);
       await Future.wait(
