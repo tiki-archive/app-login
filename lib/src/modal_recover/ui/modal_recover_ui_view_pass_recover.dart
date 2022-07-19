@@ -29,6 +29,11 @@ class ModalRecoverUiViewPassRecover extends ModalRecoverUiViewPass {
       service.setLoading(true);
       if (await service.decrypt(passphrase)) {
         service.state.passphrase = passphrase;
+
+
+        // Recovered with passphrase
+
+
         service.clearError();
         service.setLoading(false);
         controller.showCycle();

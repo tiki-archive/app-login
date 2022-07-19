@@ -35,6 +35,7 @@ class ModalRecoverUiViewPinRecover extends ModalRecoverUiViewPin {
         service.setLoading(false);
         if (success) {
           controller.showRecoverPassphrase();
+
           service.clearError();
         } else {
           service.setError(_error);
