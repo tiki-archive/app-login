@@ -149,6 +149,9 @@ class ModalRecoverService extends ChangeNotifier {
 
   Future<void> generate() async {
     state.keys = await _keysService.generate();
+
+    amplitude?.logEvent("WALLET_CREATION");
+
     notifyListeners();
   }
 
