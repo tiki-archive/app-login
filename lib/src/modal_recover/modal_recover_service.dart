@@ -6,6 +6,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:amplitude_flutter/amplitude.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
@@ -20,6 +21,7 @@ import 'model/modal_recover_model_state.dart';
 class ModalRecoverService extends ChangeNotifier {
   final Logger _log = Logger('ModalRecoverService');
   final ModalRecoverModelState state;
+  final Amplitude? amplitude;
   final TikiKeysService _keysService;
   final TikiBkupService _bkupService;
   late final ModalRecoverPresenter presenter;
@@ -28,12 +30,15 @@ class ModalRecoverService extends ChangeNotifier {
   ModalRecoverService(this.state,
       {FlutterSecureStorage? secureStorage,
       Httpp? httpp,
-      Future<void> Function(Function(String?)?)? refresh})
-      : _keysService = TikiKeysService(secureStorage: secureStorage),
+      Future<void> Function(Function(String?)?)? refresh,
+      this.amplitude})
+      :
+        _keysService = TikiKeysService(secureStorage: secureStorage),
         _bkupService = TikiBkupService(
             httpp: httpp,
             refresh: refresh,
-            accessToken: () => state.accessToken) {
+            accessToken: () => state.accessToken)
+       {
     presenter = ModalRecoverPresenter(this);
     controller = ModalRecoverController(this);
   }
@@ -80,6 +85,9 @@ class ModalRecoverService extends ChangeNotifier {
     } else {
       try {
         state.keys = TikiKeysModel.decode(address, sign, data);
+
+        // logged in with qr code
+
         await _keysService.provide(state.keys!);
         notifyListeners();
         return true;
@@ -141,6 +149,9 @@ class ModalRecoverService extends ChangeNotifier {
 
   Future<void> generate() async {
     state.keys = await _keysService.generate();
+
+    amplitude?.logEvent("WALLET_CREATION");
+
     notifyListeners();
   }
 

@@ -56,6 +56,12 @@ class ModalRecoverUiViewQrCode extends ModalRecoverUiView {
                           fontStyle: FontStyle.italic)),
                   ModalRecoverWidgetBtnElev(_opt1Txt, () async {
                     if (await controller.scanQr()) {
+                      
+                      // logged in with qr code
+                      service.amplitude?.logEvent("RETURNING_USER", eventProperties: {
+                        "method": "QR_CODE"
+                      });
+                      
                       service.setError(_error);
                       controller.showSuccess();
                     } else {

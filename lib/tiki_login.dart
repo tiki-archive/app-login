@@ -3,6 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 
+import 'package:amplitude_flutter/amplitude.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:httpp/httpp.dart';
@@ -18,9 +19,9 @@ class TikiLogin {
   final FlowService _flowService;
 
   TikiLogin(
-      {Httpp? httpp, required Page home, FlutterSecureStorage? secureStorage})
+      {Httpp? httpp, required Page home, Amplitude? amplitude, FlutterSecureStorage? secureStorage})
       : _flowService = FlowService(
-            httpp: httpp ?? Httpp(), home: home, secureStorage: secureStorage);
+            httpp: httpp ?? Httpp(), home: home, amplitude: amplitude, secureStorage: secureStorage);
 
   RouterDelegate get routerDelegate => _flowService.presenter;
 

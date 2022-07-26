@@ -3,6 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 
+import 'package:amplitude_flutter/amplitude.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -30,10 +31,12 @@ class FlowService extends ChangeNotifier {
   late final ApiBouncerService _bouncer;
   final Httpp _httpp;
   final Page _home;
+  final Amplitude? _amplitude;
 
   FlowService(
-      {required Page home, Httpp? httpp, FlutterSecureStorage? secureStorage})
+      {required Page home, Httpp? httpp, Amplitude? amplitude, FlutterSecureStorage? secureStorage})
       : _httpp = httpp ?? Httpp(),
+        _amplitude = amplitude,
         _home = home,
         _repository = FlowRepository(secureStorage: secureStorage) {
     controller = FlowController(this);
@@ -47,6 +50,8 @@ class FlowService extends ChangeNotifier {
       if (link != null) _dynamicLinkHandler(link);
     });
   }
+
+  Amplitude? get amplitude => _amplitude;
 
   Httpp get httpp => _httpp;
 

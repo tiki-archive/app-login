@@ -1,3 +1,7 @@
+## 0.0.16
+
+* track returning users (both qr code and pin/passphrase) in amplitude
+
 ## 0.0.15
 
 * update dependencies

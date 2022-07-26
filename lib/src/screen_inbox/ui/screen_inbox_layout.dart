@@ -27,7 +27,8 @@ class ScreenInboxLayout extends StatelessWidget {
                     email: service.model.current?.email,
                     accessToken: service.model.token?.bearer),
                 refresh: service.refresh,
-                httpp: service.httpp)
+                httpp: service.httpp,
+                amplitude: service.amplitude)
             .presenter
             .show(context);
       });

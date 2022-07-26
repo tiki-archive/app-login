@@ -36,6 +36,14 @@ class ModalRecoverUiViewPassBackup extends ModalRecoverUiViewPass {
         await service.backup(passphrase, () {
           service.clearError();
           service.setLoading(false);
+
+          // Logged in with passphrase and changed it
+
+          // logged in with qr code
+          service.amplitude?.logEvent("RETURNING_USER", eventProperties: {
+            "method": "PIN_PASSPHRASE"
+          });
+
           controller.showSuccess();
         }, (error) {
           service.setLoading(true);
